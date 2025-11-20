@@ -1,6 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+import { FaInstagram } from "react-icons/fa";
+import { FaFacebook } from "react-icons/fa";
+import { FaYoutube } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa";
+
+
 // ===================== FOOTER (Cinematic Film-Agency Style) =====================
 export default function Footer() {
   return (
@@ -21,11 +27,10 @@ export default function Footer() {
           </p>
 
           <div className="flex gap-4 mt-5 text-xl">
-            <a href="#" className="hover:text-[var(--accent-color)]"></a>
-            <a href="#" className="hover:text-[var(--accent-color)]"></a>
-            <a href="#" className="hover:text-[var(--accent-color)]"></a>
-            <a href="#" className="hover:text-[var(--accent-color)]"></a>
-            <a href="#" className="hover:text-[var(--accent-color)]"></a>
+            <a href="https://www.instagram.com/tpindianetwork" target="_blank" className="hover:text-[var(--accent-color)]"><FaInstagram /></a>
+            <a href="https://www.facebook.com/tpindianetwork/" target="_blank" className="hover:text-[var(--accent-color)]"><FaFacebook /></a>
+            <a href="https://www.youtube.com/@tpindianetwork/featured" target="_blank" className="hover:text-[var(--accent-color)]"><FaYoutube/> </a>
+            <a href="https://www.linkedin.com/company/tpindianetwork/" target="_blank" className="hover:text-[var(--accent-color)]"><FaLinkedin /></a>
           </div>
         </div>
 
