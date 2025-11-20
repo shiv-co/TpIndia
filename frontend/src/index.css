@@ -1,0 +1,34 @@
+@import "tailwindcss";
+/* 🌙 Theme Variables */
+:root {
+  /* Light theme (default) */
+  --bg-color: #eeeeee;
+  --text-primary: #393e46;
+  --text-secondary: #a0a0a0;
+  --accent-color: #4169e1;
+  --border-color: #d0d0d0;
+}
+
+.dark {
+  /* Dark theme */
+  --bg-color: #1a1a1a;
+  --text-primary: #fafafa;
+  --text-secondary: #a0a0a0;
+  --accent-color: #4169e1;
+  --border-color: #3a3a3a;
+}
+
+/* Optional smooth transitions */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hide scrollbar on all browsers */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE */
+  scrollbar-width: none;     /* Firefox */
+}
+
