@@ -237,7 +237,7 @@ export default function AboutUs() {
           <motion.div
             animate={{ x: ["0%", "-320%"] }}
             transition={{
-              duration: 28,
+              duration: 50,
               ease: "linear",
               repeat: Infinity,
             }}

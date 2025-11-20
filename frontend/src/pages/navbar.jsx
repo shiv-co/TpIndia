@@ -38,7 +38,7 @@ export default function Navbar() {
             <span className="font-bold hidden md:block text-xl tracking-tight text-[var(--text-primary)]">
             TP India Network
           </span>
-          <span className=" hidden md:block text-xs tracking-widest text-center text-[var(--text-primary)]">PVT. LIMITED</span>
+          <span className=" hidden md:block text-xs tracking-widest text-right text-[var(--text-primary)]">PVT. LIMITED</span>
           </div>
           
         </div>
