@@ -50,9 +50,9 @@ export default function Footer() {
           <h3 className="font-bold text-lg mb-4">Explore Us</h3>
           <ul className="space-y-3 text-gray-300 text-sm">
             <li><Link to="/" className="hover:text-[var(--accent-color)]">Home</Link></li>
-            <li><Link href="/about" className="hover:text-[var(--accent-color)]">About Us</Link></li>
-            <li><Link href="/services" className="hover:text-[var(--accent-color)]">Our Mission</Link></li>
-            <li><Link href="/blog" className="hover:text-[var(--accent-color)]">Blog</Link></li>
+            <li><Link to="/about" className="hover:text-[var(--accent-color)]">About Us</Link></li>
+            <li><Link to="/services" className="hover:text-[var(--accent-color)]">Our Mission</Link></li>
+            <li><Link to="/blog" className="hover:text-[var(--accent-color)]">Blog</Link></li>
             <li><Link to="contact" className="hover:text-[var(--accent-color)]">Contact</Link></li>
           </ul>
         </div>
