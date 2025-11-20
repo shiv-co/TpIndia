@@ -8,19 +8,19 @@ import Harshit from "../assets/crew_img/Harshit.webp";
 import Kshitiz from "../assets/crew_img/khitiz_mahajan.webp";
 import Bhanu from "../assets/crew_img/Bhanu.webp";
 import Amit from "../assets/crew_img/Amit_gupta.webp";
-import Anubhav from "../assets/crew_img/Anubhav_Patel.webp";
+import Anubhav from "../assets/crew_img/anubhav_patel.webp";
 import Anju from "../assets/crew_img/anju.webp";
 import Saurab from "../assets/crew_img/Saurab.webp";
-import Shivam from "../assets/crew_img/Shivam_singh.webp";
+import Shivam from "../assets/crew_img/Shivam_Singh.webp";
 import Umesh from "../assets/crew_img/Umesh_Tiwari.webp";
 import Nidhi from "../assets/crew_img/Nidhi_Mishra.webp";
 import Himanshu from "../assets/crew_img/Himanshu.webp";
 import Sudeep from "../assets/crew_img/sudeep_Tiwari.webp";
 import Rajan from "../assets/crew_img/Rajan.webp";
 import Akshat from "../assets/crew_img/akshat_Agarwal.webp";
-import Kudrat from "../assets/crew_img/Kudrat.webp";
+import Kudrat from "../assets/crew_img/kudrat.webp";
 import Teepu from "../assets/crew_img/Teepu_Sultan.webp";
-import Kapil from "../assets/crew_img/Kapil.webp";
+import Kapil from "../assets/crew_img/kapil1.webp";
 
 const crew = [
   {
