@@ -5,7 +5,7 @@ import "react-lazy-load-image-component/src/effects/blur.css";
 import { Link } from "react-router-dom";
 import Garima from "../assets/crew_img/Garima_Mishra.webp";
 import Harshit from "../assets/crew_img/Harshit.webp";
-import Kshitiz from "../assets/crew_img/Khitiz_mahajan.webp";
+import Kshitiz from "../assets/crew_img/khitiz_mahajan.webp";
 import Bhanu from "../assets/crew_img/Bhanu.webp";
 import Amit from "../assets/crew_img/Amit_gupta.webp";
 import Anubhav from "../assets/crew_img/Anubhav_Patel.webp";
