@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
 import { FaInstagram, FaFacebook, FaYoutube, FaLinkedin } from "react-icons/fa";
+import bg_footer from "../assets/images/bg_footer.webp";
 
 export default function Footer() {
   return (
@@ -16,7 +16,7 @@ export default function Footer() {
       <div
         className="absolute inset-0 opacity-10"
         style={{
-          backgroundImage: "url('/assets/footer-bg.jpg')",
+          backgroundImage: "url(" + bg_footer + ")",
           backgroundSize: "cover",
           backgroundPosition: "center"
         }}

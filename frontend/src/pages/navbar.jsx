@@ -76,6 +76,14 @@ export default function Navbar() {
               Careers
             </Link>
           </li>
+             <li className="pl-20">
+            <Link
+              to="/contact"
+              className="px-5 py-2 rounded-full bg-[var(--accent-color)] text-white font-semibold shadow-md hover:shadow-lg"
+            >
+              Contact Us
+            </Link>
+          </li>
         </ul>
 
         {/* RIGHT SIDE: Theme Button + Contact */}
@@ -107,16 +115,9 @@ export default function Navbar() {
             transition={{ duration: 0.4 }}
           />
         </motion.button>
-        <ul>
-          <li>
-            <Link
-              to="/contact"
-              className="px-5 py-2 rounded-full bg-[var(--accent-color)] text-white font-semibold shadow-md hover:shadow-lg"
-            >
-              Contact Us
-            </Link>
-          </li>
-        </ul>
+     
+       
+        
 
         {/* Mobile Menu Button */}
         <button

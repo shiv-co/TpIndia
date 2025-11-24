@@ -1,35 +1,39 @@
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
 import WhatsAppButton from "../components/WhatsAppButton";
 
-const Contact = () => {
+export default function Contact() {
   return (
-    <div
-      className="min-h-screen bg-[var(--bg-color)] text-[var(--text-primary)] px-4 md:px-10 py-20"
-    >
-      {/* Heading */}
-      <motion.h1
-        initial={{ opacity: 0, y: -20 }}
+    <div className="min-h-screen bg-[var(--bg-color)] text-[var(--text-primary)] pt-32 pb-24 px-6">
+
+      {/* HERO TITLE */}
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        className="text-4xl md:text-5xl font-bold"
+        transition={{ duration: 0.7 }}
+        className="text-center mb-16"
       >
-        Hey, Let's Talk!
-      </motion.h1>
+        <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight">
+          Let’s Create Something <br />
+          <span className="text-[var(--accent-color)]">
+            Extraordinary Together
+          </span>
+        </h1>
 
-      <motion.p
-        initial={{ opacity: 0, y: -10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.2 }}
-        className="mt-4 max-w-xl text-[var(--text-secondary)]"
-      >
-        If you have any questions simply use the following contact details.
-      </motion.p>
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.3, duration: 0.7 }}
+          className="mt-4 max-w-2xl mx-auto text-[var(--text-secondary)]"
+        >
+          Whether it’s filming, events, branding, or digital storytelling —
+          we are ready to collaborate.
+        </motion.p>
+      </motion.div>
 
-      {/* Main Section */}
-      <div className="grid md:grid-cols-2 gap-12 mt-12">
+      {/* CONTACT INFO + FORM GRID */}
+      <div className="grid lg:grid-cols-2 gap-16 max-w-7xl mx-auto">
 
-        {/* Left Section */}
+        {/* LEFT CONTACT INFO */}
         <motion.div
           initial={{ opacity: 0, x: -40 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -37,50 +41,58 @@ const Contact = () => {
           viewport={{ once: true }}
           className="space-y-10"
         >
-          {/* Phone */}
-          <div>
-            <p className="text-lg font-semibold">📞 Phone</p>
-            <p className="text-[var(--text-secondary)] mt-1">+91 9932012125</p>
-          </div>
 
-          {/* Email */}
-          <div>
-            <p className="text-lg font-semibold">📧 Email</p>
-            <p className="text-[var(--text-secondary)] mt-1">info@tpindia.in</p>
-            <p className="text-[var(--text-secondary)]">tpindianetwork@gmail.com</p>
-          </div>
+          {[
+            { label: "📞 Phone", value: "+91 9932012125" },
+            { label: "📧 Email", value: "info@tpindia.in" },
+            { label: "📧 Alternate", value: "tpindianetwork@gmail.com" },
+            {
+              label: "📍 Address",
+              value: "502 5th Floor, Royal Apartment, Lalbagh, Hazratganj, Lucknow, India 226001"
+            },
+            { label: "⏰ Open Hours", value: "Mon – Sat : 10.00 – 19.00" }
+          ].map((item, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: i * 0.1 }}
+              className="p-5 rounded-xl border border-[var(--border-color)] bg-[var(--bg-color)]/40 backdrop-blur-md hover:border-[var(--accent-color)] transition"
+            >
+              <p className="text-lg font-semibold">{item.label}</p>
+              <p className="text-[var(--text-secondary)] mt-1">{item.value}</p>
+            </motion.div>
+          ))}
 
-          {/* Address */}
-          <div>
-            <p className="text-lg font-semibold">📍 Address</p>
-            <p className="text-[var(--text-secondary)] mt-1">
-              502 5th Floor, Royal Apartment,  
-              Lalbagh, Hazratganj  
-              Lucknow, India 226001
-            </p>
-          </div>
-
-          {/* Hours */}
-          <div>
-            <p className="text-lg font-semibold">⏰ Open Hours</p>
-            <p className="text-[var(--text-secondary)] mt-1">
-              Mon – Sat : 10.00 – 19.00
-            </p>
-          </div>
-
-          {/* Social */}
-          <div>
-            <p className="font-semibold mb-2">Follow Our Social Media:</p>
-            <div className="flex gap-5 text-2xl cursor-pointer">
-              <i className="ri-facebook-fill hover:text-[var(--accent-color)]"></i>
-              <i className="ri-instagram-line hover:text-[var(--accent-color)]"></i>
-              <i className="ri-youtube-fill hover:text-[var(--accent-color)]"></i>
-              <i className="ri-linkedin-box-fill hover:text-[var(--accent-color)]"></i>
+          {/* SOCIAL ICONS */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.6 }}
+          >
+            <p className="font-semibold mb-3">Follow Us</p>
+            <div className="flex gap-5 text-3xl">
+              {[
+                { icon: "ri-facebook-fill", link: "#" },
+                { icon: "ri-instagram-line", link: "#" },
+                { icon: "ri-youtube-fill", link: "#" },
+                { icon: "ri-linkedin-box-fill", link: "#" }
+              ].map((s, i) => (
+                <motion.a
+                  key={i}
+                  href={s.link}
+                  whileHover={{ scale: 1.2 }}
+                  className="hover:text-[var(--accent-color)] transition"
+                >
+                  <i className={s.icon}></i>
+                </motion.a>
+              ))}
             </div>
-          </div>
+          </motion.div>
+
         </motion.div>
 
-        {/* Right Form */}
+        {/* RIGHT CONTACT FORM */}
         <motion.form
           initial={{ opacity: 0, x: 40 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -88,50 +100,59 @@ const Contact = () => {
           viewport={{ once: true }}
           className="space-y-6"
         >
-          <div>
-            <label className="block mb-2 font-medium">Name</label>
-            <input
-              type="text"
-              placeholder="Name"
-              className="w-full px-4 py-3 rounded border border-[var(--border-color)] bg-transparent focus:outline-none focus:border-[var(--accent-color)]"
-            />
-          </div>
-
-          <div>
-            <label className="block mb-2 font-medium">
-              Email <span className="text-red-500">*</span>
-            </label>
-            <input
-              type="email"
-              placeholder="Email"
-              className="w-full px-4 py-3 rounded border border-[var(--border-color)] bg-transparent focus:outline-none focus:border-[var(--accent-color)]"
-              required
-            />
-          </div>
+          {[
+            { label: "Name", type: "text", required: false },
+            { label: "Email", type: "email", required: true },
+          ].map((field, i) => (
+            <div key={i}>
+              <label className="block mb-2 font-medium">{field.label}</label>
+              <input
+                type={field.type}
+                placeholder={field.label}
+                required={field.required}
+                className="w-full px-4 py-3 rounded border border-[var(--border-color)] bg-transparent focus:outline-none focus:border-[var(--accent-color)] transition"
+              />
+            </div>
+          ))}
 
           <div>
             <label className="block mb-2 font-medium">Message</label>
             <textarea
-              placeholder="Message"
+              placeholder="Tell us about your project..."
               rows="5"
-              className="w-full px-4 py-3 rounded border border-[var(--border-color)] bg-transparent focus:outline-none focus:border-[var(--accent-color)]"
+              className="w-full px-4 py-3 rounded border border-[var(--border-color)] bg-transparent focus:outline-none focus:border-[var(--accent-color)] transition"
             ></textarea>
           </div>
 
-          <button
+          <motion.button
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.97 }}
             type="submit"
-            className="w-full py-3 border border-[var(--accent-color)] hover:bg-[var(--accent-color)] hover:text-white transition-all"
+            className="w-full py-3 border border-[var(--accent-color)] text-[var(--accent-color)] hover:bg-[var(--accent-color)] hover:text-white font-semibold rounded-lg transition"
           >
-            SEND
-          </button>
+            SEND MESSAGE
+          </motion.button>
         </motion.form>
       </div>
 
-      {/* Floating WhatsApp Button */}
-     <WhatsAppButton />
-
+      {/* GOOGLE MAP */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+        className="max-w-7xl mx-auto mt-20 rounded-xl overflow-hidden shadow-xl border border-[var(--border-color)]"
+      >
+        <iframe
+          title="TP India Location Map"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26031.344157845404!2d80.89879274368286!3d26.84497928307403!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399be36fdd64860b%3A0xf2516a6d1c8300ba!2sTP%20India%20Network%20Private%20Limited!5e1!3m2!1sen!2sin!4v1763970386801!5m2!1sen!2sin"
+          className="w-full h-72 md:h-96"
+          loading="lazy"
+        ></iframe>
+      </motion.div>
+      
+      {/* WHATSAPP BUTTON */}
+      <WhatsAppButton />
     </div>
   );
-};
-
-export default Contact;
+}

@@ -81,12 +81,12 @@ function Hero() {
             animate={{ opacity: 1 }}
             transition={{ delay: 1.2 }}
           >
-            <a
-              href="#contact"
+            <Link
+              to="/contact"
               className="px-6 py-3 rounded-full bg-[var(--accent-color)] text-white shadow-md hover:scale-[1.05] transition-transform"
             >
               Get a Quote
-            </a>
+            </Link>
 
             <a
               href="https://youtu.be/kOveEiMFESU"
@@ -485,12 +485,12 @@ export default function Home() {
           <p className="text-[var(--text-secondary)] mb-6">
             Contact TP India Network — we’ll plan, shoot and deliver with care.
           </p>
-          <a
-            href="#contact"
+          <Link
+            to="/contact"
             className="px-6 py-3 bg-[var(--accent-color)] text-white rounded-full"
           >
             Contact Us
-          </a>
+          </Link>
         </div>
       </section>
     </main>
