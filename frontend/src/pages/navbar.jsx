@@ -36,11 +36,12 @@ export default function Navbar() {
           <img src="/logo.webp" alt="TP India Logo" className="h-16 w-16" />
           <div>
             <span className="font-bold hidden md:block text-xl tracking-tight text-[var(--text-primary)]">
-            TP India Network
-          </span>
-          <span className=" hidden md:block text-xs tracking-widest text-right text-[var(--text-primary)]">PVT. LIMITED</span>
+              TP India Network
+            </span>
+            <span className=" hidden md:block text-xs tracking-widest text-right text-[var(--text-primary)]">
+              PVT. LIMITED
+            </span>
           </div>
-          
         </div>
 
         {/* Desktop Menu */}
@@ -106,6 +107,16 @@ export default function Navbar() {
             transition={{ duration: 0.4 }}
           />
         </motion.button>
+        <ul>
+          <li>
+            <Link
+              to="/contact"
+              className="px-5 py-2 rounded-full bg-[var(--accent-color)] text-white font-semibold shadow-md hover:shadow-lg"
+            >
+              Contact Us
+            </Link>
+          </li>
+        </ul>
 
         {/* Mobile Menu Button */}
         <button
@@ -148,7 +159,7 @@ export default function Navbar() {
                 About Us
               </Link>
             </li>
-             <li>
+            <li>
               <Link to="/careers" className="hover:text-[var(--accent-color)]">
                 Careers
               </Link>

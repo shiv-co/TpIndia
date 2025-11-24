@@ -11,6 +11,7 @@ import blog4 from "../assets/images/service_3.webp";
 import blog5 from "../assets/images/service_2.webp";
 import blog6 from "../assets/images/gallery9.webp";
 import avatar from "../../public/logo.webp"; // replace if needed
+import WhatsAppButton from "../components/WhatsAppButton";
 
 // Lazy image helper
 const LazyImg = ({ src, alt, className }) => (
@@ -389,6 +390,7 @@ export default function BlogPage() {
             </div>
           </motion.div>
         </aside>
+        <WhatsAppButton />
       </section>
     </main>
   );

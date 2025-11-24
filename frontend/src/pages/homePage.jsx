@@ -7,6 +7,7 @@ import product1 from "../assets/images/product_img.webp";
 import product2 from "../assets/images/product_img2.webp";
 import product3 from "../assets/images/product_img3.webp";
 import product4 from "../assets/images/product_img4.webp";
+import WhatsAppButton from "../components/WhatsAppButton";
 
 /*
   Home.jsx - Bold Cinematic Film Agency Style (Option B)
@@ -470,6 +471,7 @@ export default function Home() {
       <QuickQuote />
       <Testimonials />
       <ServiceIndex />
+      <WhatsAppButton />
 
       {/* Final CTA */}
       <section

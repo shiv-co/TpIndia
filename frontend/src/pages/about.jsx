@@ -26,6 +26,7 @@ import Kudrat from "../assets/crew_img/kudrat.webp";
 import Teepu from "../assets/crew_img/Teepu_Sultan.webp";
 import Kapil from "../assets/crew_img/kapil1.webp";
 import kudrat from "../assets/crew_img/kudrat_dir.webp";
+import WhatsAppButton from "../components/WhatsAppButton";
 
 const crew = [
   { name: "Akshat Agrawal", role: "Director / COO", img: Akshat },
@@ -171,6 +172,7 @@ export default function AboutUs() {
             <Link to="/careers" className="px-6 py-3 rounded-full border border-[var(--border-color)]">See Openings</Link>
           </div>
         </motion.div>
+        <WhatsAppButton />
       </section>
 
       <div className="h-24" />

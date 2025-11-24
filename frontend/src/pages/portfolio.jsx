@@ -22,6 +22,7 @@ import gallery9 from "../assets/images/gallery9.webp";
 import gallery13 from "../assets/images/gallery13.webp";
 import gallery11 from "../assets/images/gallery11.webp";
 import gallery12 from "../assets/images/gallery12.webp";
+import WhatsAppButton from "../components/WhatsAppButton";
 
 // Lazy loading for images
 const LazyImg = ({ src, alt, className }) => (
@@ -436,7 +437,9 @@ export default function PortfolioPage() {
             </motion.div>
           ))}
         </div>
+        <WhatsAppButton />
       </section>
+      
     </div>
   );
 }

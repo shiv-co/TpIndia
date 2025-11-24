@@ -8,6 +8,7 @@ import career2 from "../assets/images/service_2.webp";
 import career3 from "../assets/images/career3.webp";
 import career4 from "../assets/images/career4.jpg";
 import kudart from "../assets/crew_img/kudrat_dir.webp";
+import WhatsAppButton from "../components/WhatsAppButton";
 
 // NOTE: Replace asset paths below with your actual images in /src/assets/...
 const heroBg = "/assets/careers-hero.jpg";
@@ -332,6 +333,7 @@ export default function CareersAnimated() {
       )}
 
       <div className="h-28" />
+      <WhatsAppButton />
     </main>
   );
 }
