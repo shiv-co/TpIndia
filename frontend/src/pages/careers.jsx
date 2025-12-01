@@ -175,17 +175,7 @@ export default function CareersAnimated() {
       </section>
 
       {/* LOGO MARQUEE */}
-      <section className="max-w-7xl mx-auto px-6 py-8">
-        <div className="relative overflow-hidden rounded-xl border border-[var(--border-color)] bg-black/60">
-          <motion.div animate={{ x: ["0%", "-50%"] }} transition={{ duration: 18, ease: "linear", repeat: Infinity }} className="flex items-center gap-10 px-6 py-6 whitespace-nowrap">
-            {logos.concat(logos).map((l, i) => (
-              <div key={i} className="inline-flex items-center justify-center min-w-[140px] h-14 opacity-80">
-                <img src={l} alt={`logo-${i}`} className="max-h-10 object-contain grayscale hover:grayscale-0 transition" />
-              </div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
+     
 
       {/* WHY WORK WITH US */}
       <section className="max-w-7xl mx-auto px-6 py-12 grid md:grid-cols-3 gap-8">

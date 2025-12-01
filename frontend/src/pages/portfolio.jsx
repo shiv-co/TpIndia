@@ -22,6 +22,24 @@ import gallery9 from "../assets/images/gallery9.webp";
 import gallery13 from "../assets/images/gallery13.webp";
 import gallery11 from "../assets/images/gallery11.webp";
 import gallery12 from "../assets/images/gallery12.webp";
+
+import logo1 from "../assets/images/logo1.webp";
+import logo2 from "../assets/images/logo2.webp";
+import logo3 from "../assets/images/logo3.webp";
+import logo4 from "../assets/images/logo4.webp";
+import logo5 from "../assets/images/logo5.webp";
+import logo6 from "../assets/images/logo6.webp";
+import logo7 from "../assets/images/logo7.webp";
+import logo8 from "../assets/images/logo8.webp";
+import logo9 from "../assets/images/logo9.webp";
+import logo10 from "../assets/images/logo10.webp";
+import logo11 from "../assets/images/logo11.webp";
+import logo12 from "../assets/images/logo12.webp";
+import logo13 from "../assets/images/logo13.webp";
+import logo14 from "../assets/images/logo14.webp";
+import logo15 from "../assets/images/logo15.webp";
+import logo16 from "../assets/images/logo16.webp";
+
 import WhatsAppButton from "../components/WhatsAppButton";
 
 // Lazy loading for images
@@ -31,6 +49,25 @@ const LazyImg = ({ src, alt, className }) => (
 
 export default function PortfolioPage() {
   const heroRef = useRef(null);
+
+  const logos = [
+    logo1,
+    logo2,
+    logo3,
+    logo4,
+    logo5,
+    logo6,
+    logo7,
+    logo8,
+    logo9,
+    logo10,
+    logo11,
+    logo12,
+    logo13,
+    logo14,
+    logo15,
+    logo16,
+  ];
 
   const collage = [
     portfolio1,
@@ -51,9 +88,17 @@ export default function PortfolioPage() {
     { src: gallery7, category: "Behind The Scenes" },
     { src: gallery8, category: "Music Video" },
     { src: gallery9, category: "Ads" },
-    { src: gallery11, category: "Web Development" ,link: "dhasutalks.com"},
-    { src: gallery12, category: "Web Development", link: "tehzeebcreations.in" },
-    { src: gallery13, category: "Web Development", link: "ummeedwelfare.org.in" },
+    { src: gallery11, category: "Web Development", link: "dhasutalks.com" },
+    {
+      src: gallery12,
+      category: "Web Development",
+      link: "tehzeebcreations.in",
+    },
+    {
+      src: gallery13,
+      category: "Web Development",
+      link: "ummeedwelfare.org.in",
+    },
   ];
 
   const videos = [
@@ -154,6 +199,39 @@ export default function PortfolioPage() {
             is the work that defines TP India Network.
           </motion.p>
         </motion.div>
+      </section>
+
+      {/* Logos carousel */}
+      <section className="max-w-7xl mx-auto px-6 py-8">
+        <div className="relative overflow-hidden rounded-xl border border-[var(--border-color)] bg-black/60">
+          {/* Marquee Container */}
+          <div className="flex overflow-hidden">
+            {/* Track (Animated) */}
+            <motion.div
+              className="flex gap-10 whitespace-nowrap"
+              animate={{ x: ["0%", "-100%"] }}
+              transition={{
+                duration: 50,
+                ease: "linear",
+                repeat: Infinity,
+              }}
+            >
+              {/* Original logos + Duplicate for seamless loop */}
+              {[...logos, ...logos].map((l, i) => (
+                <div
+                  key={i}
+                  className="flex items-center justify-center min-w-[140px] h-24 opacity-80 px-8"
+                >
+                  <img
+                    src={l}
+                    alt={`logo-${i}`}
+                    className="max-h-20 object-contain  hover:grayscale-0 transition"
+                  />
+                </div>
+              ))}
+            </motion.div>
+          </div>
+        </div>
       </section>
 
       {/* ================= STATS STRIP ================= */}
@@ -354,20 +432,19 @@ export default function PortfolioPage() {
                 />
 
                 {/* Overlay */}
-                <div
-                  className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500  bg-black/60 group-hover:bg-[var(--accent-color)]/80 pointer-events-none"
-                >
+                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500  bg-black/60 group-hover:bg-[var(--accent-color)]/80 pointer-events-none">
                   <div className="text-center pointer-events-auto">
                     <h3 className="text-white text-lg md:text-2xl font-bold drop-shadow-lg">
                       {item.category}
                     </h3>
-                    <a className="text-white/80 text-xs mt-1 tracking-wide"
-                    href={item.link ? `https://${item.link}` : "#"}
-                    target="_blank"
-                    rel="noopener noreferrer">
+                    <a
+                      className="text-white/80 text-xs mt-1 tracking-wide"
+                      href={item.link ? `https://${item.link}` : "#"}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       View Full Project
                     </a>
-                    
                   </div>
                 </div>
               </div>
@@ -439,7 +516,6 @@ export default function PortfolioPage() {
         </div>
         <WhatsAppButton />
       </section>
-      
     </div>
   );
 }

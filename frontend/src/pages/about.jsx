@@ -26,6 +26,7 @@ import Kudrat from "../assets/crew_img/kudrat.webp";
 import Teepu from "../assets/crew_img/Teepu_Sultan.webp";
 import Kapil from "../assets/crew_img/kapil1.webp";
 import kudrat from "../assets/crew_img/kudrat_dir.webp";
+import Ali from "../assets/crew_img/ali.webp";
 import WhatsAppButton from "../components/WhatsAppButton";
 
 const crew = [
@@ -45,6 +46,7 @@ const crew = [
   { name: "Himanshu Goswami", role: "Cinematographer", img: Himanshu },
   { name: "Rajan Mishra", role: "DOP", img: Rajan },
   { name: "Sudeep Tiwari", role: "Photographer", img: Sudeep },
+  { name: "Ali Musarrat", role: "Editor", img: Ali }, 
   { name: "Teepu Sultan", role: "Video Editor / Camera Operator", img: Teepu },
   { name: "Kapil Bharti", role: "Video Editor", img: Kapil },
 ];
@@ -148,7 +150,7 @@ export default function AboutUs() {
         <div className="mx-auto w-32 border-b-2 border-[var(--accent-color)] mb-10"></div>
 
         <div className="relative w-full overflow-hidden py-6">
-          <motion.div animate={{ x: ["0%", "-200%"] }} transition={{ duration: 48, ease: "linear", repeat: Infinity }} className="flex gap-12 whitespace-nowrap items-center">
+          <motion.div animate={{ x: ["0%", "-400%"] }} transition={{ duration: 48, ease: "linear", repeat: Infinity }} className="flex gap-12 whitespace-nowrap items-center">
             {crew.concat(crew).map((member, idx) => (
               <motion.div key={idx} whileHover={{ scale: 1.03 }} className="inline-flex min-w-[240px] flex-col items-center text-center">
                 <LazyLoadImage src={member.img} effect="blur" className="w-56 h-56 object-cover rounded-full border-4 border-[var(--accent-color)] shadow-lg" />
