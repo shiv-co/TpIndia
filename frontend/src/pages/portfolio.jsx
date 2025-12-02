@@ -175,7 +175,7 @@ export default function PortfolioPage() {
             transition={{ duration: 0.7 }}
             className="uppercase tracking-[0.3em] text-xs text-white/70 mb-3"
           >
-            Portfolio • TP India Network
+            TP India Network • Portfolio 
           </motion.p>
 
           <motion.h1
@@ -202,13 +202,13 @@ export default function PortfolioPage() {
       </section>
 
       {/* Logos carousel */}
-      <section className="max-w-7xl mx-auto px-6 py-8">
+      <section className="max-w-8xl mx-auto px-6 py-8">
         <div className="relative overflow-hidden rounded-xl border border-[var(--border-color)] bg-black/60">
           {/* Marquee Container */}
           <div className="flex overflow-hidden">
             {/* Track (Animated) */}
             <motion.div
-              className="flex gap-10 whitespace-nowrap"
+              className="flex gap-4 whitespace-nowrap"
               animate={{ x: ["0%", "-100%"] }}
               transition={{
                 duration: 50,
@@ -220,12 +220,12 @@ export default function PortfolioPage() {
               {[...logos, ...logos].map((l, i) => (
                 <div
                   key={i}
-                  className="flex items-center justify-center min-w-[140px] h-24 opacity-80 px-8"
+                  className="flex items-center justify-center min-w-[200px] h-24 opacity-80 px-8"
                 >
                   <img
                     src={l}
                     alt={`logo-${i}`}
-                    className="max-h-20 object-contain  hover:grayscale-0 transition"
+                    className="max-h-20 object-contain hover:grayscale-25 transition"
                   />
                 </div>
               ))}

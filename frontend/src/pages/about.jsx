@@ -34,7 +34,11 @@ const crew = [
   { name: "Syed Kudrat Ali", role: "Director / CEO", img: Kudrat },
   { name: "Nidhi Mishra", role: "Director / Marketing Head", img: Nidhi },
   { name: "Bhanu Pratap", role: "Camera Assistant", img: Bhanu },
-  { name: "Harshit Roy Choudhury", role: "Creative Head / Photographer", img: Harshit },
+  {
+    name: "Harshit Roy Choudhury",
+    role: "Creative Head / Photographer",
+    img: Harshit,
+  },
   { name: "Garima Mishra", role: "Anchor / Social Media Manager", img: Garima },
   { name: "Kshitiz Mahazan", role: "Cinematographer", img: Kshitiz },
   { name: "Amit Gupta", role: "Photographer", img: Amit },
@@ -46,20 +50,26 @@ const crew = [
   { name: "Himanshu Goswami", role: "Cinematographer", img: Himanshu },
   { name: "Rajan Mishra", role: "DOP", img: Rajan },
   { name: "Sudeep Tiwari", role: "Photographer", img: Sudeep },
-  { name: "Ali Musarrat", role: "Editor", img: Ali }, 
+  { name: "Ali Musarrat", role: "Editor", img: Ali },
   { name: "Teepu Sultan", role: "Video Editor / Camera Operator", img: Teepu },
   { name: "Kapil Bharti", role: "Video Editor", img: Kapil },
 ];
 
 export default function AboutUs() {
   const heroRef = useRef(null);
-  const { scrollYProgress } = useScroll({ target: heroRef, offset: ["start end", "end start"] });
+  const { scrollYProgress } = useScroll({
+    target: heroRef,
+    offset: ["start end", "end start"],
+  });
   const heroY = useTransform(scrollYProgress, [0, 1], [0, -80]);
 
   return (
     <div className="bg-[var(--bg-color)] text-[var(--text-primary)]">
       {/* HERO */}
-      <section ref={heroRef} className="relative h-[60vh] md:h-[72vh] overflow-hidden">
+      <section
+        ref={heroRef}
+        className="relative h-[60vh] md:h-[72vh] overflow-hidden"
+      >
         <LazyLoadImage
           src={hero_bg}
           // effect="blur"
@@ -69,42 +79,102 @@ export default function AboutUs() {
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-black/85" />
 
         {/* Neon floating shapes */}
-        <motion.div className="absolute -left-20 top-8 w-64 h-64 rounded-full bg-[var(--accent-color)]/20 blur-3xl" animate={{ y: [0, -20, 0], opacity: [0.6, 1, 0.6] }} transition={{ duration: 6, repeat: Infinity }} />
-        <motion.div className="absolute -right-10 bottom-4 w-56 h-56 rounded-full bg-[var(--accent-color)]/18 blur-3xl" animate={{ y: [0, 14, 0], opacity: [0.5, 1, 0.5] }} transition={{ duration: 7, repeat: Infinity }} />
+        <motion.div
+          className="absolute -left-20 top-8 w-64 h-64 rounded-full bg-[var(--accent-color)]/20 blur-3xl"
+          animate={{ y: [0, -20, 0], opacity: [0.6, 1, 0.6] }}
+          transition={{ duration: 6, repeat: Infinity }}
+        />
+        <motion.div
+          className="absolute -right-10 bottom-4 w-56 h-56 rounded-full bg-[var(--accent-color)]/18 blur-3xl"
+          animate={{ y: [0, 14, 0], opacity: [0.5, 1, 0.5] }}
+          transition={{ duration: 7, repeat: Infinity }}
+        />
 
-        <motion.div style={{ y: heroY }} className="relative z-10 h-full flex flex-col items-center justify-center text-center px-6 pt-10">
-          <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.9 }} className="text-4xl md:text-6xl font-extrabold text-white">
-            Meet the People Behind   <span className="text-[var(--accent-color)]">TP India Network</span>
+        <motion.div
+          style={{ y: heroY }}
+          className="relative z-10 h-full flex flex-col items-center justify-center text-center px-6 pt-10"
+        >
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.9 }}
+            className="text-4xl md:text-6xl font-extrabold text-white"
+          >
+            Meet the People Behind{" "}
+            <span className="text-[var(--accent-color)]">TP India Network</span>
           </motion.h1>
-          <motion.p initial={{ opacity: 0, y: 10 }} animate={{ opacity: 0.95, y: 0 }} transition={{ duration: 0.9, delay: 0.12 }} className="mt-4 max-w-3xl text-white/80">
-            A diverse group of filmmakers, storytellers, coders and strategists united by craft, curiosity and care.
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 0.95, y: 0 }}
+            transition={{ duration: 0.9, delay: 0.12 }}
+            className="mt-4 max-w-3xl text-white/80"
+          >
+            A diverse group of filmmakers, storytellers, coders and strategists
+            united by craft, curiosity and care.
           </motion.p>
         </motion.div>
       </section>
 
       {/* DIRECTOR'S WORDS */}
       <section className="max-w-6xl mx-auto px-6 py-16">
-        <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="grid md:grid-cols-2 gap-8 items-center">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="grid md:grid-cols-2 gap-8 items-center"
+        >
           <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-            <LazyLoadImage src={kudrat} effect="blur" alt="Director" className="w-full h-96 object-cover" />
+            <LazyLoadImage
+              src={kudrat}
+              effect="blur"
+              alt="Director"
+              className="w-full h-96 object-cover"
+            />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
             <div className="absolute left-6 bottom-6 text-white">
-              <p className="text-sm text-[var(--text-secondary)]">From the Desk of</p>
-              <h3 className="text-2xl md:text-3xl font-bold">Syed Kudrat Ali — Founder, TP India Network</h3>
+              <p className="text-sm text-[var(--text-secondary)]">
+                From the Desk of
+              </p>
+              <h3 className="text-2xl md:text-3xl font-bold">
+                Syed Kudrat Ali — Founder, TP India Network
+              </h3>
             </div>
           </div>
 
           <div>
-            <h4 className="text-lg md:text-xl font-bold mb-4">Director's Note</h4>
-            <motion.blockquote initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.7 }} className="text-[var(--text-secondary)] italic border-l-4 border-[var(--accent-color)] pl-6 py-4 bg-white/5 rounded">
-              "Storytelling is the most human technology we have. We craft images that speak, sound that moves and edits that respect the moment. At TP India, we listen first — then shoot."
+            <h4 className="text-lg md:text-xl font-bold mb-4">
+              Director's Note
+            </h4>
+            <motion.blockquote
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.7 }}
+              className="text-[var(--text-secondary)] italic border-l-4 border-[var(--accent-color)] pl-6 py-4 bg-white/5 rounded"
+            >
+              "Storytelling is the most human technology we have. We craft
+              images that speak, sound that moves and edits that respect the
+              moment. At TP India, we listen first — then shoot."
             </motion.blockquote>
 
-            <p className="mt-6 text-[var(--text-secondary)]">We believe in collaboration, discipline, and an obsessive attention to detail. Our projects start with a conversation and end with a product that matters.</p>
+            <p className="mt-6 text-[var(--text-secondary)]">
+              We believe in collaboration, discipline, and an obsessive
+              attention to detail. Our projects start with a conversation and
+              end with a product that matters.
+            </p>
 
             <div className="mt-6 flex gap-4">
-              <Link to="/contact" className="px-5 py-2 rounded-full bg-[var(--accent-color)] text-white font-semibold shadow hover:scale-105 transition">Work With Us</Link>
-              <Link to="/portfolio" className="px-5 py-2 rounded-full border border-[var(--border-color)] text-[var(--text-primary)] hover:bg-[var(--accent-color)] hover:text-white transition">See Portfolio</Link>
+              <Link
+                to="/contact"
+                className="px-5 py-2 rounded-full bg-[var(--accent-color)] text-white font-semibold shadow hover:scale-105 transition"
+              >
+                Work With Us
+              </Link>
+              <Link
+                to="/portfolio"
+                className="px-5 py-2 rounded-full border border-[var(--border-color)] text-[var(--text-primary)] hover:bg-[var(--accent-color)] hover:text-white transition"
+              >
+                See Portfolio
+              </Link>
             </div>
           </div>
         </motion.div>
@@ -112,15 +182,42 @@ export default function AboutUs() {
 
       {/* TIMELINE / MILESTONES */}
       <section className="max-w-7xl mx-auto px-6 py-16">
-        <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} className="text-3xl font-bold text-center mb-8">Our Journey</motion.h2>
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+          className="text-3xl font-bold text-center mb-8"
+        >
+          Our Journey
+        </motion.h2>
         <div className="grid md:grid-cols-3 gap-6">
           {[
-            { year: "2005", title: "Founded", desc: "A small team with a big camera and bigger ideas." },
-            { year: "2012", title: "Growth", desc: "Expanded services, added post-production & creative teams." },
-            { year: "2022", title: "Nationwide", desc: "Teams across multiple cities and large-scale productions." },
+            {
+              year: "2005",
+              title: "Founded",
+              desc: "A small team with a big camera and bigger ideas.",
+            },
+            {
+              year: "2012",
+              title: "Growth",
+              desc: "Expanded services, added post-production & creative teams.",
+            },
+            {
+              year: "2022",
+              title: "Nationwide",
+              desc: "Teams across multiple cities and large-scale productions.",
+            },
           ].map((m, i) => (
-            <motion.div key={m.year} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: i * 0.12 }} className="p-6 rounded-xl bg-black/60 border border-[var(--border-color)]">
-              <p className="text-[var(--accent-color)] font-bold text-xl">{m.year}</p>
+            <motion.div
+              key={m.year}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: i * 0.12 }}
+              className="p-6 rounded-xl bg-black/60 border border-[var(--border-color)]"
+            >
+              <p className="text-[var(--accent-color)] font-bold text-xl">
+                {m.year}
+              </p>
               <h4 className="mt-2 font-semibold text-white">{m.title}</h4>
               <p className="mt-2 text-[var(--text-secondary)]">{m.desc}</p>
             </motion.div>
@@ -136,8 +233,16 @@ export default function AboutUs() {
             { num: "1,000+", label: "Clients" },
             { num: "50+", label: "Cities" },
           ].map((s, i) => (
-            <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: i * 0.1 }} className="p-6">
-              <p className="text-4xl font-extrabold text-[var(--accent-color)]">{s.num}</p>
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: i * 0.1 }}
+              className="p-6"
+            >
+              <p className="text-4xl font-extrabold text-[var(--accent-color)]">
+                {s.num}
+              </p>
               <p className="mt-2 text-[var(--text-secondary)]">{s.label}</p>
             </motion.div>
           ))}
@@ -145,17 +250,55 @@ export default function AboutUs() {
       </section>
 
       {/* OUR CREW - Marquee */}
-      <section className="py-12 max-w-8xl mx-auto px-6">
-        <h2 className="text-center text-3xl md:text-5xl font-bold mb-4">Our People</h2>
-        <div className="mx-auto w-32 border-b-2 border-[var(--accent-color)] mb-10"></div>
+      <section className="max-w-8xl mx-auto px-6 py-10">
+        <motion.h2
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-center text-3xl md:text-5xl font-bold mb-6"
+        >
+          Our Crew • The People Behind The Magic
+        </motion.h2>
 
-        <div className="relative w-full overflow-hidden py-6">
-          <motion.div animate={{ x: ["0%", "-400%"] }} transition={{ duration: 48, ease: "linear", repeat: Infinity }} className="flex gap-12 whitespace-nowrap items-center">
-            {crew.concat(crew).map((member, idx) => (
-              <motion.div key={idx} whileHover={{ scale: 1.03 }} className="inline-flex min-w-[240px] flex-col items-center text-center">
-                <LazyLoadImage src={member.img} effect="blur" className="w-56 h-56 object-cover rounded-full border-4 border-[var(--accent-color)] shadow-lg" />
-                <h3 className="mt-4 font-bold text-lg text-[var(--text-primary)]">{member.name}</h3>
-                <p className="text-[var(--text-secondary)] text-sm">{member.role}</p>
+        <div className="mx-auto w-32 border-b-2 border-[var(--accent-color)] mb-12"></div>
+
+        {/* Outer container with cinematic style */}
+        <div className="relative w-full overflow-hidden rounded-2xl border border-[var(--border-color)] bg-black/60 dark:bg-black/70 backdrop-blur-sm py-6 ">
+          {/* Infinite scroll track */}
+          <motion.div
+            animate={{ x: ["0%", "-400%"] }}
+            transition={{
+              duration: 60, // smooth & premium speed
+              ease: "linear",
+              repeat: Infinity,
+            }}
+            className="flex gap-8 whitespace-nowrap"
+          >
+            {[...crew, ...crew].map((member, idx) => (
+              <motion.div
+                key={idx}
+                whileHover={{ scale: 1.06 }}
+                transition={{ type: "spring", stiffness: 200 }}
+                className="inline-flex flex-col items-center text-center min-w-[260px]"
+              >
+                {/* Avatar */}
+                <div className="w-56 h-56 rounded-2xl overflow-hidden shadow-[0_0_25px_rgba(0,0,0,0.4)] border border-[var(--border-color)]">
+                  <LazyLoadImage
+                    src={member.img}
+                    effect="blur"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+
+                {/* Name */}
+                <h3 className="mt-4 font-bold text-lg  text-[var(--text-primary)]">
+                  {member.name}
+                </h3>
+
+                {/* Role */}
+                <p className="text-[var(--text-secondary)] text-sm">
+                  {member.role}
+                </p>
               </motion.div>
             ))}
           </motion.div>
@@ -164,14 +307,34 @@ export default function AboutUs() {
 
       {/* CTA */}
       <section className="max-w-7xl mx-auto px-6 py-16">
-        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="rounded-2xl p-8 bg-gradient-to-r from-black/60 to-black/40 border border-[var(--border-color)] flex flex-col md:flex-row items-center gap-6">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="rounded-2xl p-8 bg-gradient-to-r from-black/60 to-black/40 border border-[var(--border-color)] flex flex-col md:flex-row items-center gap-6"
+        >
           <div className="flex-1">
-            <h3 className="text-2xl md:text-3xl font-extrabold">Want to work with the team?</h3>
-            <p className="text-[var(--text-secondary)] mt-2">We’re hiring, collaborating and always open for creative briefs. Let’s chat.</p>
+            <h3 className="text-2xl md:text-3xl font-extrabold">
+              Want to work with the team?
+            </h3>
+            <p className="text-[var(--text-secondary)] mt-2">
+              We’re hiring, collaborating and always open for creative briefs.
+              Let’s chat.
+            </p>
           </div>
           <div className="flex gap-4">
-            <Link to="/contact" className="px-6 py-3 rounded-full bg-[var(--accent-color)] text-white font-semibold">Get In Touch</Link>
-            <Link to="/careers" className="px-6 py-3 rounded-full border border-[var(--border-color)]">See Openings</Link>
+            <Link
+              to="/contact"
+              className="px-6 py-3 rounded-full bg-[var(--accent-color)] text-white font-semibold"
+            >
+              Get In Touch
+            </Link>
+            <Link
+              to="/careers"
+              className="px-6 py-3 rounded-full border border-[var(--border-color)]"
+            >
+              See Openings
+            </Link>
           </div>
         </motion.div>
         <WhatsAppButton />

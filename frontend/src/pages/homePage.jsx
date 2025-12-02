@@ -9,13 +9,7 @@ import product3 from "../assets/images/product_img3.webp";
 import product4 from "../assets/images/product_img4.webp";
 import WhatsAppButton from "../components/WhatsAppButton";
 
-/*
-  Home.jsx - Bold Cinematic Film Agency Style (Option B)
-  - Uses CSS variables defined in your index.css ( --bg-color, --text-primary, --accent-color, --text-secondary, --border-color )
-  - Tailwind utility classes are used for layout, spacing and responsiveness
-  - Replace image src paths (/assets/...) with your real image files
-  - Mobile-first, accessible and responsive
-*/
+
 
 function PlayIcon({ className = "w-10 h-10" }) {
   return (
@@ -110,39 +104,7 @@ const fadeIn = {
   show: { opacity: 1, y: 0 },
 };
 
-// function WhatWeDo() {
-//   return (
-//     <motion.section
-//       className="py-20"
-//       variants={fadeIn}
-//       initial="hidden"
-//       whileInView="show"
-//       transition={{ duration: 1 }}
-//       viewport={{ once: true }}
-//     >
-//       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-//         <motion.img
-//           src="/assets/whatwedo.jpg"
-//           className="w-full rounded-xl shadow-xl"
-//           initial={{ opacity: 0, scale: 1.2 }}
-//           whileInView={{ opacity: 1, scale: 1 }}
-//           transition={{ duration: 1.3 }}
-//         />
 
-//         <div>
-//           <p className="text-sm text-[var(--text-secondary)] mb-3">
-//             What We Do
-//           </p>
-//           <h3 className="text-4xl font-extrabold text-[var(--text-primary)] mb-6">
-//             We Make Only Authentic Visual Experiences
-//           </h3>
-//         </div>
-//       </div>
-//     </motion.section>
-//   );
-// }
-
-// Cinematic Hover Reveal Version (Option D)
 function WhatWeDo() {
   const services = [
     {

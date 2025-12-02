@@ -44,7 +44,7 @@ export default function Navbar() {
       <div                                              
         className="w-full fixed top-0 left-0 z-[60] backdrop-blur-xl transition-colors"
         style={{
-          backgroundColor: "var(--topbar-bg, rgba(0,0,0,0.32))",
+          backgroundColor: "color-mix(in srgb, var(--bg-color) 80%, transparent)",
           color: "var(--topbar-text, var(--text-primary))",
           height: "var(--topbar-height, 2rem)",
         }}
@@ -90,7 +90,7 @@ export default function Navbar() {
               />
               <a
                 href="mailto:tpindianetwork@gmail.com"
-                className="hover:underline whitespace-nowrap underline-offset-4 decoration-[var(--accent-color)] transition font-extrabold dark:font-medium"
+                className="hover:underline whitespace-nowrap underline-offset-4 decoration-[var(--accent-color)] transition font-extrabold dark:font-medium "
               >
                 tpindianetwork@gmail.com
               </a>

@@ -3,9 +3,10 @@
 :root {
   /* Light theme (default) */
   --bg-color: #eeeeee;
-  --text-primary: #393e46;
+  /* --text-primary: #393e46; */
+  --text-primary: #232426;
   --text-secondary: #a0a0a0;
-  --accent-color: #4169e1;
+  --accent-color: #50a8dd;
   --border-color: #d0d0d0;
 }
 
@@ -14,7 +15,7 @@
   --bg-color: #1a1a1a;
   --text-primary: #fafafa;
   --text-secondary: #a0a0a0;
-  --accent-color: #4169e1;
+  --accent-color: #50a8dd;
   --border-color: #3a3a3a;
 }
 
