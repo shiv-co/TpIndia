@@ -25,7 +25,6 @@ import Akshat from "../assets/crew_img/akshat_Agarwal.webp";
 import Kudrat from "../assets/crew_img/kudrat.webp";
 import Teepu from "../assets/crew_img/Teepu_Sultan.webp";
 import Kapil from "../assets/crew_img/kapil1.webp";
-import kudrat from "../assets/crew_img/kudrat_dir.webp";
 import Ali from "../assets/crew_img/ali.webp";
 import WhatsAppButton from "../components/WhatsAppButton";
 
@@ -34,11 +33,7 @@ const crew = [
   { name: "Syed Kudrat Ali", role: "Director / CEO", img: Kudrat },
   { name: "Nidhi Mishra", role: "Director / Marketing Head", img: Nidhi },
   { name: "Bhanu Pratap", role: "Camera Assistant", img: Bhanu },
-  {
-    name: "Harshit Roy Choudhury",
-    role: "Creative Head / Photographer",
-    img: Harshit,
-  },
+  { name: "Harshit Roy Choudhury", role: "Creative Head / Photographer", img: Harshit,},
   { name: "Garima Mishra", role: "Anchor / Social Media Manager", img: Garima },
   { name: "Kshitiz Mahazan", role: "Cinematographer", img: Kshitiz },
   { name: "Amit Gupta", role: "Photographer", img: Amit },
@@ -94,6 +89,14 @@ export default function AboutUs() {
           style={{ y: heroY }}
           className="relative z-10 h-full flex flex-col items-center justify-center text-center px-6 pt-10"
         >
+          <motion.p
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 0.8, y: 0 }}
+                      transition={{ duration: 0.8 }}
+                      className="tracking-[0.25em] uppercase text-xs md:text-sm text-[var(--text-secondary)] mb-4"
+                    >
+                      TP India Network • About Us
+                    </motion.p>
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -125,10 +128,10 @@ export default function AboutUs() {
         >
           <div className="relative rounded-2xl overflow-hidden shadow-2xl">
             <LazyLoadImage
-              src={kudrat}
+              src={Kudrat}
               effect="blur"
               alt="Director"
-              className="w-full h-96 object-cover"
+              className="w-full h-auto object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
             <div className="absolute left-6 bottom-6 text-white">

@@ -1,8 +1,6 @@
 import React, { useRef, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-
 import cta_hero from "../assets/images/cta_camera.webp";
-
 import portfolio1 from "../assets/images/portfolio1.webp";
 import portfolio2 from "../assets/images/portfolio2.webp";
 import portfolio3 from "../assets/images/portfolio3.webp";
@@ -134,76 +132,87 @@ export default function PortfolioPage() {
       : galleryData.filter((g) => g.category === activeCategory);
 
   return (
+    <>
+
     <div className="bg-[var(--bg-color)] text-[var(--text-primary)]">
       {/* ================= HERO ================= */}
       <section
         ref={heroRef}
-        className="relative h-[60vh] md:h-[75vh] overflow-hidden flex items-center justify-center"
+        className="relative h-[60vh] md:h-[70vh] w-full overflow-hidden flex items-center justify-center"
       >
-        {/* Parallax background */}
+        {/* Background Image with Cinematic Zoom Animation */}
         <motion.img
           loading="lazy"
           src={cta_hero}
           alt="Cinematic camera setup"
+          className="absolute inset-0 w-full h-full object-cover opacity-80"
           style={{ scale: heroScale, opacity: heroOpacity }}
-          className="absolute inset-0 w-full h-full object-cover"
+          initial={{ scale: 1.1 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 2, ease: "easeOut" }}
         />
 
-        {/* Dark overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/80 to-black" />
+        {/* Layered Gradient Overlays for Depth */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/60 to-black/90" />
+        <div className="pointer-events-none absolute inset-x-1/4 top-0 h-40 bg-[var(--accent-color)]/25 blur-3xl" />
 
-        {/* Neon beams */}
+        {/* Floating Neon Glow (Left) */}
         <motion.div
-          className="absolute -left-20 top-10 w-72 h-72 bg-[var(--accent-color)]/25 blur-[120px] rounded-full"
-          animate={{ x: [0, 30, 0], opacity: [0.6, 1, 0.6] }}
+          className="absolute -left-20 top-16 w-64 h-64 rounded-full bg-[var(--accent-color)]/25 blur-3xl"
+          animate={{ y: [0, -20, 0], opacity: [0.6, 1, 0.6] }}
+          transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
+        />
+
+        {/* Floating Neon Glow (Right) */}
+        <motion.div
+          className="absolute -right-16 bottom-10 w-56 h-56 rounded-full bg-[var(--accent-color)]/25 blur-3xl"
+          animate={{ y: [0, 20, 0], opacity: [0.7, 1, 0.7] }}
           transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
         />
-        <motion.div
-          className="absolute -right-10 bottom-0 w-72 h-72 bg-[var(--accent-color)]/30 blur-[150px] rounded-full"
-          animate={{ x: [0, -30, 0], opacity: [0.7, 1, 0.7] }}
-          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-        />
 
-        {/* Hero Content */}
+        {/* HERO TEXT WITH PARALLAX */}
         <motion.div
           style={{ y: heroTextY }}
-          className="relative z-10 text-center px-6 md:mt-16"
+          className="relative z-10 max-w-7xl mx-auto text-center mt-20 px-6"
         >
+          {/* Subtitle */}
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 0.8, y: 0 }}
-            transition={{ duration: 0.7 }}
-            className="uppercase tracking-[0.3em] text-xs text-white/70 mb-3"
+            transition={{ duration: 0.8 }}
+            className="tracking-[0.25em] uppercase text-xs md:text-sm text-[var(--text-secondary)] mb-4"
           >
-            TP India Network • Portfolio 
+            TP India Network • Portfolio
           </motion.p>
 
+          {/* Title */}
           <motion.h1
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
-            className="text-3xl sm:text-5xl md:text-6xl font-extrabold text-white mb-3"
+            className="text-3xl md:text-5xl lg:text-6xl font-extrabold text-white"
           >
             Cinematic{" "}
             <span className="text-[var(--accent-color)]">Stories</span>{" "}
-            We&apos;ve Created
+            We&apos;ve Crafted
           </motion.h1>
 
+          {/* Description */}
           <motion.p
             initial={{ opacity: 0, y: 25 }}
             animate={{ opacity: 0.9, y: 0 }}
-            transition={{ duration: 1, delay: 0.1 }}
-            className="text-white/70 text-sm md:text-base max-w-2xl mx-auto"
+            transition={{ duration: 1, delay: 0.15 }}
+            className="mt-4 text-white/70 text-sm md:text-base max-w-2xl mx-auto"
           >
             From live events to brand films, music videos and web visuals — this
-            is the work that defines TP India Network.
+            is the work that shapes the identity of TP India Network.
           </motion.p>
         </motion.div>
       </section>
 
       {/* Logos carousel */}
-      <section className="max-w-8xl mx-auto px-6 py-8">
-        <div className="relative overflow-hidden rounded-xl border border-[var(--border-color)] bg-black/60">
+      <section className="max-w-8xl mx-auto px-6 py-8 ">
+        <div className="relative overflow-hidden rounded-xl border border-[var(--border-color)] bg-black/10">
           {/* Marquee Container */}
           <div className="flex overflow-hidden">
             {/* Track (Animated) */}
@@ -517,5 +526,6 @@ export default function PortfolioPage() {
         <WhatsAppButton />
       </section>
     </div>
+    </>
   );
 }

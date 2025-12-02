@@ -155,9 +155,9 @@ export default function Navbar() {
               className="h-14 w-14 md:h-16 md:w-16"
             />
             <div className="leading-tight">
-              <span className="font-bold text-lg md:text-xl tracking-tight text-[var(--text-primary)]">
+              <Link to="/" className="font-bold text-lg md:text-xl tracking-tight text-[var(--text-primary)]">
                 TP India Network
-              </span>
+              </Link>
               <div className="hidden md:block text-[10px] text-[var(--text-secondary)] tracking-wider">
                 PVT. LIMITED
               </div>

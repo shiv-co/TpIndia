@@ -9,7 +9,7 @@ export default function Footer() {
       className="relative mt-20 border-t border-[var(--border-color)]"
       style={{
         backgroundColor: "var(--bg-color)",
-        color: "var(--text-primary)"
+        color: "var(--text-primary)",
       }}
     >
       {/* Background Image (keeps cinematic feel but theme compatible) */}
@@ -18,25 +18,53 @@ export default function Footer() {
         style={{
           backgroundImage: "url(" + bg_footer + ")",
           backgroundSize: "cover",
-          backgroundPosition: "center"
+          backgroundPosition: "center",
         }}
       />
 
       {/* Content */}
       <div className="relative max-w-7xl mx-auto px-6 py-20 grid grid-cols-1 md:grid-cols-4 gap-12">
-        
         {/* Brand Section */}
         <div>
-          <img src="/public/logo.webp" alt="TP India Network" className="h-14 mb-4" />
-          <p className="text-sm text-[var(--text-secondary)] leading-6 max-w-xs">
-            TP India Network Pvt. Ltd. A premier film, digital marketing & video production powerhouse.
+          <img
+            src="/public/logo.webp"
+            alt="TP India Network"
+            className="h-14 mb-4"
+          />
+          <p className="text-sm text-[var(--text-secondary)]  leading-6 font-extrabold dark:font-medium max-w-xs">
+            TP India Network Pvt. Ltd. A premier film, digital marketing & video
+            production powerhouse.
           </p>
 
           <div className="flex gap-4 mt-5 text-xl">
-            <a href="https://www.instagram.com/tpindianetwork" target="_blank" className="hover:text-[var(--accent-color)]"><FaInstagram /></a>
-            <a href="https://www.facebook.com/tpindianetwork/" target="_blank" className="hover:text-[var(--accent-color)]"><FaFacebook /></a>
-            <a href="https://www.youtube.com/@tpindianetwork/featured" target="_blank" className="hover:text-[var(--accent-color)]"><FaYoutube/></a>
-            <a href="https://www.linkedin.com/company/tpindianetwork/" target="_blank" className="hover:text-[var(--accent-color)]"><FaLinkedin /></a>
+            <a
+              href="https://www.instagram.com/tpindianetwork"
+              target="_blank"
+              className="hover:text-[var(--accent-color)]"
+            >
+              <FaInstagram />
+            </a>
+            <a
+              href="https://www.facebook.com/tpindianetwork/"
+              target="_blank"
+              className="hover:text-[var(--accent-color)]"
+            >
+              <FaFacebook />
+            </a>
+            <a
+              href="https://www.youtube.com/@tpindianetwork/featured"
+              target="_blank"
+              className="hover:text-[var(--accent-color)]"
+            >
+              <FaYoutube />
+            </a>
+            <a
+              href="https://www.linkedin.com/company/tpindianetwork/"
+              target="_blank"
+              className="hover:text-[var(--accent-color)]"
+            >
+              <FaLinkedin />
+            </a>
           </div>
         </div>
 
@@ -44,10 +72,49 @@ export default function Footer() {
         <div>
           <h3 className="font-bold text-lg mb-4">Contact Info</h3>
           <ul className="space-y-3 text-[var(--text-secondary)] text-sm">
-            <li className="flex gap-3"><span>📍</span>502 5th Floor Royal Apartment, Lalbagh, Hazratganj Lucknow, India 226001</li>
-            <li className="flex gap-3"><span>📞</span>+91 9932012125</li>
-            <li className="flex gap-3"><span>✉️</span>info@tpindia.in</li>
-            <li className="flex gap-3"><span>📧</span>tpindianetwork@gmail.com</li>
+            <li className="flex gap-3">
+              <span>📍</span>
+              <a
+                href="https://maps.app.goo.gl/6HEwmpzLaug1M1mh8"
+                target="_blank"
+                rel="noopener noreferrer"
+                className=" hover:underline underline-offset-4 decoration-[var(--accent-color)] transition font-extrabold dark:font-medium"
+              >
+                {" "}
+                502 5th Floor Royal Apartment, Lalbagh, Hazratganj Lucknow,
+                India 226001{" "}
+              </a>
+            </li>
+            <li className="flex gap-3">
+              <span>📞</span>
+              <a
+                href="tel:+919932012125"
+                className="hover:underline whitespace-nowrap underline-offset-4 decoration-[var(--accent-color)] transition font-extrabold dark:font-medium"
+              >
+                {" "}
+                +91 9932012125{" "}
+              </a>{" "}
+            </li>
+            <li className="flex gap-3">
+              <span>📧</span>{" "}
+              <a
+                href="mailto:tpindianetwork@gmail.com"
+                className="hover:underline whitespace-nowrap underline-offset-4 decoration-[var(--accent-color)] transition font-extrabold dark:font-medium "
+              >
+                {" "}
+                tpindianetwork@gmail.com{" "}
+              </a>{" "}
+            </li>
+            <li className="flex gap-3">
+              <span>✉️</span>
+              <a
+                href="mailto:info@tpindia.in"
+                className="hover:underline whitespace-nowrap underline-offset-4 decoration-[var(--accent-color)] transition font-extrabold dark:font-medium "
+              >
+                {" "}
+                info@tpindia.in{" "}
+              </a>{" "}
+            </li>
           </ul>
         </div>
 
@@ -55,18 +122,38 @@ export default function Footer() {
         <div>
           <h3 className="font-bold text-lg mb-4">Explore Us</h3>
           <ul className="space-y-3 text-[var(--text-secondary)] text-sm">
-            <li><Link to="/" className="hover:text-[var(--accent-color)]">Home</Link></li>
-            <li><Link to="/about" className="hover:text-[var(--accent-color)]">About Us</Link></li>
-            <li><Link to="/services" className="hover:text-[var(--accent-color)]">Our Mission</Link></li>
-            <li><Link to="/blog" className="hover:text-[var(--accent-color)]">Blog</Link></li>
-            <li><Link to="/contact" className="hover:text-[var(--accent-color)]">Contact</Link></li>
+            <li>
+              <Link to="/" className="hover:text-[var(--accent-color)] font-extrabold dark:font-medium">
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link to="/about" className="hover:text-[var(--accent-color)] font-extrabold dark:font-medium">
+                About Us
+              </Link>
+            </li>
+            <li>
+              <Link to="/services" className="hover:text-[var(--accent-color)] font-extrabold dark:font-medium">
+                Our Mission
+              </Link>
+            </li>
+            <li>
+              <Link to="/blog" className="hover:text-[var(--accent-color)] font-extrabold dark:font-medium">
+                Blog
+              </Link>
+            </li>
+            <li>
+              <Link to="/contact" className="hover:text-[var(--accent-color)] font-extrabold dark:font-medium">
+                Contact
+              </Link>
+            </li>
           </ul>
         </div>
 
         {/* Newsletter */}
         <div>
           <h3 className="font-bold text-lg mb-4">Blog</h3>
-          <p className="text-sm text-[var(--text-secondary)] max-w-xs">
+          <p className="text-sm text-[var(--text-secondary)] max-w-xsfont-extrabold dark:font-medium">
             Get the latest updates via email. Unsubscribe anytime.
           </p>
 
@@ -76,7 +163,9 @@ export default function Footer() {
               placeholder="Enter email"
               className="flex-1 px-3 py-2 bg-transparent text-[var(--text-primary)] text-sm outline-none"
             />
-            <button className="px-4 bg-[var(--accent-color)] text-white text-sm">Send</button>
+            <button className="px-4 bg-[var(--accent-color)] text-white text-sm">
+              Send
+            </button>
           </div>
         </div>
       </div>
@@ -84,13 +173,22 @@ export default function Footer() {
       {/* Bottom Bar */}
       <div className="relative border-t border-[var(--border-color)] py-4 text-center text-[var(--text-secondary)] text-sm">
         TP India Network Private Limited © 2025 — All Rights Reserved.
-
         <div className="mt-2 space-x-4">
-          <Link to="/" className="hover:text-[var(--accent-color)]">Home</Link>
-          <Link to="/services" className="hover:text-[var(--accent-color)]">Services</Link>
-          <Link to="/portfolio" className="hover:text-[var(--accent-color)]">Portfolio</Link>
-          <Link to="/blog" className="hover:text-[var(--accent-color)]">Blog</Link>
-          <Link to="/about" className="hover:text-[var(--accent-color)]">About Us</Link>
+          <Link to="/" className="hover:text-[var(--accent-color)]">
+            Home
+          </Link>
+          <Link to="/services" className="hover:text-[var(--accent-color)]">
+            Services
+          </Link>
+          <Link to="/portfolio" className="hover:text-[var(--accent-color)]">
+            Portfolio
+          </Link>
+          <Link to="/blog" className="hover:text-[var(--accent-color)]">
+            Blog
+          </Link>
+          <Link to="/about" className="hover:text-[var(--accent-color)]">
+            About Us
+          </Link>
         </div>
       </div>
     </footer>

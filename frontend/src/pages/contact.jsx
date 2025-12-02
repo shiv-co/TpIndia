@@ -4,7 +4,6 @@ import WhatsAppButton from "../components/WhatsAppButton";
 export default function Contact() {
   return (
     <div className="min-h-screen bg-[var(--bg-color)] text-[var(--text-primary)] pt-32 pb-24 px-6">
-
       {/* HERO TITLE */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
@@ -22,17 +21,16 @@ export default function Contact() {
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 0.3, duration: 0.7 }}
+          transition={{ delay: 0.1, duration: 0.7 }}
           className="mt-4 max-w-2xl mx-auto text-[var(--text-secondary)]"
         >
-          Whether it’s filming, events, branding, or digital storytelling —
-          we are ready to collaborate.
+          Whether it’s filming, events, branding, or digital storytelling — we
+          are ready to collaborate.
         </motion.p>
       </motion.div>
 
       {/* CONTACT INFO + FORM GRID */}
       <div className="grid lg:grid-cols-2 gap-16 max-w-7xl mx-auto">
-
         {/* LEFT CONTACT INFO */}
         <motion.div
           initial={{ opacity: 0, x: -40 }}
@@ -41,16 +39,16 @@ export default function Contact() {
           viewport={{ once: true }}
           className="space-y-10"
         >
-
           {[
             { label: "📞 Phone", value: "+91 9932012125" },
             { label: "📧 Email", value: "info@tpindia.in" },
             { label: "📧 Alternate", value: "tpindianetwork@gmail.com" },
             {
               label: "📍 Address",
-              value: "502 5th Floor, Royal Apartment, Lalbagh, Hazratganj, Lucknow, India 226001"
+              value:
+                "502 5th Floor, Royal Apartment, Lalbagh, Hazratganj, Lucknow, India 226001",
             },
-            { label: "⏰ Open Hours", value: "Mon – Sat : 10.00 – 19.00" }
+            { label: "⏰ Open Hours", value: "Mon – Sat : 10.00 – 19.00" },
           ].map((item, i) => (
             <motion.div
               key={i}
@@ -73,15 +71,29 @@ export default function Contact() {
             <p className="font-semibold mb-3">Follow Us</p>
             <div className="flex gap-5 text-3xl">
               {[
-                { icon: "ri-facebook-fill", link: "#" },
-                { icon: "ri-instagram-line", link: "#" },
-                { icon: "ri-youtube-fill", link: "#" },
-                { icon: "ri-linkedin-box-fill", link: "#" }
+                {
+                  icon: "ri-facebook-fill",
+                  link: "https://www.facebook.com/tpindianetwork/",
+                },
+                {
+                  icon: "ri-instagram-line",
+                  link: "https://www.instagram.com/tpindianetwork",
+                },
+                {
+                  icon: "ri-youtube-fill",
+                  link: "https://www.youtube.com/@tpindianetwork/featured",
+                },
+                {
+                  icon: "ri-linkedin-box-fill",
+                  link: "https://www.linkedin.com/company/tpindianetwork/",
+                },
               ].map((s, i) => (
                 <motion.a
                   key={i}
                   href={s.link}
                   whileHover={{ scale: 1.2 }}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="hover:text-[var(--accent-color)] transition"
                 >
                   <i className={s.icon}></i>
@@ -89,7 +101,6 @@ export default function Contact() {
               ))}
             </div>
           </motion.div>
-
         </motion.div>
 
         {/* RIGHT CONTACT FORM */}
@@ -150,7 +161,7 @@ export default function Contact() {
           loading="lazy"
         ></iframe>
       </motion.div>
-      
+
       {/* WHATSAPP BUTTON */}
       <WhatsAppButton />
     </div>
