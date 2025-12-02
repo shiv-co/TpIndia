@@ -62,61 +62,74 @@ export default function AboutUs() {
     <div className="bg-[var(--bg-color)] text-[var(--text-primary)]">
       {/* HERO */}
       <section
-        ref={heroRef}
-        className="relative h-[60vh] md:h-[72vh] overflow-hidden"
-      >
-        <LazyLoadImage
-          src={hero_bg}
-          // effect="blur"
-          className="absolute inset-0 w-full h-full object-cover object-top brightness-75"
-        />
+  ref={heroRef}
+  className="relative h-[60vh] md:h-[70vh] w-full overflow-hidden flex items-center justify-center"
+>
+  {/* Background Image with cinematic zoom */}
+  <motion.img
+    src={hero_bg}
+    alt="About hero"
+    loading="lazy"
+    className="absolute inset-0 w-full h-full object-cover opacity-80"
+    initial={{ scale: 1.1 }}
+    animate={{ scale: 1 }}
+    transition={{ duration: 2, ease: "easeOut" }}
+  />
 
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-black/85" />
+  {/* Gradient overlays */}
+  <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/60 to-black/90" />
+  <div className="pointer-events-none absolute inset-x-1/4 top-0 h-40 bg-[var(--accent-color)]/25 blur-3xl" />
 
-        {/* Neon floating shapes */}
-        <motion.div
-          className="absolute -left-20 top-8 w-64 h-64 rounded-full bg-[var(--accent-color)]/20 blur-3xl"
-          animate={{ y: [0, -20, 0], opacity: [0.6, 1, 0.6] }}
-          transition={{ duration: 6, repeat: Infinity }}
-        />
-        <motion.div
-          className="absolute -right-10 bottom-4 w-56 h-56 rounded-full bg-[var(--accent-color)]/18 blur-3xl"
-          animate={{ y: [0, 14, 0], opacity: [0.5, 1, 0.5] }}
-          transition={{ duration: 7, repeat: Infinity }}
-        />
+  {/* Floating Neon Orb Left */}
+  <motion.div
+    className="absolute -left-20 top-16 w-64 h-64 rounded-full bg-[var(--accent-color)]/25 blur-3xl"
+    animate={{ y: [0, -20, 0], opacity: [0.6, 1, 0.6] }}
+    transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
+  />
 
-        <motion.div
-          style={{ y: heroY }}
-          className="relative z-10 h-full flex flex-col items-center justify-center text-center px-6 pt-10"
-        >
-          <motion.p
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 0.8, y: 0 }}
-                      transition={{ duration: 0.8 }}
-                      className="tracking-[0.25em] uppercase text-xs md:text-sm text-[var(--text-secondary)] mb-4"
-                    >
-                      TP India Network • About Us
-                    </motion.p>
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9 }}
-            className="text-4xl md:text-6xl font-extrabold text-white"
-          >
-            Meet the People Behind{" "}
-            <span className="text-[var(--accent-color)]">TP India Network</span>
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 0.95, y: 0 }}
-            transition={{ duration: 0.9, delay: 0.12 }}
-            className="mt-4 max-w-3xl text-white/80"
-          >
-            A diverse group of filmmakers, storytellers, coders and strategists
-            united by craft, curiosity and care.
-          </motion.p>
-        </motion.div>
-      </section>
+  {/* Floating Neon Orb Right */}
+  <motion.div
+    className="absolute -right-16 bottom-10 w-56 h-56 rounded-full bg-[var(--accent-color)]/25 blur-3xl"
+    animate={{ y: [0, 20, 0], opacity: [0.7, 1, 0.7] }}
+    transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+  />
+
+  {/* HERO CONTENT (Centered) */}
+  <div className="relative z-10 max-w-7xl mx-auto text-center px-6 mt-20">
+    {/* Subtitle */}
+    <motion.p
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 0.8, y: 0 }}
+      transition={{ duration: 0.8 }}
+      className="tracking-[0.25em] uppercase text-xs md:text-sm text-[var(--text-secondary)] mb-4"
+    >
+      TP India Network • About Us
+    </motion.p>
+
+    {/* Title */}
+    <motion.h1
+      initial={{ opacity: 0, y: 40 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1 }}
+      className="text-3xl md:text-5xl lg:text-6xl font-extrabold text-white"
+    >
+      Meet the People Behind{" "}
+      <span className="text-[var(--accent-color)]">TP India Network</span>
+    </motion.h1>
+
+    {/* Description */}
+    <motion.p
+      initial={{ opacity: 0, y: 25 }}
+      animate={{ opacity: 0.95, y: 0 }}
+      transition={{ duration: 1, delay: 0.1 }}
+      className="mt-4 max-w-2xl mx-auto text-white/75 text-sm md:text-base"
+    >
+      A diverse group of filmmakers, storytellers, coders and strategists
+      united by craft, curiosity and care.
+    </motion.p>
+  </div>
+</section>
+
 
       {/* DIRECTOR'S WORDS */}
       <section className="max-w-6xl mx-auto px-6 py-16">
