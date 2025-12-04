@@ -76,7 +76,7 @@ function Hero() {
             transition={{ delay: 1.2 }}
           >
             <Link
-              to="/contact"
+              to="/get-quote"
               className="px-6 py-3 rounded-full bg-[var(--accent-color)] text-white shadow-md hover:scale-[1.05] transition-transform"
             >
               Get a Quote
@@ -216,7 +216,7 @@ function QuickQuote() {
           </p>
         </div>
         <Link
-          to="/contact"
+          to="/get-quote"
           className="px-6 py-3 border border-[var(--accent-color)] rounded-lg hover:bg-[var(--accent-color)] hover:text-white"
         >
           Get Quotes Now

@@ -13,6 +13,7 @@ import BlogPage from "../pages/blog.jsx";
 import AboutPage from "../pages/about.jsx";
 import ContactPage from "../pages/contact.jsx";
 import CareersPage from "../pages/careers.jsx";
+import GetQuoteWizard from "../pages/GetQuoteWizard.jsx";
 
 const AppRouter = () => {
   return (
@@ -29,6 +30,7 @@ const AppRouter = () => {
           <Route path="/about" element={<AboutPage />} />
           <Route path="/careers" element={<CareersPage />} />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="/get-quote" element={<GetQuoteWizard />} />
         </Routes>
 
       <Footer />
