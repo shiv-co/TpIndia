@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { FaInstagram, FaFacebook, FaYoutube, FaLinkedin } from "react-icons/fa";
 import bg_footer from "../assets/images/bg_footer.webp";
+import logo from "../../public/logo.webp";
 
 export default function Footer() {
   return (
@@ -27,7 +28,7 @@ export default function Footer() {
         {/* Brand Section */}
         <div>
           <img
-            src="/public/logo.webp"
+            src={logo}
             alt="TP India Network"
             className="h-14 mb-4"
           />
