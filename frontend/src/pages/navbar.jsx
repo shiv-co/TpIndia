@@ -103,7 +103,7 @@ export default function Navbar() {
               href="https://www.instagram.com/tpindianetwork"
               target="_blank"
               className="hover:text-[var(--accent-color)]"
-              style={{ color: "inherit" }}
+              // style={{ color: "inherit" }}
             >
               <FaInstagram />
             </a>
@@ -111,7 +111,7 @@ export default function Navbar() {
               href="https://www.facebook.com/tpindianetwork/"
               target="_blank"
               className="hover:text-[var(--accent-color)]"
-              style={{ color: "inherit" }}
+              // style={{ color: "inherit" }}
             >
               <FaFacebook />
             </a>
@@ -120,7 +120,7 @@ export default function Navbar() {
               href="https://www.youtube.com/@tpindianetwork/featured"
               target="_blank"
               className="hover:text-[var(--accent-color)]"
-              style={{ color: "inherit" }}
+              // style={{ color: "inherit" }}
             >
               <FaYoutube />
             </a>
@@ -128,7 +128,7 @@ export default function Navbar() {
               href="https://www.linkedin.com/company/tpindianetwork/"
               target="_blank"
               className="hover:text-[var(--accent-color)]"
-              style={{ color: "inherit" }}
+              // style={{ color: "inherit" }}
             >
               <FaLinkedin />
             </a>
