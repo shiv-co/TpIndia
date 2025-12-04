@@ -149,11 +149,13 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-4 md:px-6 py-1 flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center gap-3">
+            <Link to="/">
             <img
               src="/logo.webp"
               alt="TP India Logo"
               className="h-14 w-14 md:h-16 md:w-16"
             />
+            </Link>
             <div className="leading-tight">
               <Link to="/" className="font-bold text-lg md:text-xl tracking-tight text-[var(--text-primary)]">
                 TP India Network

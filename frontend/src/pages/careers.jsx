@@ -56,16 +56,7 @@ const JOBS = [
     desc: "Use social media skills to build campaigns and generate leads.",
     img: career4,
   },
-  {
-    id: "rd-01",
-    title: "Front-end Developer",
-    team: "Tech",
-    location: "Remote",
-    type: "Full-time",
-    salary: "Based on experience",
-    desc: "Build interactive frontends, landing pages and internal tools.",
-    img: career2,
-  },
+ 
 ];
 
 function JobCard({ job, onApply, i }) {
@@ -330,7 +321,7 @@ export default function CareersAnimated() {
               <motion.div
                 initial={{ opacity: 0, y: 10 }}
                 whileHover={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.25 }}
+                transition={{ duration: 1.25 }}
                 className="mt-3 flex items-center justify-between text-sm text-[var(--text-secondary)]"
               >
                 <div className="flex items-center gap-4">

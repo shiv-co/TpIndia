@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
 import WhatsAppButton from "../components/WhatsAppButton";
+import { href } from "react-router-dom";
+import ContactForm from "../pages/contactForm.jsx";
 
 export default function Contact() {
   return (
@@ -40,15 +42,33 @@ export default function Contact() {
           className="space-y-10"
         >
           {[
-            { label: "📞 Phone", value: "+91 9932012125" },
-            { label: "📧 Email", value: "info@tpindia.in" },
-            { label: "📧 Alternate", value: "tpindianetwork@gmail.com" },
+            {
+              label: "📞 Phone",
+              value: "+91 9932012125",
+              href: "tel:+919932012125",
+            },
+            {
+              label: "📧 Email",
+              value: "tpindianetwork@gmail.com",
+              href: "mailto:tpindianetwork@gmail.com",
+            },
+            {
+              label: "📧 Alternate Email ",
+              value: "info@tpindia.in",
+              href: "mailto:info@tpindia.in",
+            },
+
             {
               label: "📍 Address",
               value:
                 "502 5th Floor, Royal Apartment, Lalbagh, Hazratganj, Lucknow, India 226001",
+              href: "https://maps.app.goo.gl/6HEwmpzLaug1M1mh8", // Replace XYZ with actual Google Maps link
             },
-            { label: "⏰ Open Hours", value: "Mon – Sat : 10.00 – 19.00" },
+            {
+              label: "⏰ Open Hours",
+              value: "Mon – Sat : 10.00 AM – 8.00 PM",
+              href: "#",
+            },
           ].map((item, i) => (
             <motion.div
               key={i}
@@ -58,7 +78,14 @@ export default function Contact() {
               className="p-5 rounded-xl border border-[var(--border-color)] bg-[var(--bg-color)]/40 backdrop-blur-md hover:border-[var(--accent-color)] transition"
             >
               <p className="text-lg font-semibold">{item.label}</p>
-              <p className="text-[var(--text-secondary)] mt-1">{item.value}</p>
+              <a
+                href={item.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[var(--text-secondary)] mt-1  hover:underline underline-offset-4 decoration-[var(--accent-color)] transition"
+              >
+                {item.value}
+              </a>
             </motion.div>
           ))}
 
@@ -104,7 +131,7 @@ export default function Contact() {
         </motion.div>
 
         {/* RIGHT CONTACT FORM */}
-        <motion.form
+        {/* <motion.form
           initial={{ opacity: 0, x: 40 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.7 }}
@@ -143,7 +170,10 @@ export default function Contact() {
           >
             SEND MESSAGE
           </motion.button>
-        </motion.form>
+        </motion.form> */}
+
+        <ContactForm />
+
       </div>
 
       {/* GOOGLE MAP */}

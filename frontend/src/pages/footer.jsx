@@ -8,7 +8,7 @@ export default function Footer() {
   return (
     <footer
       className="relative mt-20 border-t border-[var(--border-color)]"
-      style={{
+      style={{  
         backgroundColor: "var(--bg-color)",
         color: "var(--text-primary)",
       }}
