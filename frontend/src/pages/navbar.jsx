@@ -1,14 +1,10 @@
-// src/pages/navbar.jsx
 import React, { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { FaInstagram, FaFacebook, FaYoutube, FaLinkedin } from "react-icons/fa";
 
-/**
- * Navbar with a theme-aware transparent top info banner.
- * Make sure your global CSS defines the CSS variables used below.
- */
+
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);

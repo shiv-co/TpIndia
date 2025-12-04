@@ -1,18 +1,10 @@
 // GetQuoteWizard.jsx
 import React, { useState, useMemo, useRef } from "react";
 import { motion } from "framer-motion";
-// import emailjs from "@emailjs/browser";
 
-/*
-  Replace these with your EmailJS values (create account at https://emailjs.com)
-*/
-const EMAILJS_SERVICE_ID = "YOUR_SERVICE_ID";
-const EMAILJS_TEMPLATE_ID = "YOUR_TEMPLATE_ID";
-const EMAILJS_PUBLIC_KEY = "YOUR_PUBLIC_KEY";
 
-/* --------------------------
-   Configuration (edit as needed)
-   -------------------------- */
+
+
 const SERVICES = [
   "Video Editing",
   "Photography",
