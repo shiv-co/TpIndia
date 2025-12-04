@@ -42,14 +42,14 @@ export default function Navbar() {
     <>
       {/* -------------------- TOP TRANSPARENT INFO BAR -------------------- */}
       <div                                              
-        className="w-full fixed top-0 left-0 z-[60] backdrop-blur-xl transition-colors"
+        className="w-full fixed top-0 left-0 z-[60] backdrop-blur-xl transition-colors border-b-1 border-[var(--accent-color)]"
         style={{
           backgroundColor: "color-mix(in srgb, var(--bg-color) 80%, transparent)",
           color: "var(--topbar-text, var(--text-primary))",
           height: "var(--topbar-height, 2rem)",
         }}
       >
-        <div className="max-w-7xl mx-auto h-full px-4 md:px-6 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto h-full px-4  md:px-6 flex items-center justify-between">
           {/* left */}
           <div className="flex items-center gap-6 text-xs md:text-xs lg:text-sm">
             {/* 📍 Location */}
