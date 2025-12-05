@@ -87,8 +87,8 @@ function Hero() {
               target="_blank"
               className="flex items-center gap-3 text-white/90 hover:text-white"
             >
-              <span className="bg-black/30 p-3 rounded-full">
-                <PlayIcon className="w-6 h-6" />
+              <span className="bg-black/30 py-3 rounded-full">
+                <PlayIcon className="w-6 h-6 hover:scale-115" />
               </span>
               Watch Showreel
             </a>

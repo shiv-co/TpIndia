@@ -1,10 +1,15 @@
-import React, { useRef, useState } from "react";
-import {   useScroll, useTransform } from "framer-motion";
-import { motion } from "framer-motion";
+import React, { useRef, useState, useEffect } from "react";
+import { useScroll, useTransform } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 
-import playlists1 from "../assets/images/music.webp"
-import playlists2 from "../assets/images/portfolio.webp"
-import playlists3 from "../assets/images/podcasts.webp"
+
+import playlists1 from "../assets/images/music.webp";
+import playlists2 from "../assets/images/portfolio.webp";
+import playlists3 from "../assets/images/podcasts.webp";
+import playlists4 from "../assets/images/documentaries.webp";
+import playlists5 from "../assets/images/eventCoverage.webp";
+import playlists6 from "../assets/images/shortFilms.webp";
+
 import cta_hero from "../assets/images/cta_camera.webp";
 import portfolio1 from "../assets/images/portfolio1.webp";
 import portfolio2 from "../assets/images/portfolio2.webp";
@@ -105,23 +110,37 @@ export default function PortfolioPage() {
   ];
 
   const playlists = [
-  {
-    thumbnail: playlists1,
-    link: "https://www.youtube.com/watch?v=0VlR_lmn6-Q&list=PLH3Vw0GwKudHnVKY6cybeBtBBitV8apDv",
-    label: "Music Films Playlist",
-  },
-  {
-    thumbnail: playlists2,
-    link: "https://www.youtube.com/watch?v=UM3ttbm1aWc&list=PLH3Vw0GwKudGWaJzUFThLdFV5PhDDVrCE",
-    label: "Portfolio Playlists Videos",
-  },
-  {
-    thumbnail: playlists3,
-    link: "https://www.youtube.com/watch?v=fLw4KLuFSMo&list=PLH3Vw0GwKudGF-SFFezE9vcDGUTGp0GaQ",
-    label: "Podcasts & Interviews",
-  },
-];
-
+    {
+      thumbnail: playlists1,
+      link: "https://www.youtube.com/watch?v=UM3ttbm1aWc&list=PLH3Vw0GwKudGWaJzUFThLdFV5PhDDVrCE",
+      label: "Music Films Playlist",
+    },
+    {
+      thumbnail: playlists2,
+      link: "https://www.youtube.com/watch?v=0VlR_lmn6-Q&list=PLH3Vw0GwKudHnVKY6cybeBtBBitV8apDv",
+      label: "Portfolio Playlists Videos",
+    },
+    {
+      thumbnail: playlists3,
+      link: "https://www.youtube.com/watch?v=fLw4KLuFSMo&list=PLH3Vw0GwKudGF-SFFezE9vcDGUTGp0GaQ",
+      label: "Podcasts & Interviews",
+    },
+    {
+      thumbnail: playlists4,
+      link: "https://www.youtube.com/watch?v=izC13cZTXD4&list=PLH3Vw0GwKudHF1tUark0lNG0tkhjwRpMW&pp=0gcJCbAEOCosWNin",
+      label: "Documentaries",
+    },
+    {
+      thumbnail: playlists5,
+      link: "https://www.youtube.com/watch?v=3InJsilvhaY&list=PLH3Vw0GwKudGLZ-AE8RJxsHBCPrEZFXJU",
+      label: "Event Coverage",
+    },
+    {
+      thumbnail: playlists6,
+      link: "https://www.youtube.com/watch?v=bCleSAdce-I&list=PLH3Vw0GwKudHCUMeCVL1GfX1HkQ2S2CTR",
+      label: "Short Films",
+    },
+  ];
 
   const categories = [
     "All",
@@ -133,6 +152,28 @@ export default function PortfolioPage() {
     "Web Development",
   ];
   const [activeCategory, setActiveCategory] = useState("All");
+
+  const [startIndex, setStartIndex] = useState(0);
+
+  // Show 3 items at a time
+  const itemsPerView = 3;
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setStartIndex((prev) => (prev + itemsPerView) % playlists.length);
+    }, 3000); // change every 3 seconds
+
+    return () => clearInterval(interval);
+  }, [playlists.length]);
+
+  const visibleItems = playlists.slice(startIndex, startIndex + itemsPerView);
+
+  // If near end, wrap around
+  if (visibleItems.length < itemsPerView) {
+    visibleItems.push(
+      ...playlists.slice(0, itemsPerView - visibleItems.length)
+    );
+  }
 
   // Scroll-linked parallax for hero
   const { scrollYProgress } = useScroll({
@@ -234,10 +275,10 @@ export default function PortfolioPage() {
             <div className="flex overflow-hidden">
               {/* Track (Animated) */}
               <motion.div
-                className="flex gap-4 whitespace-nowrap"
+                className="flex whitespace-nowrap"
                 animate={{ x: ["0%", "-100%"] }}
                 transition={{
-                  duration: 50,
+                  duration: 60,
                   ease: "linear",
                   repeat: Infinity,
                 }}
@@ -246,7 +287,7 @@ export default function PortfolioPage() {
                 {[...logos, ...logos].map((l, i) => (
                   <div
                     key={i}
-                    className="flex items-center justify-center min-w-[200px] h-24 opacity-80 px-8"
+                    className="flex items-center justify-center min-w-[140px] h-24 opacity-80 px-4"
                   >
                     <img
                       src={l}
@@ -506,49 +547,59 @@ export default function PortfolioPage() {
         </section>
 
         {/* ================= VIDEO GALLERY ================= */}
-        <section className="max-w-7xl mx-auto px-6 py-20">
-          <motion.h2
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center text-3xl font-bold mb-6"
-          >
-            Video Playlists
-          </motion.h2>
+        {/* For mobile: horizontal scroll carousel */}
+        {/* <div className="grid grid-cols-1 gap-6 md:hidden overflow-x-auto whitespace-nowrap pb-4">
+          {playlists.map((p, i) => (
+            <motion.a
+              key={p.link}
+              href={p.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block w-64 mr-4 rounded-2xl overflow-hidden shadow-2xl border border-[var(--border-color)] bg-black"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5 }}
+            >
+              <img
+                src={p.thumbnail}
+                className="w-full h-48 object-cover"
+                alt={p.label}
+              />
+              <div className="px-4 py-3 text-center text-sm text-white/80 border-t border-white/10 hover:text-[var(--accent-color)] hover:underline underline-offset-4">
+                {p.label}
+              </div>
+            </motion.a>
+          ))}
+        </div> */}
 
-          <p className="text-center text-[var(--text-secondary)] max-w-2xl mx-auto mb-10 text-sm md:text-base">
-            Curated YouTube playlists showcasing our work and production styles.
-          </p>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {playlists.map((p, i) => (
+        {/* For MD+ screens: show 3 thumbnails that fade-cycles */}
+        <div className=" md:grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mx-4">
+          <AnimatePresence>
+            {visibleItems.map((p, i) => (
               <motion.a
-                key={p.link}
+                key={p.link + startIndex}
                 href={p.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: i * 0.15 }}
-                viewport={{ once: true }}
-                className="rounded-2xl overflow-hidden shadow-2xl bg-black border border-[var(--border-color)] block"
+                className="rounded-2xl overflow-hidden shadow-2xl border border-[var(--border-color)] bg-black"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 2 }}
               >
                 <img
                   loading="lazy"
                   src={p.thumbnail}
                   alt={p.label}
-                  className="w-full h-64 object-cover"
+                  className="w-full h-48 md:h-64 object-contain"
                 />
-
-                <div className="px-4 py-3 text-sm text-white/80 border-t text-center border-white/10">
+                <div className="px-4 py-3 text-center text-sm text-white/80 border-t border-white/10 hover:text-[var(--accent-color)] hover:underline underline-offset-4">
                   {p.label}
                 </div>
               </motion.a>
             ))}
-          </div>
-
-          <WhatsAppButton />
-        </section>
+          </AnimatePresence>
+        </div>
       </div>
     </>
   );
