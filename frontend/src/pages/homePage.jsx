@@ -8,6 +8,7 @@ import product2 from "../assets/images/product_img2.webp";
 import product3 from "../assets/images/product_img3.webp";
 import product4 from "../assets/images/product_img4.webp";
 import WhatsAppButton from "../components/WhatsAppButton";
+import GetQuoteBtn from "../components/getQuoteBtn";
 
 
 
@@ -74,13 +75,14 @@ function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.2 }}
-          >
+          > <div className="mt-6 ">
             <Link
               to="/get-quote"
               className="px-6 py-3 rounded-full bg-[var(--accent-color)] text-white shadow-md hover:scale-[1.05] transition-transform"
             >
               Get a Quote
             </Link>
+            </div>
 
             <a
               href="https://youtu.be/kOveEiMFESU"
@@ -88,7 +90,7 @@ function Hero() {
               className="flex items-center gap-3 text-white/90 hover:text-white"
             >
               <span className="bg-black/30 py-3 rounded-full">
-                <PlayIcon className="w-6 h-6 hover:scale-115" />
+                <PlayIcon className="w-12 h-12 hover:scale-115" />
               </span>
               Watch Showreel
             </a>
@@ -434,6 +436,7 @@ export default function Home() {
       <Testimonials />
       <ServiceIndex />
       <WhatsAppButton />
+      <GetQuoteBtn />
 
       {/* Final CTA */}
       <section

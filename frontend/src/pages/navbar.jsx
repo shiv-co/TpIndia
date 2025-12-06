@@ -216,7 +216,7 @@ export default function Navbar() {
 
           {/* Right: CTA + Theme Toggle (desktop only) */}
           <div className="flex items-center gap-4">
-            <div className="hidden md:block">
+            <div className="hidden lg:block">
               <Link
                 to="/contact"
                 className="px-4 py-2 rounded-full bg-[var(--accent-color)] text-white font-semibold shadow-md hover:shadow-lg transition-transform"
