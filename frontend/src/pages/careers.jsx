@@ -9,6 +9,7 @@ import career3 from "../assets/images/career3.webp";
 import career4 from "../assets/images/career4.jpg";
 import kudart from "../assets/crew_img/kudrat.webp";
 import WhatsAppButton from "../components/WhatsAppButton";
+import GetQuoteBtn from "../components/getQuoteBtn";
 
 // NOTE: Replace asset paths below with your actual images in /src/assets/...
 const heroBg = "/assets/careers-hero.jpg";
@@ -646,6 +647,7 @@ export default function CareersAnimated() {
 
       <div className="h-28" />
       <WhatsAppButton />
+      <GetQuoteBtn />
     </main>
   );
 }

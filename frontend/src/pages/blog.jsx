@@ -10,8 +10,9 @@ import blog3 from "../assets/images/blog3.webp";
 import blog4 from "../assets/images/service_3.webp";
 import blog5 from "../assets/images/service_2.webp";
 import blog6 from "../assets/images/gallery9.webp";
-import avatar from "../../public/logo.webp"; // replace if needed
+import avatar from "../../public/logo.webp"; 
 import WhatsAppButton from "../components/WhatsAppButton";
+import GetQuoteBtn from "../components/getQuoteBtn";
 
 // Lazy image helper
 const LazyImg = ({ src, alt, className }) => (
@@ -544,6 +545,7 @@ export default function BlogPage() {
           </motion.div>
         </aside>
         <WhatsAppButton />
+        <GetQuoteBtn />
       </section>
     </main>
   );

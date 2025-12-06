@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import WhatsAppButton from "../components/WhatsAppButton";
+import GetQuoteBtn from "../components/getQuoteBtn.jsx";
 import { href } from "react-router-dom";
 import ContactForm from "../pages/contactForm.jsx";
 
@@ -194,6 +195,7 @@ export default function Contact() {
 
       {/* WHATSAPP BUTTON */}
       <WhatsAppButton />
+      <GetQuoteBtn />
     </div>
   );
 }

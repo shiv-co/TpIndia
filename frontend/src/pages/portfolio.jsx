@@ -49,6 +49,7 @@ import logo15 from "../assets/images/logo15.webp";
 import logo16 from "../assets/images/logo16.webp";
 
 import WhatsAppButton from "../components/WhatsAppButton";
+import GetQuoteBtn from "../components/getQuoteBtn";
 
 // Lazy loading for images
 const LazyImg = ({ src, alt, className }) => (
@@ -600,6 +601,8 @@ export default function PortfolioPage() {
             ))}
           </AnimatePresence>
         </div>
+        <WhatsAppButton />
+        <GetQuoteBtn />
       </div>
     </>
   );

@@ -11,6 +11,7 @@ import service4 from "../assets/images/service_4.webp";
 import service5 from "../assets/images/service_5.webp";
 import service6 from "../assets/images/service_6.jpg";
 import WhatsAppButton from "../components/WhatsAppButton.jsx";
+import GetQuoteBtn from "../components/getQuoteBtn.jsx";
 
 // Neon blue accent is already in your theme: #4169E1 (var(--accent-color))
 
@@ -274,6 +275,7 @@ export default function ServicePage() {
       <CFGSection />
       <GetQuote />
       <WhatsAppButton />
+      <GetQuoteBtn />
     </div>
   );
 }

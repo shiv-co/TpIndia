@@ -27,6 +27,7 @@ import Teepu from "../assets/crew_img/Teepu_Sultan.webp";
 import Kapil from "../assets/crew_img/kapil1.webp";
 import Ali from "../assets/crew_img/ali.webp";
 import WhatsAppButton from "../components/WhatsAppButton";
+import GetQuoteBtn from "../components/getQuoteBtn";
 
 const crew = [
   { name: "Akshat Agrawal", role: "Director / COO", img: Akshat },
@@ -354,6 +355,7 @@ export default function AboutUs() {
           </div>
         </motion.div>
         <WhatsAppButton />
+        <GetQuoteBtn />
       </section>
 
       <div className="h-24" />
