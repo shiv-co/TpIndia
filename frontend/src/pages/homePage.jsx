@@ -1,5 +1,6 @@
-import React, { useState } from "react";
-import { motion } from "framer-motion";
+
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import heroImg from "../assets/hero.jpg";
 import { Link } from "react-router-dom";
 import what_we from "../assets/images/what_we.webp";
@@ -9,7 +10,9 @@ import product3 from "../assets/images/product_img3.webp";
 import product4 from "../assets/images/product_img4.webp";
 import WhatsAppButton from "../components/WhatsAppButton";
 import GetQuoteBtn from "../components/getQuoteBtn";
-
+import { MdKeyboardArrowLeft } from "react-icons/md";
+import { MdKeyboardArrowRight } from "react-icons/md";
+import { FaStar } from "react-icons/fa6";
 
 
 function PlayIcon({ className = "w-10 h-10" }) {
@@ -140,7 +143,7 @@ function WhatWeDo() {
           <img
             src={what_we}
             alt="TP India On-field Shooting"
-            className="w-full h-full object-cover rounded-xl shadow-2xl"
+            className="w-full h-full object-cover rounded-xl shadow-2xl hover:scale-110 transition-transform duration-500"
           />
         </motion.div>
 
@@ -181,7 +184,7 @@ function WhatWeDo() {
                     whileHover={{ x: 6 }}
                     transition={{ type: "spring", stiffness: 200 }}
                   >
-                    ➜
+                    <Link to="/portfolio">➜</Link>
                   </motion.span>
                 </div>
 
@@ -269,38 +272,53 @@ function ServicesGrid() {
   );
 }
 
+
+
 function Testimonials() {
   const [index, setIndex] = useState(0);
+
   const testimonials = [
     {
       name: "Sachin Gulati",
       title: "GLRA India Foundation",
-      text: "TP India Network is a documentary production powerhouse! Their dedication to storytelling is evident in every project they undertake. With a keen eye for capturing real-life moments and a knack for weaving narratives, they deliver documentaries that leave a lasting impact. Professionalism, creativity, and excellence define their work. Highly recommend TP India Network for compelling and thought-provoking documentaries!",
+      text: "TP India Network is a documentary production powerhouse! Their dedication to storytelling is evident in every project they undertake. With a keen eye for capturing real-life moments and a knack for weaving narratives, they deliver documentaries that leave a lasting impact.",
       avatar: "/assets/client1.jpg",
     },
     {
       name: "CA Aleena Rais",
       title: "CA, Influencer",
-      text: "TP India Network exceeded my expectations with their exceptional video editing services. Their attention to detail and creativity truly brought our project to life. From start to finish, the team was professional, responsive, and incredibly talented. If you're looking for top-notch editing for your film or documentary, look no further than TP India Network!",
+      text: "I recently worked with TP India Network Private Limited for video production, and digital marketing, and I was thoroughly impressed with their professionalism and quality. Their video production is truly cinematic, with excellent shooting, flawless editing, and a strong attention to detail. The wedding shoot team captured every moment beautifully, delivering creative and memorable visuals. Their graphic design team translated my ideas into impactful, visually appealing designs, while their digital marketing strategy helped boost my online presence and reach the right audience. Throughout the entire process, the TP India Network team was responsive, accommodating, and committed to delivering top-quality results. I highly recommend them for anyone seeking reliable, creative, and high-quality media and marketing services.",
       avatar: "/assets/client2.jpg",
     },
-      {
+    {
       name: "Syed Abbas Raza Rizvi",
       title: "Inglorious Films",
-      text: "TP India Network stands as a beacon of creativity and excellence in film and documentary production. With a portfolio showcasing thought-provoking narratives and cinematic brilliance, they redefine storytelling. Their commitment to professionalism and client satisfaction ensures seamless experiences. For unparalleled quality and innovation in content creation, TP India Network is the ultimate choice. Highly recommended.",
-      avatar: "/assets/client2.jpg",
+      text: "TP India Network stands as a beacon of creativity and excellence in film and documentary production. Their commitment to storytelling and professionalism makes them unmatched.",
+      avatar: "/assets/client3.jpg",
     },
-      {
+    {
       name: "Harshit Srivastava",
       title: "Brand Manager",
-      text: "TP India Network Pvt Ltd provides exceptional video production services with a skilled team and state-of-the-art technology. Their attention to detail, creativity, and timely delivery make them a top choice for high-quality, professional video projects. Highly recommended.",
-      avatar: "/assets/client2.jpg",
+      text: "Exceptional team delivering outstanding video production with creativity, precision, and timely delivery. Highly recommended!",
+      avatar: "/assets/client4.jpg",
     },
-     {
+    {
+      name: "Prashant Singh",
+      title: "Koshala Literature & Films Festival",
+      text: "Working with TP India Network was an absolute pleasure. Their team brought creativity, technical excellence, and deep sensitivity to the subject the final piece resonated strongly with our audience at the Koshala Literature & Films Festival. Reliable, professional, and highly talented.",
+      avatar: "/assets/client4.jpg",
+    },
+    {
       name: "Aisha Khatoon",
       title: "Brand Manager",
-      text: "TP India Network Pvt Ltd excels in video production. Sanatkada and Aisha Khatoon praise their creativity, professionalism, and timely delivery. The team's attention to detail and use of advanced technology ensure high-quality results. Highly recommended for outstanding video projects.",
-      avatar: "/assets/client2.jpg",
+      text: "TP India Network excels in video production with unmatched creativity and professionalism. Their work speaks for itself. Highly recommended.",
+      avatar: "/assets/client5.jpg",
+    },
+     {
+      name: "Adeeba Khanam",
+      title: "Customer",
+      text: "I recently had the pleasure of working with TP India Pvt Ltd for my video editing needs, and I am really very happy with their service. The quality of the videos they produced exceeded my expectations, and they always delivered on time. I especially appreciate their commitment to customer service, as they were available even on Sundays to accommodate my requests. If you're looking for a reliable video editor who values quality and timeliness, I highly recommend TP India Pvt Ltd!",
+      avatar: "/assets/client5.jpg",
     },
   ];
 
@@ -308,55 +326,108 @@ function Testimonials() {
   const prev = () =>
     setIndex((i) => (i - 1 + testimonials.length) % testimonials.length);
 
+  // Auto slide every 5 seconds
+  useEffect(() => {
+    const timer = setInterval(() => next(), 5000);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
-    <section className="py-16" style={{ backgroundColor: "var(--bg-color)" }}>
+    <section className="py-20 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
-          <div className="md:col-span-1">
-            {/* <p className="text-sm text-[var(--text-secondary)]">Testimonials</p> */}
-            <h3 className="text-4xl font-extrabold text-[var(--text-primary)] p-2">
+  
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 items-center">
+
+          {/* Left Side Text */}
+          <div className="space-y-3">
+            <h3 className="text-4xl font-extrabold text-[var(--text-primary)]">
               What Our Clients Say
             </h3>
-            <p className="text-sm  font-medium text-[var(--text-secondary)] mt-2">
-              The Voice of Satisfaction. Hear Their Stories, Feel Their
-              Satisfaction. Experience satisfaction through the tales of those
-              who found contentment. Their voices resonate with fulfilment,
-              inviting you to immerse yourself and share in their journey of
-              satisfaction.
+            <p className="text-sm text-[var(--text-secondary)]">
+              Real experiences from real clients. Their satisfaction speaks for our work.
             </p>
-          </div>
 
-          <div className="md:col-span-2 bg-black/95 dark:bg-black/90 p-8 rounded-lg text-white">
-            <p className="text-lg">"{testimonials[index].text}"</p>
-
-            <div className="mt-6 flex items-center gap-4">
-              <img
-                src={testimonials[index].avatar}
-                alt="avatar"
-                className="w-12 h-12 rounded-full object-cover"
-              />
-              <div>
-                <div className="font-semibold">{testimonials[index].name}</div>
-                <div className="text-sm text-[var(--text-secondary)]">
-                  {testimonials[index].title}
-                </div>
-              </div>
-
-              <div className="ml-auto flex gap-2">
-                <button onClick={prev} className="p-2 rounded-full bg-white/10">
-                  ◀
-                </button>
-                <button onClick={next} className="p-2 rounded-full bg-white/10">
-                  ▶
-                </button>
-              </div>
+            {/* Dot Indicators */}
+            <div className="flex gap-2 mt-4 md:hidden">
+              {testimonials.map((_, i) => (
+                <div
+                  key={i}
+                  className={`h-2 w-2 rounded-full transition-all ${
+                    index === i ? "bg-[var(--accent-color)] w-5" : "bg-white/30"
+                  }`}
+                />
+              ))}
             </div>
           </div>
+          {/* Testimonial Card */}
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, x: 40 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -40 }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+              className="md:col-span-2 bg-black/90 p-10 rounded-2xl border border-white/10 shadow-xl relative"
+              >
+                <p className="mb-5 flex"> <FaStar color="yellow"/><FaStar color="yellow"/><FaStar color="yellow" /><FaStar color="yellow"/><FaStar color="yellow"/></p>
+              {/* Floating Quote Icon */}
+              <motion.div
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                transition={{ delay: 0.2 }}
+                className="absolute -top-5 left-6 text-5xl text-[var(--accent-color)] opacity-70"
+              >
+                ❝
+              </motion.div>
+
+              {/* Review Text */}
+              <p className="text-sm md:text-lg leading-relaxed text-white/90 font-sans italic font-light"> 
+                “{testimonials[index].text}”
+              </p>
+
+              {/* User Info */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3 }}
+                className="mt-8 flex items-center gap-4"
+              >
+                <img
+                  src={testimonials[index].avatar}
+                  alt="avatar"
+                  className="w-14 h-14 rounded-full object-cover ring-2 ring-[var(--accent-color)]"
+                />
+                <div>
+                  <div className="font-semibold text-lg">{testimonials[index].name}</div>
+                  <div className="text-sm text-white/50">{testimonials[index].title}</div>
+                </div>
+
+                {/* Navigation Buttons */}
+                <div className="ml-auto flex gap-3">
+                  <button
+                    onClick={prev}
+                    className="p-3 rounded-full bg-white/10 hover:bg-white/20 transition"
+                  >
+                    <MdKeyboardArrowLeft />
+                  </button>
+                  <button
+                    onClick={next}
+                    className="p-3 rounded-full bg-white/10 hover:bg-white/20 transition"
+                  >
+                    <MdKeyboardArrowRight />
+                  </button>
+                </div>
+              </motion.div>
+            </motion.div>
+          </AnimatePresence>
         </div>
       </div>
     </section>
   );
 }
+
+
+
 
 function ServiceIndex() {
   const categories = [

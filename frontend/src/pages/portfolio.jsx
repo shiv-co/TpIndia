@@ -2,7 +2,6 @@ import React, { useRef, useState, useEffect } from "react";
 import { useScroll, useTransform } from "framer-motion";
 import { AnimatePresence, motion } from "framer-motion";
 
-
 import playlists1 from "../assets/images/music.webp";
 import playlists2 from "../assets/images/portfolio.webp";
 import playlists3 from "../assets/images/podcasts.webp";
@@ -363,6 +362,50 @@ export default function PortfolioPage() {
           </div>
         </section>
 
+        {/* ================= VIDEO PLAYLISTS ================= */}
+   <section className="py-16">
+  <div className="max-w-7xl mx-auto px-6">
+
+    {/* Heading */}
+    <div className="text-center mb-10">
+      <h2 className="text-3xl md:text-4xl font-extrabold text-[var(--text-primary)]">
+        What We’ve Created
+      </h2>
+      <p className="text-sm md:text-base text-[var(--text-secondary)] mt-2">
+        Showcasing our latest work and creative productions.
+      </p>
+    </div>
+
+    {/* Thumbnails Grid */}
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 ">
+      {visibleItems.map((p) => (
+        <a
+          key={p.link + startIndex}
+          href={p.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="rounded-2xl overflow-hidden shadow-xl border border-[var(--border-color)] bg-black hover:scale-[1.02] transition-transform"
+        >
+          <div className="w-full h-48 md:h-56 bg-black">
+            <img
+              loading="lazy"
+              src={p.thumbnail}
+              alt={p.label}
+              className="w-full h-full object-cover"
+            />
+          </div>
+
+          <div className="px-4 py-3 text-center text-sm md:text-lg font-semibold text-white/80 border-t border-white/10 hover:text-[var(--accent-color)] hover:underline underline-offset-4 transition">
+            {p.label}
+          </div>
+        </a>
+      ))}
+    </div>
+
+  </div>
+</section>
+
+
         {/* ================= CREATIVE COLLAGE ================= */}
         <section className="max-w-7xl mx-auto px-6 py-16">
           <motion.h2
@@ -574,33 +617,7 @@ export default function PortfolioPage() {
         </div> */}
 
         {/* For MD+ screens: show 3 thumbnails that fade-cycles */}
-        <div className=" md:grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mx-4">
-          <AnimatePresence>
-            {visibleItems.map((p, i) => (
-              <motion.a
-                key={p.link + startIndex}
-                href={p.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="rounded-2xl overflow-hidden shadow-2xl border border-[var(--border-color)] bg-black"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 2 }}
-              >
-                <img
-                  loading="lazy"
-                  src={p.thumbnail}
-                  alt={p.label}
-                  className="w-full h-48 md:h-64 object-contain"
-                />
-                <div className="px-4 py-3 text-center text-sm text-white/80 border-t border-white/10 hover:text-[var(--accent-color)] hover:underline underline-offset-4">
-                  {p.label}
-                </div>
-              </motion.a>
-            ))}
-          </AnimatePresence>
-        </div>
+
         <WhatsAppButton />
         <GetQuoteBtn />
       </div>
