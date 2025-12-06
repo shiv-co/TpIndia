@@ -113,7 +113,7 @@ export default function PortfolioPage() {
     {
       thumbnail: playlists1,
       link: "https://www.youtube.com/watch?v=UM3ttbm1aWc&list=PLH3Vw0GwKudGWaJzUFThLdFV5PhDDVrCE",
-      label: "Music Films Playlist",
+      label: "Music Videos Playlist",
     },
     {
       thumbnail: playlists2,
