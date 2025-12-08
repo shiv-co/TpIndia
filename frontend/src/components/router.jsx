@@ -1,5 +1,5 @@
 import React from "react";
-import { Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Navbar from "../pages/navbar.jsx";
 import Footer from "../pages/footer.jsx";
@@ -16,11 +16,14 @@ import GetQuoteWizard from "../pages/GetQuoteWizard.jsx";
 
 const AppRouter = () => {
   return (
-    <>
-      <ScrollToTop />
-      <Navbar />
-
+    <Router>
       <div className="min-h-screen bg-[var(--bg-color)] text-[var(--text-primary)]">
+        
+        {/* ScrollToTop MUST be inside Router layout */}
+        <ScrollToTop />
+
+        <Navbar />
+
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/services" element={<ServicePage />} />
@@ -34,7 +37,7 @@ const AppRouter = () => {
 
         <Footer />
       </div>
-    </>
+    </Router>
   );
 };
 
