@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from "react";
 import { useScroll, useTransform } from "framer-motion";
 import { AnimatePresence, motion } from "framer-motion";
-import { Helmet } from "react-helmet-async";
+import { useMeta } from "../hooks/useMeta";
 
 import playlists1 from "../assets/images/music.webp";
 import playlists2 from "../assets/images/portfolio.webp";
@@ -191,17 +191,19 @@ export default function PortfolioPage() {
       ? galleryData
       : galleryData.filter((g) => g.category === activeCategory);
 
+  useMeta({
+  title: "Portfolio — TP India Network",
+  description:
+    "A showcase of our film work, photography projects, brand visuals & event coverage.",
+  keywords: "portfolio, film showcase, cinematography portfolio",
+  image: "https://tpindia.in/assets/portfolio-cover.webp",
+  url: "https://tpindia.in/portfolio"
+});
+
+
   return (
     <>
-     <Helmet>
-        <title>Portfolio — TP India Network</title>
-        <meta
-          name="description"
-          content="Explore our cinematic portfolio: events, films, ads, music videos, corporate videos & creative productions."
-        />
-        <meta property="og:title" content="TP India Network — Portfolio" />
-        <meta property="og:image" content="https://tpindia.in/assets/portfolio-cover.webp" />
-      </Helmet>
+   
 
 
       <div className="bg-[var(--bg-color)] text-[var(--text-primary)]">

@@ -10,6 +10,7 @@ import career4 from "../assets/images/career4.jpg";
 import kudart from "../assets/crew_img/kudrat.webp";
 import WhatsAppButton from "../components/WhatsAppButton";
 import GetQuoteBtn from "../components/getQuoteBtn";
+import { useMeta } from "../hooks/useMeta.js";
 
 // NOTE: Replace asset paths below with your actual images in /src/assets/...
 const heroBg = "/assets/careers-hero.jpg";
@@ -149,6 +150,13 @@ export default function CareersAnimated() {
     setModalOpen(false);
     setForm({ name: "", email: "", message: "", file: null });
   }
+useMeta({
+  title: "Careers — TP India Network",
+  description:
+    "Join our creative team of filmmakers, editors, marketers and strategists.",
+  keywords: "film jobs, cinematographer jobs, video editor jobs",
+  url: "https://tpindia.in/careers"
+});
 
   return (
     <main className="bg-[var(--bg-color)] text-[var(--text-primary)] min-h-screen">

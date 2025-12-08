@@ -14,7 +14,7 @@ import { MdKeyboardArrowLeft } from "react-icons/md";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import { FaStar } from "react-icons/fa6";
 
-import { Helmet } from "react-helmet-async";
+import { useMeta } from "../hooks/useMeta";
 
 
 function PlayIcon({ className = "w-10 h-10" }) {
@@ -500,20 +500,18 @@ function ServiceIndex() {
 }
 
 export default function Home() {
+    useMeta({
+    title: "TP India Network Pvt. Ltd. — Film Production & Digital Marketing",
+    description:
+      "Premier film production, photography, cinematography & digital marketing agency based in Lucknow.",
+    keywords:
+      "film production, tp india network, cinematography, photography, digital marketing, lucknow film house",
+    image: "https://tpindia.in/og-main.webp",
+    url: "https://tpindia.in"
+  });
   return (
     <>
-     <Helmet>
-        <title>TP India Network — Film Production, Digital Marketing, Cinematic Services</title>
-        <meta
-          name="description"
-          content="TP India Network is India's leading production house offering video production, cinematography, editing, digital marketing & creative services."
-        />
-        <meta property="og:title" content="TP India Network — Film Production Experts" />
-        <meta property="og:description" content="We create cinematic stories for brands, events, and businesses." />
-        <meta property="og:image" content="https://tpindia.in/assets/og-main.jpg" />
-        <meta property="og:url" content="https://tpindia.in/" />
-        <meta property="og:type" content="website" />
-      </Helmet>
+    
     <main className="text-[var(--text-primary)] bg-[var(--bg-color)]">
       <Hero />
       <WhatWeDo />

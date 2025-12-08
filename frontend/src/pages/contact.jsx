@@ -3,19 +3,22 @@ import WhatsAppButton from "../components/WhatsAppButton";
 import GetQuoteBtn from "../components/getQuoteBtn.jsx";
 import { href } from "react-router-dom";
 import ContactForm from "../pages/contactForm.jsx";
-import { Helmet } from "react-helmet-async";
+import { useMeta } from "../hooks/useMeta.js";
+
 
 export default function Contact() {
+  useMeta({
+  title: "Contact — TP India Network",
+  description:
+    "Get in touch for film production, photography, marketing & creative collaborations.",
+  keywords: "contact tp india, production house contact",
+  image: "https://tpindia.in/assets/contact-cover.webp",
+  url: "https://tpindia.in/contact"
+});
+
   return (
     <>
-      <Helmet>
-        <title>Contact — TP India Network</title>
-        <meta
-          name="description"
-          content="Contact TP India Network for production, video services, marketing, and creative projects."
-        />
-      </Helmet>
-
+ 
       <div className="min-h-screen bg-[var(--bg-color)] text-[var(--text-primary)] pt-32 pb-24 px-6">
         {/* HERO TITLE */}
         <motion.div

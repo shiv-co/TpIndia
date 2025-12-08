@@ -5,7 +5,7 @@ import "react-lazy-load-image-component/src/effects/blur.css";
 import { Link } from "react-router-dom";
 // Hero background
 import hero_bg from "../assets/images/about_hero.webp";
-import { Helmet } from "react-helmet-async";
+import { useMeta } from "../hooks/useMeta.js";
 
 // Crew images (keep same imports / paths you already used)
 import Garima from "../assets/crew_img/Garima_Mishra.webp";
@@ -64,12 +64,20 @@ export default function AboutUs() {
   });
   const heroY = useTransform(scrollYProgress, [0, 1], [0, -80]);
 
+
+  useMeta({
+  title: "About Us — TP India Network",
+  description:
+    "Meet our creative team of filmmakers, developers & marketers at TP India Network.",
+  keywords: "tp india network team, about tp india network, film crew",
+  
+  url: "https://tpindia.in/about"
+});
+
+
   return (
     <>
-    <Helmet>
-  <title>About Us — TP India Network</title>
-  <meta name="description" content="Meet the creators, directors, cinematographers, and strategists behind TP India Network." />
-</Helmet>
+
 
 
 

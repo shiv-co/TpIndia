@@ -11,7 +11,7 @@ import service5 from "../assets/images/service_5.webp";
 import service6 from "../assets/images/service_6.jpg";
 import WhatsAppButton from "../components/WhatsAppButton.jsx";
 import GetQuoteBtn from "../components/getQuoteBtn.jsx";
-import { Helmet } from "react-helmet-async";
+import { useMeta } from "../hooks/useMeta.js";
 
 // Neon blue accent is already in your theme: #4169E1 (var(--accent-color))
 
@@ -73,17 +73,18 @@ const cfgItems = [
 ];
 
 export default function ServicePage() {
+  useMeta({
+  title: "Services — TP India Network",
+  description:
+    "Cinematic films, photography, editing, marketing, brand strategy & corporate production services.",
+  keywords: "production services, video editing, cinematography, service agency",
+  image: "https://tpindia.in/assets/service-cover.webp",
+  url: "https://tpindia.in/services"
+});
+
   return (
     <>
-      <Helmet>
-        <title>Services — TP India Network</title>
-        <meta
-          name="description"
-          content="Video production, cinematography, editing, social media marketing, photography & branding services."
-        />
-            <meta property="og:image" content="https://tpindia.in/assets/service-cover.webp" />
-      </Helmet>
-
+     
       <div className="bg-[var(--bg-color)] text-[var(--text-primary)]">
         {/* ================= HERO SECTION ================= */}
         <section className="relative h-[60vh] md:h-[70vh] w-full overflow-hidden">
