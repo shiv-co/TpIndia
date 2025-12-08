@@ -13,7 +13,7 @@ import blog6 from "../assets/images/gallery9.webp";
 import avatar from "../../public/logo.webp";
 import WhatsAppButton from "../components/WhatsAppButton";
 import GetQuoteBtn from "../components/getQuoteBtn";
-import { Helmet } from "react-helmet-async";
+import { useMeta } from "../hooks/useMeta.js";
 
 // Lazy image helper
 const LazyImg = ({ src, alt, className }) => (
@@ -165,16 +165,16 @@ export default function BlogPage() {
     e.currentTarget.style.transform = "";
   };
 
+  useMeta({
+    title: "Blog — TP India Network",
+    description: "Insights, stories, and tips on film production, marketing, and creative strategies.",
+    keywords: "tp india blog, film production blog, marketing strategies",
+    url: "https://tpindia.in/blog"
+  });
+
   return (
     <>
-      <Helmet>
-        <title>Blog — TP India Network</title>
-        <meta
-          name="description"
-          content="Industry insights, filmmaking tips, behind the scenes, digital marketing strategies by TP India Network."
-        />
-      </Helmet>
-
+    
       <main className="relative bg-[var(--bg-color)] text-[var(--text-primary)] min-h-screen overflow-x-hidden">
         {/* reading progress bar */}
         {/* HERO */}
