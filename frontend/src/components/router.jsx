@@ -1,9 +1,8 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 import Navbar from "../pages/navbar.jsx";
 import Footer from "../pages/footer.jsx";
-
 import ScrollToTop from "../components/ScrollToTop.jsx";
 
 import HomePage from "../pages/homePage.jsx";
@@ -17,7 +16,7 @@ import GetQuoteWizard from "../pages/GetQuoteWizard.jsx";
 
 const AppRouter = () => {
   return (
-    <Router>
+    <>
       <ScrollToTop />
       <Navbar />
 
@@ -33,9 +32,9 @@ const AppRouter = () => {
           <Route path="/get-quote" element={<GetQuoteWizard />} />
         </Routes>
 
-      <Footer />
+        <Footer />
       </div>
-    </Router>
+    </>
   );
 };
 
