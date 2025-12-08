@@ -14,6 +14,8 @@ import { MdKeyboardArrowLeft } from "react-icons/md";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import { FaStar } from "react-icons/fa6";
 
+import { Helmet } from "react-helmet-async";
+
 
 function PlayIcon({ className = "w-10 h-10" }) {
   return (
@@ -499,6 +501,19 @@ function ServiceIndex() {
 
 export default function Home() {
   return (
+    <>
+     <Helmet>
+        <title>TP India Network — Film Production, Digital Marketing, Cinematic Services</title>
+        <meta
+          name="description"
+          content="TP India Network is India's leading production house offering video production, cinematography, editing, digital marketing & creative services."
+        />
+        <meta property="og:title" content="TP India Network — Film Production Experts" />
+        <meta property="og:description" content="We create cinematic stories for brands, events, and businesses." />
+        <meta property="og:image" content="https://tpindia.in/assets/og-main.jpg" />
+        <meta property="og:url" content="https://tpindia.in/" />
+        <meta property="og:type" content="website" />
+      </Helmet>
     <main className="text-[var(--text-primary)] bg-[var(--bg-color)]">
       <Hero />
       <WhatWeDo />
@@ -530,5 +545,6 @@ export default function Home() {
         </div>
       </section>
     </main>
+    </>
   );
 }

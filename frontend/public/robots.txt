@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+# Prevent crawling of unnecessary internal pages (add more if needed)
+Disallow: /admin/
+Disallow: /server/
+Disallow: /api/
+
+# Sitemap location
+Sitemap: https://tpindia.in/sitemap.xml
