@@ -13,6 +13,8 @@ import AboutPage from "../pages/about.jsx";
 import ContactPage from "../pages/contact.jsx";
 import CareersPage from "../pages/careers.jsx";
 import GetQuoteWizard from "../pages/GetQuoteWizard.jsx";
+import WebsiteDevLanding from "../pages/WebsiteDevLanding.jsx";
+import DocumentaryLanding from "../pages/DocumentaryLanding.jsx";
 
 const AppRouter = () => {
   return (
@@ -20,10 +22,10 @@ const AppRouter = () => {
       <div className="min-h-screen bg-[var(--bg-color)] text-[var(--text-primary)]">
         
         {/* ScrollToTop MUST be inside Router layout */}
-        <ScrollToTop />
 
         <Navbar />
 
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/services" element={<ServicePage />} />
@@ -33,6 +35,8 @@ const AppRouter = () => {
           <Route path="/careers" element={<CareersPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/get-quote" element={<GetQuoteWizard />} />
+          <Route path="/website-development" element={<WebsiteDevLanding />} />
+          <Route path="/documentary" element={<DocumentaryLanding />} />
         </Routes>
 
         <Footer />

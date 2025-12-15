@@ -210,7 +210,7 @@ const SERVICE_FIELDS = {
       placeholder: "eg. 4-8 hours",
     },
   ],
-  "Documentary Shoot": [
+  "Documentary Making": [
     {
       name: "duration",
       label: "Documentary duration",
