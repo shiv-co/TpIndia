@@ -31,7 +31,7 @@ export default function DocumentaryLanding() {
       "TP India Network crafts cinematic documentaries that move audiences. Research-led, beautifully shot and widely distributed.",
     keywords:
       "documentary filmmaking, documentary production, non-fiction films, tp india network, cinematic documentaries, film production india",
-    image: "https://tpindia.in/assets/documentary-hero.jpg",
+    image: "https://tpindia.in/assets/documentary.webp",
     url: "https://tpindia.in/documentary",
   });
 

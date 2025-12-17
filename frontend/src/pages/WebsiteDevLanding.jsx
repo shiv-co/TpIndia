@@ -31,7 +31,7 @@ export default function WebsiteDevLanding() {
       "We design and build cinematic, high-converting websites — fast. Full-stack dev, performance optimization, SEO, and design that looks like film.",
     keywords:
       "website development, web design, ux/ui, high converting websites, tp india network, landing page, react development",
-    image: "https://tpindia.in/assets/website-dev-hero.webp",
+    image: "https://tpindia.in/assets/webdev.webp",
     url: "https://tpindia.in/website-development",
   });
 
