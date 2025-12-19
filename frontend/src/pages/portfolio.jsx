@@ -262,11 +262,11 @@ export default function PortfolioPage() {
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1 }}
-              className="text-3xl md:text-5xl lg:text-6xl font-extrabold text-white"
+              className="text-3xl md:text-4xl lg:text-6xl font-extrabold text-white"
             >
-              Cinematic{" "}
-              <span className="text-[var(--accent-color)]">Stories</span>{" "}
-              We&apos;ve Crafted
+              
+             We Help <span className="text-[var(--accent-color)]">Brands</span> Get More <span className="text-[var(--accent-color)]">Leads</span>
+
             </motion.h1>
 
             {/* Description */}
@@ -276,7 +276,7 @@ export default function PortfolioPage() {
               transition={{ duration: 1, delay: 0.15 }}
               className="mt-4 text-white/70 text-sm md:text-base max-w-2xl mx-auto"
             >
-              From live events to brand films, music videos and web visuals —
+              From live events to brand films, music videos and web visuals
               this is the work that shapes the identity of TP India Network.
             </motion.p>
           </motion.div>
