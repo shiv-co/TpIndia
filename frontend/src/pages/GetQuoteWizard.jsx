@@ -149,6 +149,7 @@ const SERVICE_FIELDS = {
       type: "select",
       options: [
         "Business Website",
+        "Ecommerce Website",
         "Portfolio",
         "Landing Page",
         "Web App",

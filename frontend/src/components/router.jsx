@@ -15,6 +15,7 @@ import CareersPage from "../pages/careers.jsx";
 import GetQuoteWizard from "../pages/GetQuoteWizard.jsx";
 import WebsiteDevLanding from "../pages/WebsiteDevLanding.jsx";
 import DocumentaryLanding from "../pages/DocumentaryLanding.jsx";
+import RateCard from "../pages/webdevRateCard.jsx";
 
 const AppRouter = () => {
   return (
@@ -37,6 +38,7 @@ const AppRouter = () => {
           <Route path="/get-quote" element={<GetQuoteWizard />} />
           <Route path="/website-development" element={<WebsiteDevLanding />} />
           <Route path="/documentary" element={<DocumentaryLanding />} />
+          <Route path="/website/pricing" element={<RateCard />} />
         </Routes>
 
         <Footer />
