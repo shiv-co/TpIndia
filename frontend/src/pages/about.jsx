@@ -66,7 +66,7 @@ export default function AboutUs() {
 
 
   useMeta({
-  title: "About Us — TP India Network",
+  title: "About Us TP India Network",
   description:
     "Meet our creative team of filmmakers, developers & marketers at TP India Network.",
   keywords: "tp india network team, about tp india network, film crew",

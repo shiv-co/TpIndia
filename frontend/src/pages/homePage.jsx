@@ -156,11 +156,11 @@ function WhatWeDo() {
           transition={{ duration: 1 }}
           viewport={{ once: true }}
         >
-          <p className="text-sm uppercase tracking-wider text-[var(--text-secondary)] mb-3 text-center lg:text-left">
+          <p className="text-xs        md:text-sm  uppercase tracking-wider text-[var(--text-secondary)] mb-3 text-center lg:text-left">
             What We Do
           </p>
 
-          <h2 className="text-4xl sm:text-5xl font-extrabold text-[var(--text-primary)] leading-tight mb-10 text-center lg:text-left">
+          <h2 className="text-3xl md:text-5xl font-extrabold text-[var(--text-primary)] leading-tight mb-10 text-center lg:text-left">
             We Make Only Authentic <br /> Visual Experiences
           </h2>
 
@@ -289,7 +289,7 @@ function Testimonials() {
     {
       name: "CA Aleena Rais",
       title: "CA, Influencer",
-      text: "I recently worked with TP India Network Private Limited for video production, and digital marketing, and I was thoroughly impressed with their professionalism and quality. Their video production is truly cinematic, with excellent shooting, flawless editing, and a strong attention to detail. The wedding shoot team captured every moment beautifully, delivering creative and memorable visuals. Their graphic design team translated my ideas into impactful, visually appealing designs, while their digital marketing strategy helped boost my online presence and reach the right audience. Throughout the entire process, the TP India Network team was responsive, accommodating, and committed to delivering top-quality results. I highly recommend them for anyone seeking reliable, creative, and high-quality media and marketing services.",
+      text: "I recently worked with TP India Network Private Limited for video production, and digital marketing, and I was thoroughly impressed with their professionalism and quality. I highly recommend them for anyone seeking reliable, creative, and high-quality media and marketing services.",
       avatar: "/assets/client2.jpg",
     },
     {
@@ -397,18 +397,18 @@ function Testimonials() {
                 <img
                   src={testimonials[index].avatar}
                   alt="avatar"
-                  className="w-14 h-14 rounded-full object-cover ring-2 ring-[var(--accent-color)]"
+                  className="w-14 h-12 md:h-14   rounded-full object-cover ring-2 ring-[var(--accent-color)]"
                 />
                 <div>
-                  <div className="font-semibold text-lg">{testimonials[index].name}</div>
+                  <div className="font-semibold text-sm md:text-lg">{testimonials[index].name}</div>
                   <div className="text-sm text-white/50">{testimonials[index].title}</div>
                 </div>
 
                 {/* Navigation Buttons */}
-                <div className="ml-auto flex gap-3">
+                <div className="ml-auto flex md:gap-3 gap-2">
                   <button
                     onClick={prev}
-                    className="p-3 rounded-full bg-white/10 hover:bg-white/20 transition"
+                    className="p-3  rounded-full bg-white/10 hover:bg-white/20 transition"
                   >
                     <MdKeyboardArrowLeft />
                   </button>
@@ -532,7 +532,7 @@ export default function Home() {
             Ready to start your story?
           </h3>
           <p className="text-[var(--text-secondary)] mb-6">
-            Contact TP India Network — we’ll plan, shoot and deliver with care.
+            Contact TP India Network  we’ll plan, shoot and deliver with care.
           </p>
           <Link
             to="/contact"
