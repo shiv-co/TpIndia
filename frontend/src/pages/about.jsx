@@ -41,7 +41,7 @@ const crew = [
     img: Harshit,
   },
   { name: "Garima Mishra", role: "Anchor / Social Media Manager", img: Garima },
-  { name: "Ali Musarrat", role: "Production Head Editor", img: Ali },
+  { name: "Ali Musarrat", role: "Production Head /Video Editor", img: Ali },
   { name: "Anju", role: "Post Production Head / Video Editor", img: Anju },
   { name: "Kshitiz Mahazan", role: "Cinematographer", img: Kshitiz },
   { name: "Saurabh Singh", role: "Social Media Strategist", img: Saurab },
