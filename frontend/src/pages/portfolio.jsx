@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect } from "react";
 import { useScroll, useTransform } from "framer-motion";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, useMotionValue, animate, motion } from "framer-motion";
 import { useMeta } from "../hooks/useMeta";
 
 import playlists1 from "../assets/images/music.webp";
@@ -158,15 +158,19 @@ export default function PortfolioPage() {
 
   // Show 3 items at a time
   const itemsPerView = 3;
+const trackRef = useRef(null);
+const x = useMotionValue(0);
+const [isMobile, setIsMobile] = useState(false);
 
-  const [isMobile, setIsMobile] = useState(false);
+useEffect(() => {
+  const check = () => setIsMobile(window.innerWidth < 768);
+  check();
+  window.addEventListener("resize", check);
+  return () => window.removeEventListener("resize", check);
+}, []);
 
-  useEffect(() => {
-    const checkScreen = () => setIsMobile(window.innerWidth < 768);
-    checkScreen();
-    window.addEventListener("resize", checkScreen);
-    return () => window.removeEventListener("resize", checkScreen);
-  }, []);
+
+
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -177,6 +181,21 @@ export default function PortfolioPage() {
   }, [playlists.length]);
 
   const visibleItems = playlists.slice(startIndex, startIndex + itemsPerView);
+
+  useEffect(() => {
+  if (!trackRef.current) return;
+
+  const trackWidth = trackRef.current.scrollWidth / 2;
+
+  const controls = animate(x, [-0, -trackWidth], {
+    ease: "linear",
+    duration: isMobile ? 12 : 28, // 🚀 ACTUAL speed control
+    repeat: Infinity,
+  });
+
+  return controls.stop;
+}, [isMobile]);
+
 
   // If near end, wrap around
   if (visibleItems.length < itemsPerView) {
@@ -344,7 +363,7 @@ export default function PortfolioPage() {
         </section>
 
         {/* ================= HORIZONTAL REEL / MARQUEE ================= */}
-       <section className="max-w-8xl mx-auto px-6 py-10">
+<section className="max-w-8xl mx-auto px-6 py-10">
   <motion.h2
     initial={{ opacity: 0, y: 30 }}
     whileInView={{ opacity: 1, y: 0 }}
@@ -356,12 +375,8 @@ export default function PortfolioPage() {
 
   <div className="relative w-full overflow-hidden rounded-2xl border border-[var(--border-color)] bg-black/80">
     <motion.div
-      animate={{ x: ["0%", "-100%"] }}
-      transition={{
-        duration: isMobile ? 14 : 25,
-        ease: "linear",
-        repeat: Infinity,
-      }}
+      ref={trackRef}
+      style={{ x }}
       className="flex gap-6 whitespace-nowrap py-6"
     >
       {[...collage, ...collage].map((src, i) => (
@@ -379,6 +394,7 @@ export default function PortfolioPage() {
     </motion.div>
   </div>
 </section>
+
 
 
         {/* ================= VIDEO PLAYLISTS ================= */}
