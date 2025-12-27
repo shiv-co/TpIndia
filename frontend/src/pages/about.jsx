@@ -34,26 +34,26 @@ const crew = [
   { name: "Akshat Agrawal", role: "Director / COO", img: Akshat },
   { name: "Syed Kudrat Ali", role: "Director / CEO", img: Kudrat },
   { name: "Nidhi Mishra", role: "Director / Marketing Head", img: Nidhi },
+  { name: "Bhanu Pratap", role: "Camera Assistant", img: Bhanu },
   {
     name: "Harshit Roy Choudhury",
     role: "Creative Head / Photographer",
     img: Harshit,
   },
   { name: "Garima Mishra", role: "Anchor / Social Media Manager", img: Garima },
-  { name: "Anju", role: "Post Production Head / Video Editor", img: Anju },
-  { name: "Saurabh Singh", role: "Social Media Strategist", img: Saurab },
-  // { name: "Ali Musarrat", role: "Production Head /Video Editor", img: Ali },
   { name: "Kshitiz Mahazan", role: "Cinematographer", img: Kshitiz },
   { name: "Amit Gupta", role: "Photographer", img: Amit },
-  { name: "Shivam Singh", role: "Full Stack Developer", img: Shivam },
   { name: "Anubhav Patel", role: "Cinematographer", img: Anubhav },
-  { name: "Bhanu Pratap", role: "Camera Assistant", img: Bhanu },
+  { name: "Anju", role: "Production Head / Video Editor", img: Anju },
+  { name: "Saurabh Singh", role: "Social Media Strategist", img: Saurab },
+  { name: "Shivam Singh", role: "Full Stack Developer", img: Shivam },
   { name: "Umesh Tiwari", role: "Camera Operator", img: Umesh },
   { name: "Himanshu Goswami", role: "Cinematographer", img: Himanshu },
   { name: "Rajan Mishra", role: "DOP", img: Rajan },
-  { name: "Kapil Bharti", role: "Video Editor", img: Kapil },
   { name: "Sudeep Tiwari", role: "Photographer", img: Sudeep },
+  { name: "Ali Musarrat", role: "Editor", img: Ali },
   { name: "Teepu Sultan", role: "Video Editor / Camera Operator", img: Teepu },
+  { name: "Kapil Bharti", role: "Video Editor", img: Kapil },
 ];
 
 export default function AboutUs() {
@@ -192,7 +192,7 @@ export default function AboutUs() {
               >
                 "Storytelling is the most human technology we have. We craft
                 images that speak, sound that moves and edits that respect the
-                moment. At TP India, we listen first — then shoot."
+                moment. At TP India, we listen first then shoot."
               </motion.blockquote>
 
               <p className="mt-6 text-[var(--text-secondary)]">
@@ -289,60 +289,82 @@ export default function AboutUs() {
         </section>
 
         {/* OUR CREW - Marquee */}
-        <section className="max-w-8xl mx-auto px-6 py-10">
-          <motion.h2
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center text-3xl md:text-5xl font-bold mb-6"
-          >
-            Our Crew • The People Behind The Magic
-          </motion.h2>
+       <section className="max-w-8xl mx-auto px-6 py-10">
+  <motion.h2
+    initial={{ opacity: 0, y: 30 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.8 }}
+    className="text-center text-2xl md:text-5xl font-bold md:mb-6 mb-2"
+  >
+    Our Crew • The People Behind The Magic
+  </motion.h2>
 
-          <div className="mx-auto w-32 border-b-2 border-[var(--accent-color)] mb-12"></div>
+  <div className="mx-auto w-32 border-b-2 border-[var(--accent-color)] mb-12"></div>
 
-          {/* Outer container with cinematic style */}
-          <div className="relative w-full overflow-hidden rounded-2xl border border-[var(--border-color)] bg-black/60 dark:bg-black/70 backdrop-blur-sm py-6 ">
-            {/* Infinite scroll track */}
-            <motion.div
-              animate={{ x: ["0%", "-400%"] }}
-              transition={{
-                duration: 60, // smooth & premium speed
-                ease: "linear",
-                repeat: Infinity,
-              }}
-              className="flex gap-8 whitespace-nowrap"
-            >
-              {[...crew, ...crew].map((member, idx) => (
-                <motion.div
-                  key={idx}
-                  whileHover={{ scale: 1.06 }}
-                  transition={{ type: "spring", stiffness: 200 }}
-                  className="inline-flex flex-col items-center text-center min-w-[260px]"
-                >
-                  {/* Avatar */}
-                  <div className="w-56 h-56 rounded-2xl overflow-hidden shadow-[0_0_25px_rgba(0,0,0,0.4)] border border-[var(--border-color)]">
-                    <LazyLoadImage
-                      src={member.img}
-                      effect="blur"
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
+  {/* ================= MOBILE (Vertical Scroll) ================= */}
+  <div className="md:hidden max-h-[520px] overflow-y-auto space-y-6 pr-2">
+    {crew.map((member, idx) => (
+      <div
+        key={idx}
+        className="flex items-center gap-4 rounded-2xl border border-[var(--border-color)] bg-black/60 dark:bg-black/70 backdrop-blur-sm p-4"
+      >
+        <div className="w-24 h-24 rounded-xl overflow-hidden border border-[var(--border-color)] flex-shrink-0">
+          <LazyLoadImage
+            src={member.img}
+            effect="blur"
+            className="w-full h-full object-cover"
+          />
+        </div>
 
-                  {/* Name */}
-                  <h3 className="mt-4 font-bold text-lg  text-[var(--text-primary)]">
-                    {member.name}
-                  </h3>
+        <div>
+          <h3 className="font-semibold text-[var(--text-primary)]">
+            {member.name}
+          </h3>
+          <p className="text-sm text-[var(--text-secondary)]">
+            {member.role}
+          </p>
+        </div>
+      </div>
+    ))}
+  </div>
 
-                  {/* Role */}
-                  <p className="text-[var(--text-secondary)] text-sm">
-                    {member.role}
-                  </p>
-                </motion.div>
-              ))}
-            </motion.div>
+  {/* ================= DESKTOP (Infinite Carousel) ================= */}
+  <div className="hidden md:block relative w-full overflow-hidden rounded-2xl border border-[var(--border-color)] bg-black/60 dark:bg-black/70 backdrop-blur-sm py-6">
+    <motion.div
+      animate={{ x: ["0%", "-400%"] }}
+      transition={{
+        duration: 60,
+        ease: "linear",
+        repeat: Infinity,
+      }}
+      className="flex gap-8 whitespace-nowrap"
+    >
+      {[...crew, ...crew].map((member, idx) => (
+        <motion.div
+          key={idx}
+          whileHover={{ scale: 1.06 }}
+          transition={{ type: "spring", stiffness: 200 }}
+          className="inline-flex flex-col items-center text-center min-w-[260px]"
+        >
+          <div className="w-56 h-56 rounded-2xl overflow-hidden shadow-[0_0_25px_rgba(0,0,0,0.4)] border border-[var(--border-color)]">
+            <LazyLoadImage
+              src={member.img}
+              effect="blur"
+              className="w-full h-full object-cover"
+            />
           </div>
-        </section>
+
+          <h3 className="mt-4 font-bold text-lg text-[var(--text-primary)]">
+            {member.name}
+          </h3>
+          <p className="text-sm text-[var(--text-secondary)]">
+            {member.role}
+          </p>
+        </motion.div>
+      ))}
+    </motion.div>
+  </div>
+</section>
 
         {/* CTA */}
         <section className="max-w-7xl mx-auto px-6 py-16">
@@ -353,10 +375,10 @@ export default function AboutUs() {
             className="rounded-2xl p-8 bg-gradient-to-r from-black/60 to-black/40 border border-[var(--border-color)] flex flex-col md:flex-row items-center gap-6"
           >
             <div className="flex-1">
-              <h3 className="text-2xl md:text-3xl font-extrabold">
+              <h3 className=" text-xl md:text-2xl md:text-3xl font-extrabold">
                 Want to work with the team?
               </h3>
-              <p className="text-[var(--text-secondary)] mt-2">
+              <p className="text-[var(--text-secondary)] mt-2 text-base md:text-lg">
                 We’re hiring, collaborating and always open for creative briefs.
                 Let’s chat.
               </p>
@@ -364,9 +386,9 @@ export default function AboutUs() {
             <div className="flex gap-4">
               <Link
                 to="/contact"
-                className="px-6 py-3 rounded-full bg-[var(--accent-color)] text-white font-semibold"
+                className="px-10 py-1 md:px-6 md:py-3 rounded-full bg-[var(--accent-color)] text-white font-semibold text-sm md:text-lg "
               >
-                Get In Touch
+                <span>Get In Touch</span>
               </Link>
               <Link
                 to="/careers"

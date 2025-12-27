@@ -159,6 +159,15 @@ export default function PortfolioPage() {
   // Show 3 items at a time
   const itemsPerView = 3;
 
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkScreen = () => setIsMobile(window.innerWidth < 768);
+    checkScreen();
+    window.addEventListener("resize", checkScreen);
+    return () => window.removeEventListener("resize", checkScreen);
+  }, []);
+
   useEffect(() => {
     const interval = setInterval(() => {
       setStartIndex((prev) => (prev + itemsPerView) % playlists.length);
@@ -192,20 +201,16 @@ export default function PortfolioPage() {
       : galleryData.filter((g) => g.category === activeCategory);
 
   useMeta({
-  title: "Portfolio — TP India Network",
-  description:
-    "A showcase of our film work, photography projects, brand visuals & event coverage.",
-  keywords: "portfolio, film showcase, cinematography portfolio",
-  image: "https://tpindia.in/assets/portfolio-cover.webp",
-  url: "https://tpindia.in/portfolio"
-});
-
+    title: "Portfolio — TP India Network",
+    description:
+      "A showcase of our film work, photography projects, brand visuals & event coverage.",
+    keywords: "portfolio, film showcase, cinematography portfolio",
+    image: "https://tpindia.in/assets/portfolio-cover.webp",
+    url: "https://tpindia.in/portfolio",
+  });
 
   return (
     <>
-   
-
-
       <div className="bg-[var(--bg-color)] text-[var(--text-primary)]">
         {/* ================= HERO ================= */}
         <section
@@ -264,9 +269,8 @@ export default function PortfolioPage() {
               transition={{ duration: 1 }}
               className="text-3xl md:text-4xl lg:text-6xl font-extrabold text-white"
             >
-              
-             We Help <span className="text-[var(--accent-color)]">Brands</span> Get More <span className="text-[var(--accent-color)]">Leads</span>
-
+              We Help <span className="text-[var(--accent-color)]">Brands</span>{" "}
+              Get More <span className="text-[var(--accent-color)]">Leads</span>
             </motion.h1>
 
             {/* Description */}
@@ -276,8 +280,8 @@ export default function PortfolioPage() {
               transition={{ duration: 1, delay: 0.15 }}
               className="mt-4 text-white/70 text-sm md:text-base max-w-2xl mx-auto"
             >
-              From live events to brand films, music videos and web visuals
-              this is the work that shapes the identity of TP India Network.
+              From live events to brand films, music videos and web visuals this
+              is the work that shapes the identity of TP India Network.
             </motion.p>
           </motion.div>
         </section>
@@ -340,85 +344,83 @@ export default function PortfolioPage() {
         </section>
 
         {/* ================= HORIZONTAL REEL / MARQUEE ================= */}
-        <section className="max-w-8xl mx-auto px-6 py-10">
-          <motion.h2
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center text-2xl md:text-3xl font-bold mb-6"
-          >
-            On-Set & Behind The Scenes
-          </motion.h2>
+       <section className="max-w-8xl mx-auto px-6 py-10">
+  <motion.h2
+    initial={{ opacity: 0, y: 30 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.8 }}
+    className="text-center text-2xl md:text-3xl font-bold mb-6"
+  >
+    On-Set & Behind The Scenes
+  </motion.h2>
 
-          <div className="relative w-full overflow-hidden rounded-2xl border border-[var(--border-color)] bg-black/80">
-            <motion.div
-              animate={{ x: ["0%", "-100%"] }}
-              transition={{
-                duration: 25,
-                ease: "linear",
-                repeat: Infinity,
-              }}
-              className="flex gap-6 whitespace-nowrap py-6"
-            >
-              {[...collage, ...collage].map((src, i) => (
-                <div
-                  key={i}
-                  className="inline-flex min-w-[260px] h-64 rounded-xl overflow-hidden"
-                >
-                  <LazyImg
-                    src={src}
-                    alt="On set"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              ))}
-            </motion.div>
-          </div>
-        </section>
-
-        {/* ================= VIDEO PLAYLISTS ================= */}
-   <section className="py-16">
-  <div className="max-w-7xl mx-auto px-6">
-
-    {/* Heading */}
-    <div className="text-center mb-10">
-      <h2 className="text-3xl md:text-4xl font-extrabold text-[var(--text-primary)]">
-        What We’ve Created
-      </h2>
-      <p className="text-sm md:text-base text-[var(--text-secondary)] mt-2">
-        Showcasing our latest work and creative productions.
-      </p>
-    </div>
-
-    {/* Thumbnails Grid */}
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 ">
-      {visibleItems.map((p) => (
-        <a
-          key={p.link + startIndex}
-          href={p.link}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="rounded-2xl overflow-hidden shadow-xl border border-[var(--border-color)] bg-black hover:scale-[1.02] transition-transform"
+  <div className="relative w-full overflow-hidden rounded-2xl border border-[var(--border-color)] bg-black/80">
+    <motion.div
+      animate={{ x: ["0%", "-100%"] }}
+      transition={{
+        duration: isMobile ? 14 : 25,
+        ease: "linear",
+        repeat: Infinity,
+      }}
+      className="flex gap-6 whitespace-nowrap py-6"
+    >
+      {[...collage, ...collage].map((src, i) => (
+        <div
+          key={i}
+          className="inline-flex min-w-[260px] h-64 rounded-xl overflow-hidden"
         >
-          <div className="w-full h-48 md:h-56 bg-black">
-            <img
-              loading="lazy"
-              src={p.thumbnail}
-              alt={p.label}
-              className="w-full h-full object-cover"
-            />
-          </div>
-
-          <div className="px-4 py-3 text-center text-sm md:text-lg font-semibold text-white/80 border-t border-white/10 hover:text-[var(--accent-color)] hover:underline underline-offset-4 transition">
-            {p.label}
-          </div>
-        </a>
+          <LazyImg
+            src={src}
+            alt="On set"
+            className="w-full h-full object-cover"
+          />
+        </div>
       ))}
-    </div>
-
+    </motion.div>
   </div>
 </section>
 
+
+        {/* ================= VIDEO PLAYLISTS ================= */}
+        <section className="py-16">
+          <div className="max-w-7xl mx-auto px-6">
+            {/* Heading */}
+            <div className="text-center mb-10">
+              <h2 className="text-3xl md:text-4xl font-extrabold text-[var(--text-primary)]">
+                What We’ve Created
+              </h2>
+              <p className="text-sm md:text-base text-[var(--text-secondary)] mt-2">
+                Showcasing our latest work and creative productions.
+              </p>
+            </div>
+
+            {/* Thumbnails Grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 ">
+              {visibleItems.map((p) => (
+                <a
+                  key={p.link + startIndex}
+                  href={p.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="rounded-2xl overflow-hidden shadow-xl border border-[var(--border-color)] bg-black hover:scale-[1.02] transition-transform"
+                >
+                  <div className="w-full h-48 md:h-56 bg-black">
+                    <img
+                      loading="lazy"
+                      src={p.thumbnail}
+                      alt={p.label}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+
+                  <div className="px-4 py-3 text-center text-sm md:text-lg font-semibold text-white/80 border-t border-white/10 hover:text-[var(--accent-color)] hover:underline underline-offset-4 transition">
+                    {p.label}
+                  </div>
+                </a>
+              ))}
+            </div>
+          </div>
+        </section>
 
         {/* ================= CREATIVE COLLAGE ================= */}
         <section className="max-w-7xl mx-auto px-6 py-16">
