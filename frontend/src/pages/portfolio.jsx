@@ -9,6 +9,8 @@ import playlists3 from "../assets/images/podcasts.webp";
 import playlists4 from "../assets/images/documentaries.webp";
 import playlists5 from "../assets/images/eventCoverage.webp";
 import playlists6 from "../assets/images/shortFilms.webp";
+import playlists9 from "../assets/images/playlists9.webp"
+import playlists10  from "../assets/images/playlists10.webp"
 
 import cta_hero from "../assets/images/cta_camera.webp";
 import portfolio1 from "../assets/images/portfolio1.webp";
@@ -140,6 +142,16 @@ export default function PortfolioPage() {
       thumbnail: playlists6,
       link: "https://www.youtube.com/watch?v=bCleSAdce-I&list=PLH3Vw0GwKudHCUMeCVL1GfX1HkQ2S2CTR",
       label: "Short Films",
+    },
+     {
+      thumbnail: playlists9,
+      link: "https://www.youtube.com/watch?v=F5ThKH5fIWA&list=PLH3Vw0GwKudFjvMHLk6aFrJr71PIRTuo7",
+      label: "Reels/Shorts/Teaser",
+    },
+     {
+      thumbnail: playlists10,
+      link: "https://www.youtube.com/watch?v=zod9C1LDp-M&list=PLH3Vw0GwKudEHgw1w8POQp7e81SJO-vs4",
+      label: "TVC & Advertisement",
     },
   ];
 
@@ -398,45 +410,56 @@ useEffect(() => {
 
 
         {/* ================= VIDEO PLAYLISTS ================= */}
-        <section className="py-16">
-          <div className="max-w-7xl mx-auto px-6">
-            {/* Heading */}
-            <div className="text-center mb-10">
-              <h2 className="text-3xl md:text-4xl font-extrabold text-[var(--text-primary)]">
-                What We’ve Created
-              </h2>
-              <p className="text-sm md:text-base text-[var(--text-secondary)] mt-2">
-                Showcasing our latest work and creative productions.
-              </p>
-            </div>
+<section className="py-20 bg-[var(--bg-color)]">
+  <div className="max-w-7xl mx-auto px-6">
 
-            {/* Thumbnails Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 ">
-              {visibleItems.map((p) => (
-                <a
-                  key={p.link + startIndex}
-                  href={p.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="rounded-2xl overflow-hidden shadow-xl border border-[var(--border-color)] bg-black hover:scale-[1.02] transition-transform"
-                >
-                  <div className="w-full h-48 md:h-56 bg-black">
-                    <img
-                      loading="lazy"
-                      src={p.thumbnail}
-                      alt={p.label}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
+    {/* Heading */}
+    <div className="mb-10">
+      <h2 className="text-2xl md:text-3xl font-bold text-[var(--text-primary)]">
+        What We’ve Created
+      </h2>
+      <p className="text-sm text-[var(--text-secondary)] mt-1">
+        Films, documentaries & visual stories by TP India Network
+      </p>
+    </div>
 
-                  <div className="px-4 py-3 text-center text-sm md:text-lg font-semibold text-white/80 border-t border-white/10 hover:text-[var(--accent-color)] hover:underline underline-offset-4 transition">
-                    {p.label}
-                  </div>
-                </a>
-              ))}
-            </div>
+    {/* STATIC GRID */}
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-10">
+      {playlists.map((p, i) => (
+        <a
+          key={i}
+          href={p.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="block"
+        >
+          {/* Thumbnail */}
+          <div className="w-full aspect-video bg-black rounded-lg overflow-hidden">
+            <img
+              src={p.thumbnail}
+              alt={p.title}
+              loading="lazy"
+              className="w-full h-full object-cover"
+            />
           </div>
-        </section>
+
+          {/* Title */}
+          <h3 className="mt-3 text-sm md:text-base font-medium text-[var(--text-primary)] leading-snug">
+            {p.title}
+          </h3>
+
+          {/* Meta text */}
+          <p className="text-xs text-[var(--text-secondary)] mt-1">
+            {p.category}
+          </p>
+        </a>  
+      ))}
+    </div>
+  </div>
+</section>
+
+
+
 
         {/* ================= CREATIVE COLLAGE ================= */}
         <section className="max-w-7xl mx-auto px-6 py-16">
