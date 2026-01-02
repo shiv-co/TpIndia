@@ -15,6 +15,26 @@ import { MdKeyboardArrowRight } from "react-icons/md";
 import { FaStar } from "react-icons/fa6";
 
 import { useMeta } from "../hooks/useMeta";
+import man_avatar from "../assets/man.png";
+import woman_avatar from "../assets/woman.png";
+
+
+import logo1 from "../assets/images/logo1.webp";
+import logo2 from "../assets/images/logo2.webp";
+import logo3 from "../assets/images/logo3.webp";
+import logo4 from "../assets/images/logo4.webp";
+import logo5 from "../assets/images/logo5.webp";
+import logo6 from "../assets/images/logo6.webp";
+import logo7 from "../assets/images/logo7.webp";
+import logo8 from "../assets/images/logo8.webp";
+import logo9 from "../assets/images/logo9.webp";
+import logo10 from "../assets/images/logo10.webp";
+import logo11 from "../assets/images/logo11.webp";
+import logo12 from "../assets/images/logo12.webp";
+import logo13 from "../assets/images/logo13.webp";
+import logo14 from "../assets/images/logo14.webp";
+import logo15 from "../assets/images/logo15.webp";
+import logo16 from "../assets/images/logo16.webp";
 
 
 function PlayIcon({ className = "w-10 h-10" }) {
@@ -276,6 +296,8 @@ function ServicesGrid() {
 
 
 
+
+
 function Testimonials() {
   const [index, setIndex] = useState(0);
 
@@ -284,43 +306,43 @@ function Testimonials() {
       name: "Sachin Gulati",
       title: "GLRA India Foundation",
       text: "TP India Network is a documentary production powerhouse! Their dedication to storytelling is evident in every project they undertake. With a keen eye for capturing real-life moments and a knack for weaving narratives, they deliver documentaries that leave a lasting impact.",
-      avatar: "/assets/client1.jpg",
+      avatar: man_avatar,
     },
     {
       name: "CA Aleena Rais",
       title: "CA, Influencer",
       text: "I recently worked with TP India Network Private Limited for video production, and digital marketing, and I was thoroughly impressed with their professionalism and quality. I highly recommend them for anyone seeking reliable, creative, and high-quality media and marketing services.",
-      avatar: "/assets/client2.jpg",
+      avatar: woman_avatar,
     },
     {
       name: "Syed Abbas Raza Rizvi",
       title: "Inglorious Films",
       text: "TP India Network stands as a beacon of creativity and excellence in film and documentary production. Their commitment to storytelling and professionalism makes them unmatched.",
-      avatar: "/assets/client3.jpg",
+      avatar: man_avatar,
     },
     {
       name: "Harshit Srivastava",
       title: "Brand Manager",
       text: "Exceptional team delivering outstanding video production with creativity, precision, and timely delivery. Highly recommended!",
-      avatar: "/assets/client4.jpg",
+      avatar: man_avatar,
     },
     {
       name: "Prashant Singh",
       title: "Koshala Literature & Films Festival",
       text: "Working with TP India Network was an absolute pleasure. Their team brought creativity, technical excellence, and deep sensitivity to the subject the final piece resonated strongly with our audience at the Koshala Literature & Films Festival. Reliable, professional, and highly talented.",
-      avatar: "/assets/client4.jpg",
+      avatar: man_avatar,
     },
     {
       name: "Aisha Khatoon",
       title: "Brand Manager",
       text: "TP India Network excels in video production with unmatched creativity and professionalism. Their work speaks for itself. Highly recommended.",
-      avatar: "/assets/client5.jpg",
+      avatar: woman_avatar,
     },
      {
       name: "Adeeba Khanam",
       title: "Customer",
       text: "I recently had the pleasure of working with TP India Pvt Ltd for my video editing needs, and I am really very happy with their service. The quality of the videos they produced exceeded my expectations, and they always delivered on time. I especially appreciate their commitment to customer service, as they were available even on Sundays to accommodate my requests. If you're looking for a reliable video editor who values quality and timeliness, I highly recommend TP India Pvt Ltd!",
-      avatar: "/assets/client5.jpg",
+      avatar: woman_avatar,
     },
   ];
 
@@ -333,6 +355,9 @@ function Testimonials() {
     const timer = setInterval(() => next(), 5000);
     return () => clearInterval(timer);
   }, []);
+
+
+  
 
   return (
     <section className="py-20 relative overflow-hidden">
@@ -397,7 +422,7 @@ function Testimonials() {
                 <img
                   src={testimonials[index].avatar}
                   alt="avatar"
-                  className="w-14 h-12 md:h-14   rounded-full object-cover ring-2 ring-[var(--accent-color)]"
+                  className="w-14 h-12 md:h-14  p-1 rounded-full object-cover ring-2 ring-[var(--accent-color)]"
                 />
                 <div>
                   <div className="font-semibold text-sm md:text-lg">{testimonials[index].name}</div>
@@ -499,6 +524,71 @@ function ServiceIndex() {
   );
 }
 
+function Logo() {
+
+  const logos = [
+      logo1,
+      logo2,
+      logo3,
+      logo4,
+      logo5,
+      logo6,
+      logo7,
+      logo8,
+      logo9,
+      logo10,
+      logo11,
+      logo12,
+      logo13,
+      logo14,
+      logo15,
+      logo16,
+    ];
+
+
+
+  return(
+  
+    <>
+          {/* Logos carousel */}
+          <section className="max-w-8xl mx-auto px-6 py-8 ">
+            <div className="relative overflow-hidden rounded-xl border border-[var(--border-color)] bg-black/10">
+            <h1 className="text-lg md:text-3xl md:font-bold text-center text-[var(--text-primary)] mb-6 pt-6">
+              Our Esteemed Clients
+            </h1>
+              {/* Marquee Container */}
+              <div className="flex overflow-hidden">
+                {/* Track (Animated) */}
+                <motion.div
+                  className="flex whitespace-nowrap"
+                  animate={{ x: ["0%", "-100%"] }}
+                  transition={{
+                    duration: 60,
+                    ease: "linear",
+                    repeat: Infinity,
+                  }}
+                >
+                  {/* Original logos + Duplicate for seamless loop */}
+                  {[...logos, ...logos].map((l, i) => (
+                    <div
+                      key={i}
+                      className="flex items-center justify-center min-w-[140px] h-24 opacity-80 px-4"
+                    >
+                      <img
+                        src={l}
+                        alt={`logo-${i}`}
+                        className="max-h-20 object-contain hover:grayscale-25 transition"
+                      />
+                    </div>
+                  ))}
+                </motion.div>
+              </div>
+            </div>
+          </section>
+          </>
+  );
+}
+
 export default function Home() {
     useMeta({
     title: "TP India Network Pvt. Ltd. — Film Production & Digital Marketing",
@@ -519,6 +609,7 @@ export default function Home() {
       <QuickQuote />
       <Testimonials />
       <ServiceIndex />
+      <Logo />
       <WhatsAppButton />
       <GetQuoteBtn />
 

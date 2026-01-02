@@ -3,14 +3,18 @@ import { useScroll, useTransform } from "framer-motion";
 import { AnimatePresence, useMotionValue, animate, motion } from "framer-motion";
 import { useMeta } from "../hooks/useMeta";
 
-import playlists1 from "../assets/images/music.webp";
-import playlists2 from "../assets/images/portfolio.webp";
-import playlists3 from "../assets/images/podcasts.webp";
-import playlists4 from "../assets/images/documentaries.webp";
-import playlists5 from "../assets/images/eventCoverage.webp";
-import playlists6 from "../assets/images/shortFilms.webp";
-import playlists9 from "../assets/images/playlists9.webp"
-import playlists10  from "../assets/images/playlists10.webp"
+import music from "../assets/images/music.webp";
+import full_portfolio from "../assets/images/Full_Portfolio.webp";
+import podcasts from "../assets/images/podcasts.webp";
+import shortFilms from "../assets/images/shortFilms.webp";
+import creators_content from "../assets/images/creators_content.webp";
+import corporate from "../assets/images/corporate.webp";
+import wedding from "../assets/images/wedding.webp";
+import reels_shorts from "../assets/images/reels_shorts.webp";
+import testimonial from "../assets/images/testimonial.webp";  
+import private_doc from "../assets/images/private_doc.webp";
+import ads_tvc from "../assets/images/ads_tvc.webp";
+import Goverment_doc from "../assets/images/Goverment_doc.webp";
 
 import cta_hero from "../assets/images/cta_camera.webp";
 import portfolio1 from "../assets/images/portfolio1.webp";
@@ -114,44 +118,82 @@ export default function PortfolioPage() {
 
   const playlists = [
     {
-      thumbnail: playlists1,
+      thumbnail: Goverment_doc,
+      link: "https://www.youtube.com/watch?v=izC13cZTXD4&list=PLH3Vw0GwKudHF1tUark0lNG0tkhjwRpMW&pp=gAQB",
+      label: "Goverment Documentaries",
+    },
+    {
+      thumbnail: private_doc,
+      link: "https://www.youtube.com/watch?v=izC13cZTXD4&list=PLH3Vw0GwKudHF1tUark0lNG0tkhjwRpMW&pp=gAQB",
+      label: "Private Documentaries",
+    },
+    {
+      thumbnail: testimonial,
+      link: "https://www.youtube.com/watch?v=HBSBy6KRfC0&list=PLH3Vw0GwKudFvyy-j2rAyTZruxPlQ7vuQ&pp=gAQB",
+      label: "Testimonials by TP India Network",
+    },
+    {
+      thumbnail: reels_shorts,
+      link: "https://www.youtube.com/watch?v=F5ThKH5fIWA&list=PLH3Vw0GwKudFjvMHLk6aFrJr71PIRTuo7&pp=gAQB0gcJCbEEOCosWNin",
+      label: "Reels & Shorts ",
+    },
+  
+    {
+      thumbnail: wedding,
+      link: "https://www.youtube.com/watch?v=bCleSAdce-I&list=PLH3Vw0GwKudHCUMeCVL1GfX1HkQ2S2CTR",
+      label: "Wedding & Traditional Events",
+    },
+    {
+      thumbnail: corporate,
+      link: "https://www.youtube.com/watch?v=bCleSAdce-I&list=PLH3Vw0GwKudHCUMeCVL1GfX1HkQ2S2CTR",
+      label: "Corporate & Cultural Events and Livestreams",
+    },
+    // corrected links   below 
+    {
+      thumbnail: creators_content,
+      link: "https://www.youtube.com/watch?v=BDCHkk_p8Og&list=PLH3Vw0GwKudHriLoJjfaSJlmlBttFIbDd&pp=gAQB",
+      label: "Creator's Content",
+    },
+    {
+      thumbnail: music,
       link: "https://www.youtube.com/watch?v=UM3ttbm1aWc&list=PLH3Vw0GwKudGWaJzUFThLdFV5PhDDVrCE",
       label: "Music Videos Playlist",
     },
     {
-      thumbnail: playlists2,
+      thumbnail: full_portfolio,
       link: "https://www.youtube.com/watch?v=0VlR_lmn6-Q&list=PLH3Vw0GwKudHnVKY6cybeBtBBitV8apDv",
-      label: "Portfolio Playlists Videos",
+      label: "Full Portfolio  ",
     },
     {
-      thumbnail: playlists3,
+      thumbnail: podcasts,
       link: "https://www.youtube.com/watch?v=fLw4KLuFSMo&list=PLH3Vw0GwKudGF-SFFezE9vcDGUTGp0GaQ",
       label: "Podcasts & Interviews",
     },
     {
-      thumbnail: playlists4,
-      link: "https://www.youtube.com/watch?v=izC13cZTXD4&list=PLH3Vw0GwKudHF1tUark0lNG0tkhjwRpMW&pp=0gcJCbAEOCosWNin",
-      label: "Documentaries",
-    },
-    {
-      thumbnail: playlists5,
-      link: "https://www.youtube.com/watch?v=3InJsilvhaY&list=PLH3Vw0GwKudGLZ-AE8RJxsHBCPrEZFXJU",
-      label: "Event Coverage",
-    },
-    {
-      thumbnail: playlists6,
+      thumbnail: shortFilms,
       link: "https://www.youtube.com/watch?v=bCleSAdce-I&list=PLH3Vw0GwKudHCUMeCVL1GfX1HkQ2S2CTR",
       label: "Short Films",
     },
+    // {
+    //   thumbnail: playlists4,
+    //   link: "https://www.youtube.com/watch?v=izC13cZTXD4&list=PLH3Vw0GwKudHF1tUark0lNG0tkhjwRpMW&pp=0gcJCbAEOCosWNin",
+    //   label: "Documentaries",
+    // },
+    // {
+    //   thumbnail: playlists5,
+    //   link: "https://www.youtube.com/watch?v=3InJsilvhaY&list=PLH3Vw0GwKudGLZ-AE8RJxsHBCPrEZFXJU",
+    //   label: "Event Coverage",
+    // },
+    
+    //  {
+    //   thumbnail: playlists9,
+    //   link: "https://www.youtube.com/watch?v=F5ThKH5fIWA&list=PLH3Vw0GwKudFjvMHLk6aFrJr71PIRTuo7",
+    //   label: "Reels/Shorts/Teaser",
+    // },
      {
-      thumbnail: playlists9,
-      link: "https://www.youtube.com/watch?v=F5ThKH5fIWA&list=PLH3Vw0GwKudFjvMHLk6aFrJr71PIRTuo7",
-      label: "Reels/Shorts/Teaser",
-    },
-     {
-      thumbnail: playlists10,
+      thumbnail: ads_tvc,
       link: "https://www.youtube.com/watch?v=zod9C1LDp-M&list=PLH3Vw0GwKudEHgw1w8POQp7e81SJO-vs4",
-      label: "TVC & Advertisement",
+      label: "Ad/TVC Films & Fiction",
     },
   ];
 
@@ -439,19 +481,19 @@ useEffect(() => {
               src={p.thumbnail}
               alt={p.title}
               loading="lazy"
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover hover:scale-110 transition-transform duration-700 "
             />
           </div>
 
           {/* Title */}
-          <h3 className="mt-3 text-sm md:text-base font-medium text-[var(--text-primary)] leading-snug">
-            {p.title}
+          <h3 className="mt-3 text-sm md:text-base font-semibold text-center text-[var(--text-primary)] hover:scale-105 transition-transform duration-900  leading-snug">
+            {p.label}
           </h3>
-
-          {/* Meta text */}
+{/* 
+          Meta text
           <p className="text-xs text-[var(--text-secondary)] mt-1">
-            {p.category}
-          </p>
+            {p.link.replace("https://www.youtube.com/watch?v=", "") }
+          </p> */}
         </a>  
       ))}
     </div>
