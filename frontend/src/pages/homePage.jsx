@@ -551,40 +551,39 @@ function Logo() {
   
     <>
           {/* Logos carousel */}
-          <section className="max-w-8xl mx-auto px-6 py-8 ">
-            <div className="relative overflow-hidden rounded-xl border border-[var(--border-color)] bg-black/10">
-            <h1 className="text-lg md:text-3xl md:font-bold text-center text-[var(--text-primary)] mb-6 pt-6">
-              Our Esteemed Clients
-            </h1>
-              {/* Marquee Container */}
-              <div className="flex overflow-hidden">
-                {/* Track (Animated) */}
-                <motion.div
-                  className="flex whitespace-nowrap"
-                  animate={{ x: ["0%", "-100%"] }}
-                  transition={{
-                    duration: 60,
-                    ease: "linear",
-                    repeat: Infinity,
-                  }}
-                >
-                  {/* Original logos + Duplicate for seamless loop */}
-                  {[...logos, ...logos].map((l, i) => (
-                    <div
-                      key={i}
-                      className="flex items-center justify-center min-w-[140px] h-24 opacity-80 px-4"
-                    >
-                      <img
-                        src={l}
-                        alt={`logo-${i}`}
-                        className="max-h-20 object-contain hover:grayscale-25 transition"
-                      />
-                    </div>
-                  ))}
-                </motion.div>
-              </div>
-            </div>
-          </section>
+          <section className="max-w-7xl mx-auto px-6 py-16">
+  <div className="rounded-2xl border border-[var(--border-color)] bg-[var(--bg-color)]/60 backdrop-blur-sm p-8 md:p-12">
+
+    {/* Heading */}
+    <div className="text-center mb-10">
+      <h2 className="text-2xl md:text-3xl font-extrabold text-[var(--text-primary)]">
+        Our Esteemed Clients
+      </h2>
+      <p className="mt-2 text-sm md:text-base text-[var(--text-secondary)] max-w-2xl mx-auto">
+        Trusted by brands, organisations and creators across industries.
+      </p>
+    </div>
+
+    {/* Logos Grid */}
+    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-x-10 gap-y-10 items-center">
+      {logos.map((logo, i) => (
+        <div
+          key={i}
+          className="flex items-center justify-center"
+        >
+          <img
+            src={logo}
+            alt={`Client logo ${i + 1}`}
+            loading="lazy"
+            className="max-h-16 md:max-h-20 object-contain opacity-80  hover:opacity-100 transition"
+          />
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>
+
           </>
   );
 }
