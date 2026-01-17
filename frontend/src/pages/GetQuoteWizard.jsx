@@ -16,7 +16,12 @@ const SERVICES = [
   "Podcast & Talk Shows / Music Video",
   "Logo Design",
   "Short Film Shoot",
-  "Social Media Content",
+  "Social Media Marketing",
+  "Performance Marketing",
+  "Lead Generation",
+  "Live Streaming",
+  "Content Writing",
+  "Web Conference",
   "Others (type below)",
 ];
 
@@ -130,12 +135,56 @@ const SERVICE_FEATURES = {
     "VFX / Motion",
   ],
 
-  "Social Media Content": [
-    "Reels Editing",
-    "Short Form Content",
-    "Content Strategy",
-    "Color Correction",
-    "Sound Design",
+  "Social Media Marketing": [
+   "Strategy & Planning",
+    "Content Calendar",
+    "Reels & Shorts Production",
+    "Community Management",
+    "Influencer Outreach",
+    "Analytics & Reporting",
+  ],
+
+  "Performance Marketing": [
+    "PPC Campaign Setup",
+    "Meta & Google Ads",
+    "A/B Testing",
+    "Conversion Optimization",
+    "Retargeting Strategies",
+    "ROI Tracking",
+  ],
+
+  "Lead Generation": [
+    "Landing Page Design",
+    "Email Drip Campaigns",
+    "LinkedIn Outreach",
+    "Lead Magnet Creation",
+    "CRM Integration",
+    "Audience Segmentation",
+  ],
+
+  "Live Streaming": [
+    "Multi-platform Broadcasting",
+    "Custom Overlays & Graphics",
+    "Technical Troubleshooting",
+    "Chat Moderation",
+    "High-quality AV Setup",
+    "Post-stream Editing",
+  ],
+  "Content Writing": [
+    "SEO Blog Posts",
+    "Website Copywriting",
+    "Newsletter & Email Copy",
+    "Technical Whitepapers",
+    "Social Media Captions",
+    "Case Studies",
+  ],
+  "Web Conference": [
+    "Platform Setup (Zoom/Teams)",
+    "Attendee Registration",
+    "Virtual Breakout Rooms",
+    "Live Tech Support",
+    "Speaker Coordination",
+    "Post-event Analytics",
   ],
 
   "Others (type below)": [],
@@ -298,20 +347,136 @@ const SERVICE_FIELDS = {
     },
     { name: "locations", label: "No. of locations", type: "text" },
   ],
-  "Social Media Content": [
+
+  "Social Media Marketing": [
     {
       name: "platforms",
-      label: "Platforms",
-      type: "text",
-      placeholder: "Instagram / YouTube / Facebook / Shorts",
+      label: "Target Platforms",
+      type: "select",
+      options: [
+        "Instagram & Facebook",
+        "LinkedIn & Twitter/X",
+        "YouTube",
+        "All Major Platforms",
+        "Other",
+      ],
     },
     {
-      name: "count",
-      label: "Posts / videos required",
-      type: "text",
-      placeholder: "eg. 10 reels",
+      name: "postingFrequency",
+      label: "Desired Posting Frequency",
+      type: "select",
+      options: [
+        "Daily",
+        "3-4 times a week",
+        "Weekly",
+        "Campaign based (One-time)",
+        "Not sure",
+      ],
     },
   ],
+  "Performance Marketing": [
+    {
+      name: "adBudget",
+      label: "Estimated Monthly Ad Budget",
+      type: "text",
+      placeholder: "eg. ₹10k - ₹30k",
+    },
+    {
+      name: "adChannels",
+      label: "Preferred Channels",
+      type: "select",
+      options: [
+        "Google Ads (Search/Display)",
+        "Meta Ads (FB/Insta)",
+        "LinkedIn Ads",
+        "Multi-channel Strategy",
+        "Consultation needed",
+      ],
+    },
+  ],
+  "Lead Generation": [
+    {
+      name: "targetAudience",
+      label: "Target Audience Type",
+      type: "select",
+      options: [
+        "B2B (Business to Business)",
+        "B2C (Business to Consumer)",
+        "Both",
+      ],
+    },
+    {
+      name: "industry",
+      label: "Target Industry/Niche",
+      type: "text",
+      placeholder: "eg. Real Estate, SaaS, Healthcare",
+    },
+  ],
+  "Live Streaming": [
+    {
+      name: "streamType",
+      label: "Event Type",
+      type: "select",
+      options: [
+        "Corporate Event / Townhall",
+        "Product Launch",
+        "Concert / Performance",
+        "Podcast / Interview",
+        "Other",
+      ],
+    },
+    {
+      name: "setupRequirements",
+      label: "Production Scale",
+      type: "select",
+      options: [
+        "Single Camera Setup",
+        "Multi-Camera Production",
+        "Hybrid (On-ground + Virtual)",
+        "Not sure",
+      ],
+    },
+  ],
+  "Content Writing": [
+    {
+      name: "contentType",
+      label: "Primary Content Need",
+      type: "select",
+      options: [
+        "SEO Blog Posts",
+        "Website Copy",
+        "Whitepapers / E-books",
+        "Newsletters",
+        "Social Media Captions",
+      ],
+    },
+    {
+      name: "volume",
+      label: "Volume / Quantity",
+      type: "text",
+      placeholder: "eg. 4 blogs per month / 10 page website",
+    },
+  ],
+  "Web Conference": [
+    {
+      name: "attendees",
+      label: "Expected Number of Attendees",
+      type: "text",
+      placeholder: "eg. 50-100 / 500+",
+    },
+    {
+      name: "platformNeeds",
+      label: "Platform Preference",
+      type: "select",
+      options: [
+        "Zoom / MS Teams Management",
+        "Custom Virtual Venue",
+        "Webinar Software",
+        "No preference",
+      ],
+    },
+  ],
+
   "Others (type below)": [
     {
       name: "otherDescription",

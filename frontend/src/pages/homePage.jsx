@@ -72,7 +72,7 @@ import logo35 from "../assets/logos/logo_35.webp";
 import logo36 from "../assets/logos/logo_36.webp";
 import logo37 from "../assets/logos/logo_37.webp";
 import logo38 from "../assets/logos/logo_38.webp";
-// import logo39 from "../assets/logos/logo_39.webp";
+import logo39 from "../assets/logos/logo_39.webp";
 // import logo40 from "../assets/logos/logo_40.webp";
 
 function PlayIcon({ className = "w-10 h-10" }) {
@@ -725,7 +725,10 @@ function Logo() {
       logo: logo38,
       title: "DIAS",
     },
-    // logo39,
+    {
+      logo: logo39,
+      title: "T.S Mishra College",
+    },
     // logo40,
   ];
 
@@ -759,13 +762,13 @@ function Logo() {
               src={logo.logo}
               alt={`Client logo ${i + 1}`}
               loading="lazy"
-              className="max-h-full w-auto object-contain opacity-80 group-hover:opacity-100 transition-opacity duration-300"
+              className="max-h-full w-auto object-contain opacity-100 hover:scale-110 transition-all duration-700"
             />
           </div>
 
           {/* Text Container */}
           <div className="text-center">
-            <p className="text-[var(--text-primary)] text-xs md:font-semibold md:text-sm tracking-wide">
+            <p className="text-[var(--text-primary)] text-xs md:font-light md:text-xs tracking-wide">
               {logo.title}
             </p>
           </div>
