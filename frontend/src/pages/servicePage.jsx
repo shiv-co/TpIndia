@@ -47,7 +47,7 @@ const services = [
     desc: "Multi-cam podcast, interviews and talk-show style content.",
   },
   {
-    title: "Web Development & Digital Marketing",
+    title: "Web Development & Performance Marketing",
     img: service6,
     badge: "Digital",
     desc: "Web experiences and landing pages that match your visual identity.",

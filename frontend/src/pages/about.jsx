@@ -27,6 +27,7 @@ import Kudrat from "../assets/crew_img/kudrat.webp";
 import Teepu from "../assets/crew_img/Teepu_Sultan.webp";
 import Kapil from "../assets/crew_img/kapil1.webp";
 import Ali from "../assets/crew_img/ali.webp";
+import Ayush from "../assets/crew_img/Ayush_dhawan.webp";
 import WhatsAppButton from "../components/WhatsAppButton";
 import GetQuoteBtn from "../components/getQuoteBtn";
 
@@ -42,11 +43,11 @@ const crew = [
   },
   { name: "Garima Mishra", role: "Anchor / Social Media Manager", img: Garima },
   { name: "Kshitiz Mahazan", role: "Cinematographer", img: Kshitiz },
-  { name: "Amit Gupta", role: "Photographer", img: Amit },
   { name: "Anubhav Patel", role: "Cinematographer", img: Anubhav },
   { name: "Anju", role: "Production Head / Video Editor", img: Anju },
-  { name: "Saurabh Singh", role: "Social Media Strategist", img: Saurab },
   { name: "Shivam Singh", role: "Full Stack Developer", img: Shivam },
+  { name: "Saurabh Singh", role: "Social Media Strategist", img: Saurab },
+  { name: "Amit Gupta", role: "Photographer", img: Amit },
   { name: "Umesh Tiwari", role: "Camera Operator", img: Umesh },
   { name: "Himanshu Goswami", role: "Cinematographer", img: Himanshu },
   { name: "Rajan Mishra", role: "DOP", img: Rajan },
@@ -54,6 +55,7 @@ const crew = [
   { name: "Ali Musarrat", role: "Editor", img: Ali },
   { name: "Teepu Sultan", role: "Video Editor / Camera Operator", img: Teepu },
   { name: "Kapil Bharti", role: "Video Editor", img: Kapil },
+   { name: "Ayush Dhawan", role: "Video Editor", img: Ayush },
 ];
 
 export default function AboutUs() {

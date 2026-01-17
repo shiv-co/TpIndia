@@ -37,22 +37,44 @@ import gallery13 from "../assets/images/gallery13.webp";
 import gallery11 from "../assets/images/gallery11.webp";
 import gallery12 from "../assets/images/gallery12.webp";
 
-import logo1 from "../assets/images/logo1.webp";
-import logo2 from "../assets/images/logo2.webp";
-import logo3 from "../assets/images/logo3.webp";
-import logo4 from "../assets/images/logo4.webp";
-import logo5 from "../assets/images/logo5.webp";
-import logo6 from "../assets/images/logo6.webp";
-import logo7 from "../assets/images/logo7.webp";
-import logo8 from "../assets/images/logo8.webp";
-import logo9 from "../assets/images/logo9.webp";
-import logo10 from "../assets/images/logo10.webp";
-import logo11 from "../assets/images/logo11.webp";
-import logo12 from "../assets/images/logo12.webp";
-import logo13 from "../assets/images/logo13.webp";
-import logo14 from "../assets/images/logo14.webp";
-import logo15 from "../assets/images/logo15.webp";
-import logo16 from "../assets/images/logo16.webp";
+import logo1 from "../assets/logos/logo_1.webp";
+import logo2 from "../assets/logos/logo_2.webp";
+import logo3 from "../assets/logos/logo_3.webp";
+import logo4 from "../assets/logos/logo_4.webp";
+import logo5 from "../assets/logos/logo_5.webp";
+import logo6 from "../assets/logos/logo_6.webp";
+import logo7 from "../assets/logos/logo_7.webp";
+import logo8 from "../assets/logos/logo_8.webp";
+import logo9 from "../assets/logos/logo_9.webp";
+import logo10 from "../assets/logos/logo_10.webp";
+import logo11 from "../assets/logos/logo_11.webp";
+import logo12 from "../assets/logos/logo_12.webp";
+import logo13 from "../assets/logos/logo_13.webp";
+import logo14 from "../assets/logos/logo_14.webp";
+import logo15 from "../assets/logos/logo_15.webp";
+import logo16 from "../assets/logos/logo_16.webp";
+import logo17 from "../assets/logos/logo_17.webp";
+import logo18 from "../assets/logos/logo_18.webp";
+import logo19 from "../assets/logos/logo_19.webp";
+import logo20 from "../assets/logos/logo_20.webp";
+import logo21 from "../assets/logos/logo_21.webp";
+import logo22 from "../assets/logos/logo_22.webp";
+import logo23 from "../assets/logos/logo_23.webp";
+import logo24 from "../assets/logos/logo_24.webp";
+import logo25 from "../assets/logos/logo_25.webp";
+import logo26 from "../assets/logos/logo_26.webp";
+import logo27 from "../assets/logos/logo_27.webp";
+import logo28 from "../assets/logos/logo_28.webp";
+import logo29 from "../assets/logos/logo_29.webp";
+import logo30 from "../assets/logos/logo_30.webp";
+import logo31 from "../assets/logos/logo_31.webp";
+import logo32 from "../assets/logos/logo_32.webp";
+import logo33 from "../assets/logos/logo_33.webp";
+import logo34 from "../assets/logos/logo_34.webp";
+import logo35 from "../assets/logos/logo_35.webp";
+import logo36 from "../assets/logos/logo_36.webp";
+import logo37 from "../assets/logos/logo_37.webp";
+import logo38 from "../assets/logos/logo_38.webp";
 
 import WhatsAppButton from "../components/WhatsAppButton";
 import GetQuoteBtn from "../components/getQuoteBtn";
@@ -67,21 +89,43 @@ export default function PortfolioPage() {
 
   const logos = [
     logo1,
-    logo2,
-    logo3,
-    logo4,
-    logo5,
-    logo6,
-    logo7,
-    logo8,
-    logo9,
-    logo10,
-    logo11,
-    logo12,
-    logo13,
-    logo14,
-    logo15,
-    logo16,
+         logo2,
+         logo3,
+         logo4,
+         logo5,
+         logo6,
+         logo7,
+         logo8,
+         logo9,
+         logo10,
+         logo11,
+         logo12,
+         logo13,
+         logo14,
+         logo15,
+         logo16,
+         logo17,
+         logo18,
+         logo19,
+         logo20,
+         logo21,
+         logo22,
+         logo23,
+         logo24,
+         logo25,
+         logo26,
+         logo27,
+         logo28,
+         logo29,
+         logo30,
+         logo31,
+         logo32,
+         logo33,
+         logo34,
+         logo35,
+         logo36,
+         logo37,
+         logo38,
   ];
 
   const collage = [
@@ -369,7 +413,7 @@ useEffect(() => {
                 className="flex whitespace-nowrap"
                 animate={{ x: ["0%", "-100%"] }}
                 transition={{
-                  duration: 60,
+                  duration: 120,
                   ease: "linear",
                   repeat: Infinity,
                 }}
@@ -378,7 +422,7 @@ useEffect(() => {
                 {[...logos, ...logos].map((l, i) => (
                   <div
                     key={i}
-                    className="flex items-center justify-center min-w-[140px] h-24 opacity-80 px-4"
+                    className="flex items-center justify-center min-w-[150px] h-24 opacity-80 px-4"
                   >
                     <img
                       src={l}

@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import heroImg from "../assets/hero.jpg";
@@ -18,24 +17,63 @@ import { useMeta } from "../hooks/useMeta";
 import man_avatar from "../assets/man.png";
 import woman_avatar from "../assets/woman.png";
 
+// import logo1 from "../assets/images/logo1.webp";
+// import logo2 from "../assets/images/logo2.webp";
+// import logo3 from "../assets/images/logo3.webp";
+// import logo4 from "../assets/images/logo4.webp";
+// import logo5 from "../assets/images/logo5.webp";
+// import logo6 from "../assets/images/logo6.webp";
+// import logo7 from "../assets/images/logo7.webp";
+// import logo8 from "../assets/images/logo8.webp";
+// import logo9 from "../assets/images/logo9.webp";
+// import logo10 from "../assets/images/logo10.webp";
+// import logo11 from "../assets/images/logo11.webp";
+// import logo12 from "../assets/images/logo12.webp";
+// import logo13 from "../assets/images/logo13.webp";
+// import logo14 from "../assets/images/logo14.webp";
+// import logo15 from "../assets/images/logo15.webp";
+// import logo16 from "../assets/images/logo16.webp";
 
-import logo1 from "../assets/images/logo1.webp";
-import logo2 from "../assets/images/logo2.webp";
-import logo3 from "../assets/images/logo3.webp";
-import logo4 from "../assets/images/logo4.webp";
-import logo5 from "../assets/images/logo5.webp";
-import logo6 from "../assets/images/logo6.webp";
-import logo7 from "../assets/images/logo7.webp";
-import logo8 from "../assets/images/logo8.webp";
-import logo9 from "../assets/images/logo9.webp";
-import logo10 from "../assets/images/logo10.webp";
-import logo11 from "../assets/images/logo11.webp";
-import logo12 from "../assets/images/logo12.webp";
-import logo13 from "../assets/images/logo13.webp";
-import logo14 from "../assets/images/logo14.webp";
-import logo15 from "../assets/images/logo15.webp";
-import logo16 from "../assets/images/logo16.webp";
-
+import logo1 from "../assets/logos/logo_1.webp";
+import logo2 from "../assets/logos/logo_2.webp";
+import logo3 from "../assets/logos/logo_3.webp";
+import logo4 from "../assets/logos/logo_4.webp";
+import logo5 from "../assets/logos/logo_5.webp";
+import logo6 from "../assets/logos/logo_6.webp";
+import logo7 from "../assets/logos/logo_7.webp";
+import logo8 from "../assets/logos/logo_8.webp";
+import logo9 from "../assets/logos/logo_9.webp";
+import logo10 from "../assets/logos/logo_10.webp";
+import logo11 from "../assets/logos/logo_11.webp";
+import logo12 from "../assets/logos/logo_12.webp";
+import logo13 from "../assets/logos/logo_13.webp";
+import logo14 from "../assets/logos/logo_14.webp";
+import logo15 from "../assets/logos/logo_15.webp";
+import logo16 from "../assets/logos/logo_16.webp";
+import logo17 from "../assets/logos/logo_17.webp";
+import logo18 from "../assets/logos/logo_18.webp";
+import logo19 from "../assets/logos/logo_19.webp";
+import logo20 from "../assets/logos/logo_20.webp";
+import logo21 from "../assets/logos/logo_21.webp";
+import logo22 from "../assets/logos/logo_22.webp";
+import logo23 from "../assets/logos/logo_23.webp";
+import logo24 from "../assets/logos/logo_24.webp";
+import logo25 from "../assets/logos/logo_25.webp";
+import logo26 from "../assets/logos/logo_26.webp";
+import logo27 from "../assets/logos/logo_27.webp";
+import logo28 from "../assets/logos/logo_28.webp";
+import logo29 from "../assets/logos/logo_29.webp";
+import logo30 from "../assets/logos/logo_30.webp";
+import logo31 from "../assets/logos/logo_31.webp";
+import logo32 from "../assets/logos/logo_32.webp";
+import logo33 from "../assets/logos/logo_33.webp";
+import logo34 from "../assets/logos/logo_34.webp";
+import logo35 from "../assets/logos/logo_35.webp";
+import logo36 from "../assets/logos/logo_36.webp";
+import logo37 from "../assets/logos/logo_37.webp";
+import logo38 from "../assets/logos/logo_38.webp";
+// import logo39 from "../assets/logos/logo_39.webp";
+// import logo40 from "../assets/logos/logo_40.webp";
 
 function PlayIcon({ className = "w-10 h-10" }) {
   return (
@@ -100,15 +138,16 @@ function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.2 }}
-          > <div className="mt-6 ">
-            <Link
-              to="/get-quote"
-              className="px-6 py-3 rounded-full bg-[var(--accent-color)] text-white shadow-md hover:scale-[1.05] transition-transform"
-            >
-              Get a Quote
-            </Link>
+          >
+            {" "}
+            <div className="mt-6 ">
+              <Link
+                to="/get-quote"
+                className="px-6 py-3 rounded-full bg-[var(--accent-color)] text-white shadow-md hover:scale-[1.05] transition-transform"
+              >
+                Get a Quote
+              </Link>
             </div>
-
             <a
               href="https://youtu.be/kOveEiMFESU"
               target="_blank"
@@ -130,7 +169,6 @@ const fadeIn = {
   hidden: { opacity: 0, y: 60 },
   show: { opacity: 1, y: 0 },
 };
-
 
 function WhatWeDo() {
   const services = [
@@ -294,10 +332,6 @@ function ServicesGrid() {
   );
 }
 
-
-
-
-
 function Testimonials() {
   const [index, setIndex] = useState(0);
 
@@ -338,7 +372,7 @@ function Testimonials() {
       text: "TP India Network excels in video production with unmatched creativity and professionalism. Their work speaks for itself. Highly recommended.",
       avatar: woman_avatar,
     },
-     {
+    {
       name: "Adeeba Khanam",
       title: "Customer",
       text: "I recently had the pleasure of working with TP India Pvt Ltd for my video editing needs, and I am really very happy with their service. The quality of the videos they produced exceeded my expectations, and they always delivered on time. I especially appreciate their commitment to customer service, as they were available even on Sundays to accommodate my requests. If you're looking for a reliable video editor who values quality and timeliness, I highly recommend TP India Pvt Ltd!",
@@ -356,22 +390,18 @@ function Testimonials() {
     return () => clearInterval(timer);
   }, []);
 
-
-  
-
   return (
     <section className="py-20 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
-  
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 items-center">
-
           {/* Left Side Text */}
           <div className="space-y-3">
             <h3 className="text-4xl font-extrabold text-[var(--text-primary)]">
               What Our Clients Say
             </h3>
             <p className="text-sm text-[var(--text-secondary)]">
-              Real experiences from real clients. Their satisfaction speaks for our work.
+              Real experiences from real clients. Their satisfaction speaks for
+              our work.
             </p>
 
             {/* Dot Indicators */}
@@ -395,8 +425,15 @@ function Testimonials() {
               exit={{ opacity: 0, x: -40 }}
               transition={{ duration: 0.6, ease: "easeOut" }}
               className="md:col-span-2 bg-black/90 p-10 rounded-2xl border border-white/10 shadow-xl relative"
-              >
-                <p className="mb-5 flex"> <FaStar color="yellow"/><FaStar color="yellow"/><FaStar color="yellow" /><FaStar color="yellow"/><FaStar color="yellow"/></p>
+            >
+              <p className="mb-5 flex">
+                {" "}
+                <FaStar color="yellow" />
+                <FaStar color="yellow" />
+                <FaStar color="yellow" />
+                <FaStar color="yellow" />
+                <FaStar color="yellow" />
+              </p>
               {/* Floating Quote Icon */}
               <motion.div
                 initial={{ scale: 0 }}
@@ -408,7 +445,7 @@ function Testimonials() {
               </motion.div>
 
               {/* Review Text */}
-              <p className="text-sm md:text-lg leading-relaxed text-white/90 font-sans italic font-light"> 
+              <p className="text-sm md:text-lg leading-relaxed text-white/90 font-sans italic font-light">
                 “{testimonials[index].text}”
               </p>
 
@@ -425,8 +462,12 @@ function Testimonials() {
                   className="w-14 h-12 md:h-14  p-1 rounded-full object-cover ring-2 ring-[var(--accent-color)]"
                 />
                 <div>
-                  <div className="font-semibold text-sm md:text-lg">{testimonials[index].name}</div>
-                  <div className="text-sm text-white/50">{testimonials[index].title}</div>
+                  <div className="font-semibold text-sm md:text-lg">
+                    {testimonials[index].name}
+                  </div>
+                  <div className="text-sm text-white/50">
+                    {testimonials[index].title}
+                  </div>
                 </div>
 
                 {/* Navigation Buttons */}
@@ -452,9 +493,6 @@ function Testimonials() {
     </section>
   );
 }
-
-
-
 
 function ServiceIndex() {
   const categories = [
@@ -525,35 +563,179 @@ function ServiceIndex() {
 }
 
 function Logo() {
-
   const logos = [
-      logo1,
-      logo2,
-      logo3,
-      logo4,
-      logo5,
-      logo6,
-      logo7,
-      logo8,
-      logo9,
-      logo10,
-      logo11,
-      logo12,
-      logo13,
-      logo14,
-      logo15,
-      logo16,
-    ];
+    {
+      logo: logo1,
+      title: "University of Lucknow",
+    },
+    {
+      logo: logo2,
+      title: "Information and Public Relation Department",
+    },
+    {
+      logo: logo3,
+      title: "Indian Army",
+    },
+    
+    {
+      logo: logo4,
+      title: "Madhyamik Shiksha Parishad",
+    },
+    {
+      logo: logo5,
+      title: "Lucknow Development Authority",
+    },
+    {
+      logo: logo6,
+      title: "Mahakumbh Mela",
+    },
+     {
+      logo: logo2,
+      title: "U.P. Skill Development Mission",
+    },
+    {
+      logo: logo2,
+      title: "Basic Shiksha Vibhag",
+    },
+    {
+      logo: logo7,
+      title: "Kalicharan Degree College, Lucknow",
+    },
+    {
+      logo: logo8,
+      title: "Southern Command",
+    },
+    {
+      logo: logo9,
+      title: "Dr. SMNR University",
+    },
+    {
+      logo: logo10,
+      title: "UPNEDA",
+    },
+    {
+      logo: logo11,
+      title: "Time Coaching Lucknow",
+    },
+    {
+      logo: logo12,
+      title: "GLRA India",
+    },
+    {
+      logo: logo13,
+      title: "AMS Creative School",
+    },
+    {
+      logo: logo14,
+      title: "Defence Dreamers Academy",
+    },
+    {
+      logo: logo15,
+      title: "Unnati Foundation",
+    },
+    {
+      logo: logo16,
+      title: "Birla Open Minds, Lucknow",
+    },
+    {
+      logo: logo17,
+      title: "City Group of Colleges",
+    },
+    {
+      logo: logo18,
+      title: "Koshala Literature Festival",
+    },
+    {
+      logo: logo19,
+      title: "Sanatkada Trust",
+    },
+    {
+      logo: logo20,
+      title: "Samaritan  Defence Arena",
+    },
+    {
+      logo: logo21,
+      title: "Aleena Rais Live",
+    },
+    {
+      logo: logo22,
+      title: " Amity University",
+    },
+    {
+      logo: logo23,
+      title: "KMCL University",
+    },
+    {
+      logo: logo24,
+      title: "Akravan  Asssociates",
+    },
+    {
+      logo: logo25,
+      title: "Ad Krishna",
+    },
+    {
+      logo: logo26,
+      title: "Dhasu Talks",
+    },
+    {
+      logo: logo27,
+      title: "Tehzeeb Creations",
+    },
+    {
+      logo: logo28,
+      title: "Cherubic smiles",
+    },
+    {
+      logo: logo29,
+      title: "TrueTalk with shilpa",
+    },
+    {
+      logo: logo30,
+      title: "Ummeed Welfare Trust",
+    },
+    {
+      logo: logo31,
+      title: "ALT History",
+    },
+    {
+      logo: logo32,
+      title: "CHAYAN KARO",
+    },
+    {
+      logo: logo33,
+      title: "UP Council of Science & Technology ",
+    },
+    {
+      logo: logo34,
+      title: "Migsun",
+    },
+    {
+      logo: logo35,
+      title: "Shambhavi Healthcare",
+    },
+    {
+      logo: logo36,
+      title: "Poseidon Films",
+    },
+    {
+      logo: logo37,
+      title: "Inglorious Films",
+    },
+    {
+      logo: logo38,
+      title: "DIAS",
+    },
+    // logo39,
+    // logo40,
+  ];
 
-
-
-  return(
-  
+  return (
     <>
-          {/* Logos carousel */}
-          <section className="max-w-7xl mx-auto px-6 py-16">
-  <div className="rounded-2xl border border-[var(--border-color)] bg-[var(--bg-color)]/60 backdrop-blur-sm p-8 md:p-12">
+      {/* Logos carousel */}
+   
 
+      <section className="max-w-7xl mx-auto px-6 py-16">
+  <div className="rounded-2xl border border-[var(--border-color)] bg-[var(--bg-color)]/60 backdrop-blur-sm p-8 md:p-12">
     {/* Heading */}
     <div className="text-center mb-10">
       <h2 className="text-2xl md:text-3xl font-extrabold text-[var(--text-primary)]">
@@ -565,74 +747,81 @@ function Logo() {
     </div>
 
     {/* Logos Grid */}
-    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-x-10 gap-y-10 items-center">
+    <div className="grid grid-cols-4 md:grid-cols-5 lg:grid-cols-8 gap-x-8 md:gap-x-10 gap-y-2 md:gap-y-8 items-baseline">
       {logos.map((logo, i) => (
         <div
           key={i}
-          className="flex items-center justify-center"
+          className="flex flex-col items-center justify-center group"
         >
-          <img
-            src={logo}
-            alt={`Client logo ${i + 1}`}
-            loading="lazy"
-            className="max-h-16 md:max-h-20 object-contain opacity-80  hover:opacity-100 transition"
-          />
+          {/* Image Container with fixed height for alignment */}
+          <div className="h-20 flex items-center justify-center md:mb-2">
+            <img
+              src={logo.logo}
+              alt={`Client logo ${i + 1}`}
+              loading="lazy"
+              className="max-h-full w-auto object-contain opacity-80 group-hover:opacity-100 transition-opacity duration-300"
+            />
+          </div>
+
+          {/* Text Container */}
+          <div className="text-center">
+            <p className="text-[var(--text-primary)] text-xs md:font-semibold md:text-sm tracking-wide">
+              {logo.title}
+            </p>
+          </div>
         </div>
       ))}
     </div>
-
   </div>
 </section>
-
-          </>
+    </>
   );
 }
 
 export default function Home() {
-    useMeta({
+  useMeta({
     title: "TP India Network Pvt. Ltd. — Film Production & Digital Marketing",
     description:
       "Premier film production, photography, cinematography & digital marketing agency based in Lucknow.",
     keywords:
       "film production, tp india network, cinematography, photography, digital marketing, lucknow film house",
     image: "https://tpindia.in/og-main.webp",
-    url: "https://tpindia.in"
+    url: "https://tpindia.in",
   });
   return (
     <>
-    
-    <main className="text-[var(--text-primary)] bg-[var(--bg-color)]">
-      <Hero />
-      <WhatWeDo />
-      <ServicesGrid />
-      <QuickQuote />
-      <Testimonials />
-      <ServiceIndex />
-      <Logo />
-      <WhatsAppButton />
-      <GetQuoteBtn />
+      <main className="text-[var(--text-primary)] bg-[var(--bg-color)]">
+        <Hero />
+        <WhatWeDo />
+        <ServicesGrid />
+        <QuickQuote />
+        <Testimonials />
+        <ServiceIndex />
+        <Logo />
+        <WhatsAppButton />
+        <GetQuoteBtn />
 
-      {/* Final CTA */}
-      <section
-        className="py-16 flex items-center justify-center"
-        style={{ backgroundColor: "var(--bg-color)" }}
-      >
-        <div className="max-w-3xl text-center">
-          <h3 className="text-3xl font-bold mb-4">
-            Ready to start your story?
-          </h3>
-          <p className="text-[var(--text-secondary)] mb-6">
-            Contact TP India Network  we’ll plan, shoot and deliver with care.
-          </p>
-          <Link
-            to="/contact"
-            className="px-6 py-3 bg-[var(--accent-color)] text-white rounded-full"
-          >
-            Contact Us
-          </Link>
-        </div>
-      </section>
-    </main>
+        {/* Final CTA */}
+        <section
+          className="py-16 flex items-center justify-center"
+          style={{ backgroundColor: "var(--bg-color)" }}
+        >
+          <div className="max-w-3xl text-center">
+            <h3 className="text-3xl font-bold mb-4">
+              Ready to start your story?
+            </h3>
+            <p className="text-[var(--text-secondary)] mb-6">
+              Contact TP India Network we’ll plan, shoot and deliver with care.
+            </p>
+            <Link
+              to="/contact"
+              className="px-6 py-3 bg-[var(--accent-color)] text-white rounded-full"
+            >
+              Contact Us
+            </Link>
+          </div>
+        </section>
+      </main>
     </>
   );
 }
