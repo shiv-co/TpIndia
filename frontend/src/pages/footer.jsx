@@ -133,6 +133,9 @@ export default function Footer() {
                 About Us
               </Link>
             </li>
+               <Link to="/careers" className="hover:text-[var(--accent-color)] font-extrabold dark:font-medium">
+            Careers
+          </Link>
             <li>
               <Link to="/services" className="hover:text-[var(--accent-color)] font-extrabold dark:font-medium">
                 Our Mission
@@ -183,6 +186,9 @@ export default function Footer() {
           </Link>
           <Link to="/portfolio" className="hover:text-[var(--accent-color)]">
             Portfolio
+          </Link>
+           <Link to="/careers" className="hover:text-[var(--accent-color)]">
+            Careers
           </Link>
           <Link to="/blog" className="hover:text-[var(--accent-color)]">
             Blog

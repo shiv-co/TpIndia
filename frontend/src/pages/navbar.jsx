@@ -206,10 +206,10 @@ export default function Navbar() {
             </li>
             <li>
               <Link
-                to="/careers"
+                to="/rentals"
                 className="hover:text-[var(--accent-color)] transition-colors"
               >
-                Careers
+                Rentals
               </Link>
             </li>
           </ul>
