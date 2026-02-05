@@ -8,6 +8,7 @@ import { motion } from "framer-motion";
 const SERVICES = [
   "Video Editing",
   "Photography",
+  "Animations (2D & 3D)",
   "Website Development",
   "Documentary Shoot",
   "Drone Shoot",
@@ -77,6 +78,18 @@ const SERVICE_FEATURES = {
     "Subtitles",
     "Motion Graphics",
     "Social Media Reels",
+  ],
+
+  "Animations (2D & 3D)": [
+    "Storyboarding & Scripting",
+    "Character Design / 3D Modeling",
+    "Motion Graphics",
+    "Explainer Videos",
+    "Product Visualization",
+    "Architectural Walkthroughs",
+    "Visual Effects (VFX)",
+    "Sound Design & Voiceover",
+    "High-Quality Rendering",
   ],
 
   Photography: [
@@ -243,6 +256,42 @@ const SERVICE_FIELDS = {
         "Documentary",
         "Social Reels",
         "Other",
+      ],
+    },
+  ],
+  "Animations (2D & 3D)": [
+    {
+      name: "animationType",
+      label: "Animation Dimension",
+      type: "select",
+      options: ["2D Animation", "3D Animation", "Mixed Media (2D + 3D)"],
+    },
+    {
+      name: "style",
+      label: "Visual Style",
+      type: "select",
+      options: [
+        "Minimal / Flat Vector",
+        "Isometric",
+        "Character-driven",
+        "Photorealistic (3D)",
+        "Motion Graphics / Typography",
+      ],
+    },
+    {
+      name: "duration",
+      label: "Expected Duration",
+      type: "text",
+      placeholder: "eg. 15s / 60s / 3 mins",
+    },
+    {
+      name: "assets",
+      label: "Asset Source",
+      type: "select",
+      options: [
+        "I will provide (Logos/Models)",
+        "Create from scratch",
+        "Mixed",
       ],
     },
   ],
