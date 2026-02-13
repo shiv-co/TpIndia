@@ -5,8 +5,8 @@ import CategoryCard from "../components/rentals/CategoryCard";
 import ItemCard from "../components/rentals/ItemCard";
 import RentalBucket from "../components/rentals/RentalBucket";
 import DateRangeSelector from "../components/rentals/DateRangeSelector";
-import WhatsAppButton from "../components/rentals/WhatsAppButton";
-import GetQuoteBtn from "../components/rentals/GetQuoteBtn";
+import WhatsAppButton from "../components/WhatsAppButton";
+import GetQuoteBtn from "../components/getQuoteBtn";
 
 export default function RentalsPage() {
   const [selectedCategory, setSelectedCategory] = useState(null);
