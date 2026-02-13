@@ -321,11 +321,11 @@ export default function Navbar() {
               </li>
               <li>
                 <Link
-                  to="/careers"
+                  to="/rentals"
                   onClick={() => setIsOpen(false)}
                   className="hover:text-[var(--accent-color)]"
                 >
-                  Careers
+                  Rentals
                 </Link>
               </li>
               <li>
