@@ -50,7 +50,8 @@ export default function RentalsPage() {
   };
 
   return (
-    <section className="max-w-7xl mx-auto px-6 py-16 pt-28">
+    <div className="bg-[#1a1a1a] text-white min-h-screen">
+      <section className="max-w-7xl mx-auto px-6 py-16 pt-28">
       {/* HEADER */}
       <h1 className="text-3xl md:text-5xl font-bold text-center mb-3">
         Build Your{" "}
@@ -131,6 +132,7 @@ export default function RentalsPage() {
 <WhatsAppButton />
 <GetQuoteBtn />
       
-    </section>
+      </section>
+    </div>
   );
 }

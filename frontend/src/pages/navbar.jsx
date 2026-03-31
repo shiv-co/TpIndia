@@ -1,17 +1,37 @@
-import React, { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import React, { useEffect, useRef, useState } from "react";
+import { ChevronDown, Menu, X } from "lucide-react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { FaInstagram, FaFacebook, FaYoutube, FaLinkedin } from "react-icons/fa";
 
-
-
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isPricingOpen, setIsPricingOpen] = useState(false);
+  const [isMobilePricingOpen, setIsMobilePricingOpen] = useState(false);
+  const pricingCloseTimer = useRef(null);
+  const pricingMenuRef = useRef(null);
 
   const toggleMenu = () => setIsOpen((s) => !s);
 
-  // THEME TOGGLE LOGIC
+  const clearPricingCloseTimer = () => {
+    if (pricingCloseTimer.current) {
+      clearTimeout(pricingCloseTimer.current);
+      pricingCloseTimer.current = null;
+    }
+  };
+
+  const openPricingMenu = () => {
+    clearPricingCloseTimer();
+    setIsPricingOpen(true);
+  };
+
+  const closePricingMenuWithDelay = () => {
+    clearPricingCloseTimer();
+    pricingCloseTimer.current = setTimeout(() => {
+      setIsPricingOpen(false);
+    }, 160);
+  };
+
   const toggleTheme = () => {
     const html = document.documentElement;
     html.classList.toggle("dark");
@@ -23,7 +43,6 @@ export default function Navbar() {
     }
   };
 
-  // Load theme on refresh
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme");
     if (savedTheme === "dark") {
@@ -31,13 +50,29 @@ export default function Navbar() {
     }
   }, []);
 
-  // topbar height — use CSS var if present, fallback
-  const topbarHeight = "var(--topbar-height, 2rem)"; // fallback 3.5rem (~56px)
+  useEffect(() => {
+    const handlePointerDown = (event) => {
+      if (
+        pricingMenuRef.current &&
+        !pricingMenuRef.current.contains(event.target)
+      ) {
+        setIsPricingOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handlePointerDown);
+
+    return () => {
+      document.removeEventListener("mousedown", handlePointerDown);
+      clearPricingCloseTimer();
+    };
+  }, []);
+
+  const topbarHeight = "var(--topbar-height, 2rem)";
 
   return (
     <>
-      {/* -------------------- TOP TRANSPARENT INFO BAR -------------------- */}
-      <div                                              
+      <div
         className="w-full fixed top-0 left-0 z-[60] backdrop-blur-xl transition-colors border-b-1 border-[var(--accent-color)]"
         style={{
           backgroundColor: "color-mix(in srgb, var(--bg-color) 80%, transparent)",
@@ -46,9 +81,7 @@ export default function Navbar() {
         }}
       >
         <div className="max-w-7xl mx-auto h-full px-4  md:px-6 flex items-center justify-between">
-          {/* left */}
           <div className="flex items-center gap-6 text-xs md:text-xs lg:text-sm">
-            {/* 📍 Location */}
             <span className="hidden lg:flex  items-center gap-2 opacity-95">
               <i
                 className="ri-map-pin-line"
@@ -64,7 +97,6 @@ export default function Navbar() {
               </a>
             </span>
 
-            {/* 📞 Phone */}
             <span className=" items-center gap-2">
               <i
                 className="ri-phone-line"
@@ -78,7 +110,6 @@ export default function Navbar() {
               </a>
             </span>
 
-            {/* ✉️ Email */}
             <span className="hidden lg:flex items-center gap-2">
               <i
                 className="ri-mail-line"
@@ -93,13 +124,11 @@ export default function Navbar() {
             </span>
           </div>
 
-          {/* right icons */}
           <div className="flex items-center gap-4 text-base">
             <a
               href="https://www.instagram.com/tpindianetwork"
               target="_blank"
               className="hover:text-[var(--accent-color)]"
-              // style={{ color: "inherit" }}
             >
               <FaInstagram />
             </a>
@@ -107,7 +136,6 @@ export default function Navbar() {
               href="https://www.facebook.com/tpindianetwork/"
               target="_blank"
               className="hover:text-[var(--accent-color)]"
-              // style={{ color: "inherit" }}
             >
               <FaFacebook />
             </a>
@@ -116,7 +144,6 @@ export default function Navbar() {
               href="https://www.youtube.com/@tpindianetwork/featured"
               target="_blank"
               className="hover:text-[var(--accent-color)]"
-              // style={{ color: "inherit" }}
             >
               <FaYoutube />
             </a>
@@ -124,7 +151,6 @@ export default function Navbar() {
               href="https://www.linkedin.com/company/tpindianetwork/"
               target="_blank"
               className="hover:text-[var(--accent-color)]"
-              // style={{ color: "inherit" }}
             >
               <FaLinkedin />
             </a>
@@ -132,7 +158,6 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* -------------------- MAIN NAVBAR (positioned below topbar) -------------------- */}
       <nav
         className="fixed left-0 w-full z-[50] backdrop-blur-md border-b transition-all duration-300"
         style={{
@@ -143,14 +168,13 @@ export default function Navbar() {
         }}
       >
         <div className="max-w-7xl mx-auto px-4 md:px-6 py-1 flex items-center justify-between">
-          {/* Logo */}
           <div className="flex items-center gap-3">
             <Link to="/">
-            <img
-              src="/logo.webp"
-              alt="TP India Logo"
-              className="h-14 w-14 md:h-16 md:w-16"
-            />
+              <img
+                src="/logo.webp"
+                alt="TP India Logo"
+                className="h-14 w-14 md:h-16 md:w-16"
+              />
             </Link>
             <div className="leading-tight">
               <Link to="/" className="font-bold text-lg md:text-xl tracking-tight text-[var(--text-primary)]">
@@ -162,7 +186,6 @@ export default function Navbar() {
             </div>
           </div>
 
-          {/* Desktop Menu */}
           <ul className="hidden md:flex items-center gap-8 text-[var(--text-primary)] font-medium">
             <li>
               <Link
@@ -187,6 +210,58 @@ export default function Navbar() {
               >
                 Portfolio
               </Link>
+            </li>
+            <li>
+              <div
+                ref={pricingMenuRef}
+                className="relative group"
+                onMouseEnter={openPricingMenu}
+                onMouseLeave={closePricingMenuWithDelay}
+              >
+                <button
+                  type="button"
+                  onClick={() => {
+                    clearPricingCloseTimer();
+                    setIsPricingOpen((open) => !open);
+                  }}
+                  aria-expanded={isPricingOpen}
+                  aria-haspopup="menu"
+                  className="flex items-center gap-1 hover:text-[var(--accent-color)] transition-colors"
+                >
+                  Pricing
+                  <ChevronDown
+                    size={16}
+                    className={`mt-[1px] transition-transform duration-200 ${
+                      isPricingOpen ? "rotate-180" : ""
+                    }`}
+                  />
+                </button>
+
+                <div
+                  className={`absolute left-1/2 top-full z-30 w-60 -translate-x-1/2 pt-2 transition-all duration-200 ${
+                    isPricingOpen
+                      ? "pointer-events-auto translate-y-0 opacity-100"
+                      : "pointer-events-none -translate-y-1 opacity-0"
+                  }`}
+                >
+                  <div className="rounded-2xl border border-[var(--border-color)] bg-[color-mix(in_srgb,var(--bg-color)_96%,transparent)] p-2 shadow-xl backdrop-blur-xl">
+                    <Link
+                      to="/pricing"
+                      onClick={() => setIsPricingOpen(false)}
+                      className="block rounded-xl px-4 py-3 text-sm text-[var(--text-primary)] hover:bg-[var(--border-color)]/30"
+                    >
+                      Website Pricing
+                    </Link>
+                    <Link
+                      to="/pricing-makeup"
+                      onClick={() => setIsPricingOpen(false)}
+                      className="mt-1 block rounded-xl px-4 py-3 text-sm text-[var(--text-primary)] hover:bg-[var(--border-color)]/30"
+                    >
+                      Makeup Artist Pricing
+                    </Link>
+                  </div>
+                </div>
+              </div>
             </li>
             <li>
               <Link
@@ -214,7 +289,6 @@ export default function Navbar() {
             </li>
           </ul>
 
-          {/* Right: CTA + Theme Toggle (desktop only) */}
           <div className="flex items-center gap-4">
             <div className="hidden lg:block">
               <Link
@@ -225,7 +299,6 @@ export default function Navbar() {
               </Link>
             </div>
 
-            {/* Animated Theme Toggle Button */}
             <motion.button
               onClick={toggleTheme}
               whileTap={{ rotate: 180, scale: 0.9 }}
@@ -235,7 +308,6 @@ export default function Navbar() {
               aria-label="Toggle theme"
               title="Toggle theme"
             >
-              {/* Light → Dark */}
               <motion.i
                 key="moon"
                 className="ri-moon-line dark:hidden"
@@ -245,7 +317,6 @@ export default function Navbar() {
                 style={{ color: "var(--text-primary)" }}
               />
 
-              {/* Dark → Light */}
               <motion.i
                 key="sun"
                 className="ri-sun-line hidden dark:block"
@@ -256,7 +327,6 @@ export default function Navbar() {
               />
             </motion.button>
 
-            {/* Mobile Menu Button */}
             <button
               className="md:hidden text-[var(--text-primary)] p-2 rounded"
               onClick={toggleMenu}
@@ -267,7 +337,6 @@ export default function Navbar() {
           </div>
         </div>
 
-        {/* Mobile Menu */}
         {isOpen && (
           <div
             className="md:hidden bg-[var(--bg-color)] dark:bg-[var(--bg-color)] border-t border-[var(--border-color)] animate-fadeIn"
@@ -277,7 +346,10 @@ export default function Navbar() {
               <li>
                 <Link
                   to="/"
-                  onClick={() => setIsOpen(false)}
+                  onClick={() => {
+                    setIsOpen(false);
+                    setIsMobilePricingOpen(false);
+                  }}
                   className="hover:text-[var(--accent-color)]"
                 >
                   Home
@@ -286,7 +358,10 @@ export default function Navbar() {
               <li>
                 <Link
                   to="/services"
-                  onClick={() => setIsOpen(false)}
+                  onClick={() => {
+                    setIsOpen(false);
+                    setIsMobilePricingOpen(false);
+                  }}
                   className="hover:text-[var(--accent-color)]"
                 >
                   Services
@@ -295,16 +370,62 @@ export default function Navbar() {
               <li>
                 <Link
                   to="/portfolio"
-                  onClick={() => setIsOpen(false)}
+                  onClick={() => {
+                    setIsOpen(false);
+                    setIsMobilePricingOpen(false);
+                  }}
                   className="hover:text-[var(--accent-color)]"
                 >
                   Portfolio
                 </Link>
               </li>
               <li>
+                <button
+                  type="button"
+                  onClick={() => setIsMobilePricingOpen((open) => !open)}
+                  className="flex items-center gap-2 hover:text-[var(--accent-color)]"
+                  aria-expanded={isMobilePricingOpen}
+                >
+                  Pricing
+                  <ChevronDown
+                    size={16}
+                    className={`transition-transform duration-200 ${isMobilePricingOpen ? "rotate-180" : ""}`}
+                  />
+                </button>
+              </li>
+              {isMobilePricingOpen ? (
+                <li className="w-full px-6">
+                  <div className="rounded-2xl border border-[var(--border-color)] bg-[color-mix(in_srgb,var(--bg-color)_97%,transparent)] p-2">
+                    <Link
+                      to="/pricing"
+                      onClick={() => {
+                        setIsOpen(false);
+                        setIsMobilePricingOpen(false);
+                      }}
+                      className="block rounded-xl px-4 py-3 text-center hover:text-[var(--accent-color)]"
+                    >
+                      Website Pricing
+                    </Link>
+                    <Link
+                      to="/pricing-makeup"
+                      onClick={() => {
+                        setIsOpen(false);
+                        setIsMobilePricingOpen(false);
+                      }}
+                      className="block rounded-xl px-4 py-3 text-center hover:text-[var(--accent-color)]"
+                    >
+                      Makeup Artist Pricing
+                    </Link>
+                  </div>
+                </li>
+              ) : null}
+              <li>
                 <Link
                   to="/blog"
-                  onClick={() => setIsOpen(false)}
+                  onClick={() => {
+                    setIsOpen(false);
+                    setIsMobilePricingOpen(false);
+                  }}
                   className="hover:text-[var(--accent-color)]"
                 >
                   Blog
@@ -313,7 +434,10 @@ export default function Navbar() {
               <li>
                 <Link
                   to="/about"
-                  onClick={() => setIsOpen(false)}
+                  onClick={() => {
+                    setIsOpen(false);
+                    setIsMobilePricingOpen(false);
+                  }}
                   className="hover:text-[var(--accent-color)]"
                 >
                   About Us
@@ -322,7 +446,10 @@ export default function Navbar() {
               <li>
                 <Link
                   to="/rentals"
-                  onClick={() => setIsOpen(false)}
+                  onClick={() => {
+                    setIsOpen(false);
+                    setIsMobilePricingOpen(false);
+                  }}
                   className="hover:text-[var(--accent-color)]"
                 >
                   Rentals
@@ -331,7 +458,10 @@ export default function Navbar() {
               <li>
                 <Link
                   to="/contact"
-                  onClick={() => setIsOpen(false)}
+                  onClick={() => {
+                    setIsOpen(false);
+                    setIsMobilePricingOpen(false);
+                  }}
                   className="px-5 py-2 rounded-full bg-[var(--accent-color)] text-white font-semibold shadow-md hover:shadow-lg"
                 >
                   Contact Us

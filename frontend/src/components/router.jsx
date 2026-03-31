@@ -17,14 +17,12 @@ import GetQuoteWizard from "../pages/GetQuoteWizard.jsx";
 import WebsiteDevLanding from "../pages/WebsiteDevLanding.jsx";
 import DocumentaryLanding from "../pages/DocumentaryLanding.jsx";
 import RateCard from "../pages/webdevRateCard.jsx";
+import Pricing2 from "../pages/pricing2/Pricing2.jsx";
 
 const AppRouter = () => {
   return (
     <Router>
-      <div className="min-h-screen bg-[var(--bg-color)] text-[var(--text-primary)]">
-        
-        {/* ScrollToTop MUST be inside Router layout */}
-
+      <div className="min-h-screen bg-transparent text-[var(--text-primary)]">
         <Navbar />
 
         <ScrollToTop />
@@ -40,7 +38,9 @@ const AppRouter = () => {
           <Route path="/get-quote" element={<GetQuoteWizard />} />
           <Route path="/website-development" element={<WebsiteDevLanding />} />
           <Route path="/documentary" element={<DocumentaryLanding />} />
+          <Route path="/pricing" element={<RateCard />} />
           <Route path="/website/pricing" element={<RateCard />} />
+          <Route path="/pricing-makeup" element={<Pricing2 />} />
         </Routes>
 
         <Footer />

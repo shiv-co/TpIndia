@@ -964,7 +964,8 @@ ${form.otherFeatureText ? `*Other Feature:* ${form.otherFeatureText}` : ""}
 
   /* --------------- main render --------------- */
   return (
-    <div className="max-w-4xl mx-auto p-6">
+    <div className="bg-[#0b0b0b] text-white min-h-screen">
+      <div className="max-w-4xl mx-auto p-6">
       <div className="mb-6">
         <div className="text-xl font-bold">Get a Quote</div>
         <div className="text-sm text-[var(--text-secondary)]">
@@ -1074,6 +1075,7 @@ ${form.otherFeatureText ? `*Other Feature:* ${form.otherFeatureText}` : ""}
           )}
         </div>
       </motion.div>
+      </div>
     </div>
   );
 }
