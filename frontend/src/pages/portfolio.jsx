@@ -1,20 +1,7 @@
 import React, { useRef, useState, useEffect } from "react";
 import { useScroll, useTransform } from "framer-motion";
-import { AnimatePresence, useMotionValue, animate, motion } from "framer-motion";
+import { useMotionValue, animate, motion as Motion } from "framer-motion";
 import { useMeta } from "../hooks/useMeta";
-
-import music from "../assets/images/music.webp";
-import full_portfolio from "../assets/images/Full_Portfolio.webp";
-import podcasts from "../assets/images/podcasts.webp";
-import shortFilms from "../assets/images/shortFilms.webp";
-import creators_content from "../assets/images/creators_content.webp";
-import corporate from "../assets/images/corporate.webp";
-import wedding from "../assets/images/wedding.webp";
-import reels_shorts from "../assets/images/reels_shorts.webp";
-import testimonial from "../assets/images/testimonial.webp";  
-import private_doc from "../assets/images/private_doc.webp";
-import ads_tvc from "../assets/images/ads_tvc.webp";
-import Goverment_doc from "../assets/images/Goverment_doc.webp";
 
 import cta_hero from "../assets/images/cta_camera.webp";
 import portfolio1 from "../assets/images/portfolio1.webp";
@@ -78,6 +65,12 @@ import logo38 from "../assets/logos/logo_38.webp";
 
 import WhatsAppButton from "../components/WhatsAppButton";
 import GetQuoteBtn from "../components/getQuoteBtn";
+import PortfolioGrid from "../components/PortfolioGrid";
+import {
+  categoryOrder,
+  portfolioData,
+  sectionDescriptions,
+} from "../data/portfolioData";
 
 // Lazy loading for images
 const LazyImg = ({ src, alt, className }) => (
@@ -160,87 +153,6 @@ export default function PortfolioPage() {
     },
   ];
 
-  const playlists = [
-    {
-      thumbnail: Goverment_doc,
-      link: "https://www.youtube.com/watch?v=izC13cZTXD4&list=PLH3Vw0GwKudHF1tUark0lNG0tkhjwRpMW&pp=gAQB",
-      label: "Goverment Documentaries",
-    },
-    {
-      thumbnail: private_doc,
-      link: "https://www.youtube.com/watch?v=izC13cZTXD4&list=PLH3Vw0GwKudHF1tUark0lNG0tkhjwRpMW&pp=gAQB",
-      label: "Private Documentaries",
-    },
-    {
-      thumbnail: testimonial,
-      link: "https://www.youtube.com/watch?v=HBSBy6KRfC0&list=PLH3Vw0GwKudFvyy-j2rAyTZruxPlQ7vuQ&pp=gAQB",
-      label: "Testimonials by TP India Network",
-    },
-    {
-      thumbnail: reels_shorts,
-      link: "https://www.youtube.com/watch?v=F5ThKH5fIWA&list=PLH3Vw0GwKudFjvMHLk6aFrJr71PIRTuo7&pp=gAQB0gcJCbEEOCosWNin",
-      label: "Reels & Shorts ",
-    },
-  
-    {
-      thumbnail: wedding,
-      link: "https://www.youtube.com/watch?v=bCleSAdce-I&list=PLH3Vw0GwKudHCUMeCVL1GfX1HkQ2S2CTR",
-      label: "Wedding & Traditional Events",
-    },
-    {
-      thumbnail: corporate,
-      link: "https://www.youtube.com/watch?v=bCleSAdce-I&list=PLH3Vw0GwKudHCUMeCVL1GfX1HkQ2S2CTR",
-      label: "Corporate & Cultural Events and Livestreams",
-    },
-    // corrected links   below 
-    {
-      thumbnail: creators_content,
-      link: "https://www.youtube.com/watch?v=BDCHkk_p8Og&list=PLH3Vw0GwKudHriLoJjfaSJlmlBttFIbDd&pp=gAQB",
-      label: "Creator's Content",
-    },
-    {
-      thumbnail: music,
-      link: "https://www.youtube.com/watch?v=UM3ttbm1aWc&list=PLH3Vw0GwKudGWaJzUFThLdFV5PhDDVrCE",
-      label: "Music Videos Playlist",
-    },
-    {
-      thumbnail: full_portfolio,
-      link: "https://www.youtube.com/watch?v=0VlR_lmn6-Q&list=PLH3Vw0GwKudHnVKY6cybeBtBBitV8apDv",
-      label: "Full Portfolio  ",
-    },
-    {
-      thumbnail: podcasts,
-      link: "https://www.youtube.com/watch?v=fLw4KLuFSMo&list=PLH3Vw0GwKudGF-SFFezE9vcDGUTGp0GaQ",
-      label: "Podcasts & Interviews",
-    },
-    {
-      thumbnail: shortFilms,
-      link: "https://www.youtube.com/watch?v=bCleSAdce-I&list=PLH3Vw0GwKudHCUMeCVL1GfX1HkQ2S2CTR",
-      label: "Short Films",
-    },
-    // {
-    //   thumbnail: playlists4,
-    //   link: "https://www.youtube.com/watch?v=izC13cZTXD4&list=PLH3Vw0GwKudHF1tUark0lNG0tkhjwRpMW&pp=0gcJCbAEOCosWNin",
-    //   label: "Documentaries",
-    // },
-    // {
-    //   thumbnail: playlists5,
-    //   link: "https://www.youtube.com/watch?v=3InJsilvhaY&list=PLH3Vw0GwKudGLZ-AE8RJxsHBCPrEZFXJU",
-    //   label: "Event Coverage",
-    // },
-    
-    //  {
-    //   thumbnail: playlists9,
-    //   link: "https://www.youtube.com/watch?v=F5ThKH5fIWA&list=PLH3Vw0GwKudFjvMHLk6aFrJr71PIRTuo7",
-    //   label: "Reels/Shorts/Teaser",
-    // },
-     {
-      thumbnail: ads_tvc,
-      link: "https://www.youtube.com/watch?v=zod9C1LDp-M&list=PLH3Vw0GwKudEHgw1w8POQp7e81SJO-vs4",
-      label: "Ad/TVC Films & Fiction",
-    },
-  ];
-
   const categories = [
     "All",
     "Events",
@@ -252,10 +164,6 @@ export default function PortfolioPage() {
   ];
   const [activeCategory, setActiveCategory] = useState("All");
 
-  const [startIndex, setStartIndex] = useState(0);
-
-  // Show 3 items at a time
-  const itemsPerView = 3;
 const trackRef = useRef(null);
 const x = useMotionValue(0);
 const [isMobile, setIsMobile] = useState(false);
@@ -266,20 +174,6 @@ useEffect(() => {
   window.addEventListener("resize", check);
   return () => window.removeEventListener("resize", check);
 }, []);
-
-
-
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setStartIndex((prev) => (prev + itemsPerView) % playlists.length);
-    }, 3000); // change every 3 seconds
-
-    return () => clearInterval(interval);
-  }, [playlists.length]);
-
-  const visibleItems = playlists.slice(startIndex, startIndex + itemsPerView);
-
   useEffect(() => {
   if (!trackRef.current) return;
 
@@ -292,15 +186,8 @@ useEffect(() => {
   });
 
   return controls.stop;
-}, [isMobile]);
+}, [isMobile, x]);
 
-
-  // If near end, wrap around
-  if (visibleItems.length < itemsPerView) {
-    visibleItems.push(
-      ...playlists.slice(0, itemsPerView - visibleItems.length)
-    );
-  }
 
   // Scroll-linked parallax for hero
   const { scrollYProgress } = useScroll({
@@ -335,7 +222,7 @@ useEffect(() => {
           className="relative h-[60vh] md:h-[70vh] w-full overflow-hidden flex items-center justify-center"
         >
           {/* Background Image with Cinematic Zoom Animation */}
-          <motion.img
+          <Motion.img
             loading="lazy"
             src={cta_hero}
             alt="Cinematic camera setup"
@@ -351,36 +238,36 @@ useEffect(() => {
           <div className="pointer-events-none absolute inset-x-1/4 top-0 h-40 bg-[var(--accent-color)]/25 blur-3xl" />
 
           {/* Floating Neon Glow (Left) */}
-          <motion.div
+          <Motion.div
             className="absolute -left-20 top-16 w-64 h-64 rounded-full bg-[var(--accent-color)]/25 blur-3xl"
             animate={{ y: [0, -20, 0], opacity: [0.6, 1, 0.6] }}
             transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
           />
 
           {/* Floating Neon Glow (Right) */}
-          <motion.div
+          <Motion.div
             className="absolute -right-16 bottom-10 w-56 h-56 rounded-full bg-[var(--accent-color)]/25 blur-3xl"
             animate={{ y: [0, 20, 0], opacity: [0.7, 1, 0.7] }}
             transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
           />
 
           {/* HERO TEXT WITH PARALLAX */}
-          <motion.div
+          <Motion.div
             style={{ y: heroTextY }}
             className="relative z-10 max-w-7xl mx-auto text-center mt-20 px-6"
           >
             {/* Subtitle */}
-            <motion.p
+            <Motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 0.8, y: 0 }}
               transition={{ duration: 0.8 }}
               className="tracking-[0.25em] uppercase text-xs md:text-sm text-[var(--text-secondary)] mb-4"
             >
               TP India Network • Portfolio
-            </motion.p>
+            </Motion.p>
 
             {/* Title */}
-            <motion.h1
+            <Motion.h1
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1 }}
@@ -388,10 +275,10 @@ useEffect(() => {
             >
               We Help <span className="text-[var(--accent-color)]">Brands</span>{" "}
               Get More <span className="text-[var(--accent-color)]">Leads</span>
-            </motion.h1>
+            </Motion.h1>
 
             {/* Description */}
-            <motion.p
+            <Motion.p
               initial={{ opacity: 0, y: 25 }}
               animate={{ opacity: 0.9, y: 0 }}
               transition={{ duration: 1, delay: 0.15 }}
@@ -399,8 +286,8 @@ useEffect(() => {
             >
               From live events to brand films, music videos and web visuals this
               is the work that shapes the identity of TP India Network.
-            </motion.p>
-          </motion.div>
+            </Motion.p>
+          </Motion.div>
         </section>
 
         {/* Logos carousel */}
@@ -409,7 +296,7 @@ useEffect(() => {
             {/* Marquee Container */}
             <div className="flex overflow-hidden">
               {/* Track (Animated) */}
-              <motion.div
+              <Motion.div
                 className="flex whitespace-nowrap"
                 animate={{ x: ["0%", "-100%"] }}
                 transition={{
@@ -431,7 +318,7 @@ useEffect(() => {
                     />
                   </div>
                 ))}
-              </motion.div>
+              </Motion.div>
             </div>
           </div>
         </section>
@@ -443,7 +330,7 @@ useEffect(() => {
             { label: "Brands & Artists", value: "465+" },
             { label: "Cities Covered", value: "40+" },
           ].map((item, i) => (
-            <motion.div
+            <Motion.div
               key={item.label}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -456,23 +343,67 @@ useEffect(() => {
                 {item.value}
               </p>
               <p className="text-sm text-white/80 mt-1">{item.label}</p>
-            </motion.div>
+            </Motion.div>
           ))}
         </section>
 
+
+  {/* ================= PORTFOLIO GRID ================= */}
+        <PortfolioGrid
+          categoryOrder={categoryOrder}
+          portfolioData={portfolioData}
+          sectionDescriptions={sectionDescriptions}
+        />
+        {/* ================= CREATIVE COLLAGE ================= */}
+        <section className="max-w-7xl mx-auto px-6 py-16">
+          <Motion.h2
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center text-3xl font-bold mb-3"
+          >
+            Creative Collage
+          </Motion.h2>
+          <p className="text-center text-[var(--text-secondary)] max-w-2xl mx-auto mb-10 text-sm md:text-base">
+            A glimpse of our visual universe — live shows, studio sessions,
+            brand storytelling and cultural narratives.
+          </p>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+            {collage.map((src, i) => (
+              <Motion.div
+                key={i}
+                initial={{ opacity: 0, scale: 0.9, y: 20 }}
+                whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                transition={{ duration: 0.7, delay: i * 0.1 }}
+                viewport={{ once: true }}
+                whileHover={{ scale: 1.03, rotate: -1.5 }}
+                className="overflow-hidden rounded-2xl shadow-lg bg-black/60 border border-white/5"
+              >
+                <LazyImg
+                  src={src}
+                  alt="portfolio collage"
+                  className="w-full h-64 object-cover object-top hover:scale-110 transition-transform duration-700"
+                />
+              </Motion.div>
+            ))}
+          </div>
+        </section>
+
+
         {/* ================= HORIZONTAL REEL / MARQUEE ================= */}
 <section className="max-w-8xl mx-auto px-6 py-10">
-  <motion.h2
+  <Motion.h2
     initial={{ opacity: 0, y: 30 }}
     whileInView={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.8 }}
     className="text-center text-2xl md:text-3xl font-bold mb-6"
   >
     On-Set & Behind The Scenes
-  </motion.h2>
+  </Motion.h2>
 
   <div className="relative w-full overflow-hidden rounded-2xl border border-[var(--border-color)] bg-black/80">
-    <motion.div
+    <Motion.div
       ref={trackRef}
       style={{ x }}
       className="flex gap-6 whitespace-nowrap py-6"
@@ -489,103 +420,17 @@ useEffect(() => {
           />
         </div>
       ))}
-    </motion.div>
+    </Motion.div>
   </div>
 </section>
 
 
 
-        {/* ================= VIDEO PLAYLISTS ================= */}
-<section className="py-20 bg-[var(--bg-color)]">
-  <div className="max-w-7xl mx-auto px-6">
-
-    {/* Heading */}
-    <div className="mb-10">
-      <h2 className="text-2xl md:text-3xl font-bold text-[var(--text-primary)]">
-        What We’ve Created
-      </h2>
-      <p className="text-sm text-[var(--text-secondary)] mt-1">
-        Films, documentaries & visual stories by TP India Network
-      </p>
-    </div>
-
-    {/* STATIC GRID */}
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-10">
-      {playlists.map((p, i) => (
-        <a
-          key={i}
-          href={p.link}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="block"
-        >
-          {/* Thumbnail */}
-          <div className="w-full aspect-video bg-black rounded-lg overflow-hidden">
-            <img
-              src={p.thumbnail}
-              alt={p.title}
-              loading="lazy"
-              className="w-full h-full object-cover hover:scale-110 transition-transform duration-700 "
-            />
-          </div>
-
-          {/* Title */}
-          <h3 className="mt-3 text-sm md:text-base font-semibold text-center text-[var(--text-primary)] hover:scale-105 transition-transform duration-900  leading-snug">
-            {p.label}
-          </h3>
-{/* 
-          Meta text
-          <p className="text-xs text-[var(--text-secondary)] mt-1">
-            {p.link.replace("https://www.youtube.com/watch?v=", "") }
-          </p> */}
-        </a>  
-      ))}
-    </div>
-  </div>
-</section>
-
-
-
-
-        {/* ================= CREATIVE COLLAGE ================= */}
-        <section className="max-w-7xl mx-auto px-6 py-16">
-          <motion.h2
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center text-3xl font-bold mb-3"
-          >
-            Creative Collage
-          </motion.h2>
-          <p className="text-center text-[var(--text-secondary)] max-w-2xl mx-auto mb-10 text-sm md:text-base">
-            A glimpse of our visual universe — live shows, studio sessions,
-            brand storytelling and cultural narratives.
-          </p>
-
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-            {collage.map((src, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, scale: 0.9, y: 20 }}
-                whileInView={{ opacity: 1, scale: 1, y: 0 }}
-                transition={{ duration: 0.7, delay: i * 0.1 }}
-                viewport={{ once: true }}
-                whileHover={{ scale: 1.03, rotate: -1.5 }}
-                className="overflow-hidden rounded-2xl shadow-lg bg-black/60 border border-white/5"
-              >
-                <LazyImg
-                  src={src}
-                  alt="portfolio collage"
-                  className="w-full h-64 object-cover object-top hover:scale-110 transition-transform duration-700"
-                />
-              </motion.div>
-            ))}
-          </div>
-        </section>
+      
 
         {/* ================= FEATURED PROJECTS ================= */}
         <section className="max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-          <motion.div
+          <Motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
@@ -606,9 +451,9 @@ useEffect(() => {
               Our team handled concept, shooting, drone shots, edit, color
               grade, and social-first cutdowns.
             </p>
-          </motion.div>
+          </Motion.div>
 
-          <motion.div
+          <Motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
@@ -627,19 +472,19 @@ useEffect(() => {
               </p>
               <p className="text-lg font-semibold">Concert Aftermovie</p>
             </div>
-          </motion.div>
+          </Motion.div>
         </section>
 
         {/* ================= FILTERABLE IMAGE GALLERY ================= */}
         <section className="max-w-7xl mx-auto px-6 py-16">
-          <motion.h2
+          <Motion.h2
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             className="text-center text-3xl font-bold mb-3"
           >
             Image Gallery
-          </motion.h2>
+          </Motion.h2>
 
           <p className="text-center text-[var(--text-secondary)] max-w-2xl mx-auto mb-8 text-sm md:text-base">
             Filter through our work across events, films, music and advertising.
@@ -665,7 +510,7 @@ useEffect(() => {
           {/* Masonry Gallery */}
           <div className="columns-1 sm:columns-2 md:columns-3 gap-4 space-y-4">
             {filteredGallery.map((item, i) => (
-              <motion.div
+              <Motion.div
                 key={item.src + i}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -700,21 +545,21 @@ useEffect(() => {
                     </div>
                   </div>
                 </div>
-              </motion.div>
+              </Motion.div>
             ))}
           </div>
         </section>
 
         {/* ================= YOUTUBE  ================= */}
         <section className="max-w-7xl mx-auto px-6 py-20">
-          <motion.h2
+          <Motion.h2
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             className="text-center text-3xl font-bold mb-6"
           >
             YouTube Showreel
-          </motion.h2>
+          </Motion.h2>
           <p className="text-center text-[var(--text-secondary)] max-w-2xl mx-auto mb-8 text-sm md:text-base">
             Watch a curated playlist of our films, campaigns and performance
             cuts.
@@ -730,34 +575,6 @@ useEffect(() => {
             ></iframe>
           </div>
         </section>
-
-        {/* ================= VIDEO GALLERY ================= */}
-        {/* For mobile: horizontal scroll carousel */}
-        {/* <div className="grid grid-cols-1 gap-6 md:hidden overflow-x-auto whitespace-nowrap pb-4">
-          {playlists.map((p, i) => (
-            <motion.a
-              key={p.link}
-              href={p.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block w-64 mr-4 rounded-2xl overflow-hidden shadow-2xl border border-[var(--border-color)] bg-black"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.5 }}
-            >
-              <img
-                src={p.thumbnail}
-                className="w-full h-48 object-cover"
-                alt={p.label}
-              />
-              <div className="px-4 py-3 text-center text-sm text-white/80 border-t border-white/10 hover:text-[var(--accent-color)] hover:underline underline-offset-4">
-                {p.label}
-              </div>
-            </motion.a>
-          ))}
-        </div> */}
-
-        {/* For MD+ screens: show 3 thumbnails that fade-cycles */}
 
         <WhatsAppButton />
         <GetQuoteBtn />
