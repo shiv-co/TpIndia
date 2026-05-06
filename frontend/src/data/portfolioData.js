@@ -27,7 +27,7 @@ import darji_wave_music from "../assets/images/darji_wave_music.webp";
 import alfaaz_short_film from "../assets/images/alfaaz_short_film.webp";
 import The_mercy_man from "../assets/images/The_mercy_man.webp";
 import saajhi_short_film from "../assets/images/saajhi_short_film.webp";
-import bosa_short_Film from "../assets/images/bosa_short_film.webp";
+import bosa_short_Film from "../assets/images/bosa_short_Film.webp";
 
 export const categoryOrder = [
   "Government Documentaries",
