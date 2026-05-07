@@ -10,24 +10,34 @@ import privateDoc from "../assets/images/private_doc.webp";
 import reelsShorts from "../assets/images/reels_shorts.webp";
 import shortFilms from "../assets/images/shortFilms.webp";
 import web from "../assets/images/web.webp";
+// Podcasts & Interviews
 import dhasutalks from "../assets/images/dhasutalks_podcast_image.webp";
 import aleena_rais from "../assets/images/aleena_raies_podcast.avif";
 import vijit_singh from "../assets/images/vijit_singh_podcast.webp";
 import shilpa_podcast from "../assets/images/shilpa_arun_rajhbhar.webp";
 import Dr_Amit_Podcast from "../assets/images/pocast_dr_amit1.webp";
-import mohan_aaye_hain from "../assets/images/Mohan_aaye_hain_music_video.webp";
-import mera_bhola from "../assets/images/Mera_bhola_records.webp";
-import aai_re_holi from "../assets/images/aai_re_aai_holi.webp";
+// Websites
 import dhasutalks_website from "../assets/images/gallery11.webp";
 import Tehzeeb_website from "../assets/images/gallery12.webp";  
 import Ummeed_website from "../assets/images/ummeed_welfare.webp";
 import aitechtactics_website from "../assets/images/aitechtactics.webp";
+// Music Videos
+import mohan_aaye_hain from "../assets/images/Mohan_aaye_hain_music_video.webp";
+import mera_bhola from "../assets/images/Mera_bhola_records.webp";
+import aai_re_holi from "../assets/images/aai_re_aai_holi.webp";
 import mahakhumb from "../assets/images/mahakhumb_song.webp";
 import darji_wave_music from "../assets/images/darji_wave_music.webp";
+// Short Films
 import alfaaz_short_film from "../assets/images/alfaaz_short_film.webp";
 import The_mercy_man from "../assets/images/The_mercy_man.webp";
 import saajhi_short_film from "../assets/images/saajhi_short_film.webp";
 import bosa_short_Film from "../assets/images/bosa_short_Film.webp";
+// Government Documentaries
+import MahaKhumb from "../assets/images/mahakhumb.webp";
+import Baisc_shiksha_vibhaag from "../assets/images/Baisc_shiksha_vibhaag.webp";
+import Ayodhya_documentary from "../assets/images/ayodhya_doc.webp";
+import Mission_Rojgar from "../assets/images/Mission_rojgar.webp";
+import Dharmik_Sanskritik from "../assets/images/Dharmik_doc.webp";
 
 export const categoryOrder = [
   "Government Documentaries",
@@ -74,21 +84,46 @@ export const sectionDescriptions = {
 export const portfolioData = {
   "Government Documentaries": [
     {
-      title: "Public Development Stories",
+      title: "Uttar Pradesh Basic Shiksha Documentary",
       client: "Government & Public Bodies",
       description: "Documentary storytelling around public initiatives and progress",
-      image: governmentDoc,
+      image: Baisc_shiksha_vibhaag,
       video: "",
-      slug: "https://www.youtube.com/watch?v=izC13cZTXD4&list=PLH3Vw0GwKudHF1tUark0lNG0tkhjwRpMW&pp=gAQB",
+      slug: "https://www.youtube.com/watch?v=i2YcP2VgOXA&list=PLH3Vw0GwKudHa0hcIOJmgArEzygAbXcLi&index=1&pp=iAQB",
+    },
+      {
+        title: "MahaKhumb Documentary",
+        client: "Uttar Pradesh Tourism",
+        description: "Documentary storytelling around public initiatives and progress",
+        image: MahaKhumb,
+        video: "",
+        slug: "https://youtu.be/ln7NlGIsrGM?list=PLH3Vw0GwKudHa0hcIOJmgArEzygAbXcLi",
+      },
+      {
+      title: "Ayodhya Documentary",
+      client: "Uttar Pradesh Government",
+      description: "Documentary storytelling around public initiatives and progress",
+      image: Ayodhya_documentary,
+      video: "",
+      slug: "https://www.youtube.com/watch?v=3qgtbuL0LPE&list=PLH3Vw0GwKudHa0hcIOJmgArEzygAbXcLi&index=2&pp=iAQB",
     },
      {
-      title: "Public Development Stories 2.0",
-      client: "Government & Public Bodies",
+      title: "Mission Rojgar Documentary",
+      client: "Uttar Pradesh Government",
       description: "Documentary storytelling around public initiatives and progress",
-      image: governmentDoc,
+      image: Mission_Rojgar,
       video: "",
-      slug: "https://www.youtube.com/watch?v=izC13cZTXD4&list=PLH3Vw0GwKudHF1tUark0lNG0tkhjwRpMW&pp=gAQB",
+      slug: "https://youtu.be/SIhHdIk8xKM?list=PLH3Vw0GwKudHa0hcIOJmgArEzygAbXcLi",
     },
+    {
+      title: "Dharmik evam Sanskritik Unnayan Documentary",
+      client: "Uttar Pradesh Government",
+      description: "Documentary storytelling around public initiatives and progress",
+      image: Dharmik_Sanskritik,
+      video: "",
+      slug: "https://youtu.be/OWGzJeLOMCo?list=PLH3Vw0GwKudHa0hcIOJmgArEzygAbXcLi",
+    },
+
   ],
   "Corporate Documentaries": [
     {
