@@ -35,7 +35,7 @@ import bosa_short_Film from "../assets/images/bosa_short_Film.webp";
 // Government Documentaries
 import MahaKhumb from "../assets/images/mahakhumb.webp";
 import Baisc_shiksha_vibhaag from "../assets/images/Baisc_shiksha_vibhaag.webp";
-import Ayodhya_documentary from "../assets/images/ayodhya_doc.webp";
+import Ayodhya_documentary from "../assets/images/Ayodhya_doc.webp";
 import Mission_Rojgar from "../assets/images/Mission_rojgar.webp";
 import Dharmik_Sanskritik from "../assets/images/Dharmik_doc.webp";
 
