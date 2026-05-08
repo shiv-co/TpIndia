@@ -39,6 +39,13 @@ import saajhi_short_film from "../assets/images/saajhi_short_film.webp";
 import bosa_short_Film from "../assets/images/bosa_short_Film.webp";
 import salman_is_innocent from "../assets/images/salman_is_innocent_short_film.webp";
 import i_ate_short_film from "../assets/images/i_ate_short_film.webp";
+// Reels & Shorts 
+import reel_aleena from "../assets/images/reel_aleena.webp";
+import vijit_reels_2 from "../assets/images/vijit_reels_2.webp";
+import vijit_reels_1 from "../assets/images/vijit_reels.webp";
+// live streaming and broadcasting
+import live_img1 from "../assets/images/live_img1.webp";
+import live_img2 from "../assets/images/live_img2.webp";
 // Government Documentaries
 import MahaKhumb from "../assets/images/MahaKhumb.webp";
 import Baisc_shiksha_vibhaag from "../assets/images/Baisc_shiksha_vibhaag.webp";
@@ -198,12 +205,20 @@ export const portfolioData = {
   ],
   "Live Streaming & Broadcasting": [
     {
-      title: "Multi-Camera Live Production",
+      title: "Live Broadcast Production",
       client: "Corporate & Cultural Events",
       description: "Broadcast-ready coverage for stages, conferences and launches",
-      image: corporate,
+      image: live_img1,
       video: "",
-      slug: "https://www.youtube.com/watch?v=bCleSAdce-I&list=PLH3Vw0GwKudHCUMeCVL1GfX1HkQ2S2CTR",
+      slug: "",
+    },
+    {
+      title: "Thalka Sanwaad Live Broadcast",
+      client: "Thalka Sanwaad",
+      description: "Broadcast-ready coverage for stages, conferences and launches",
+      image: live_img2,
+      video: "",
+      slug: "",
     },
   ],
   "Podcasts & Interviews": [
@@ -338,12 +353,28 @@ export const portfolioData = {
   ],
   "Reels/Shorts": [
     {
-      title: "Social-First Reels Pack",
-      client: "Digital Campaigns",
+      title: "16 ways to say sorry.",
+      client: "Aleena Rais",
       description: "Fast, vertical edits crafted for attention and retention",
-      image: reelsShorts,
+      image: reel_aleena,
       video: "",
-      slug: "https://www.youtube.com/watch?v=F5ThKH5fIWA&list=PLH3Vw0GwKudFjvMHLk6aFrJr71PIRTuo7&pp=gAQB0gcJCbEEOCosWNin",
+      slug: "https://www.youtube.com/watch?v=F5ThKH5fIWA&list=PLH3Vw0GwKudFjvMHLk6aFrJr71PIRTuo7&index=1&pp=iAQB",
+    },
+     {
+      title: "Dil wali Coffee",
+      client: "Vijit Singh Studio",
+      description: "Fast, vertical edits crafted for attention and retention",
+      image: vijit_reels_1,
+      video: "",
+      slug: "https://www.youtube.com/watch?v=8nVlSWC8l7c&list=PLH3Vw0GwKudFjvMHLk6aFrJr71PIRTuo7&index=2&pp=iAQB",
+    },
+       {
+      title: "Mohabbat ",
+      client: "Vijit Singh Studio",
+      description: "Fast, vertical edits crafted for attention and retention",
+      image: vijit_reels_2,
+      video: "",
+      slug: "https://www.youtube.com/watch?v=c-OPmfDkRpU&list=PLH3Vw0GwKudFjvMHLk6aFrJr71PIRTuo7&index=3&pp=iAQB",
     },
   ],
   "Short Films": [
