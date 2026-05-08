@@ -21,6 +21,11 @@ import dhasutalks_website from "../assets/images/gallery11.webp";
 import Tehzeeb_website from "../assets/images/gallery12.webp";  
 import Ummeed_website from "../assets/images/ummeed_welfare.webp";
 import aitechtactics_website from "../assets/images/aitechtactics.webp";
+// TVC Films
+import maa_vaishno_devi from "../assets/images/maa_vaishno_devi.webp";
+import op_jagriti_TVC from "../assets/images/op_jagriti_TVC.webp";
+import false_fir from "../assets/images/false_fir.webp";
+import martial_discord from "../assets/images/martial_discord.webp";
 // Music Videos
 import mohan_aaye_hain from "../assets/images/Mohan_aaye_hain_music_video.webp";
 import mera_bhola from "../assets/images/Mera_bhola_records.webp";
@@ -32,6 +37,8 @@ import alfaaz_short_film from "../assets/images/alfaaz_short_film.webp";
 import The_mercy_man from "../assets/images/The_mercy_man.webp";
 import saajhi_short_film from "../assets/images/saajhi_short_film.webp";
 import bosa_short_Film from "../assets/images/bosa_short_Film.webp";
+import salman_is_innocent from "../assets/images/salman_is_innocent_short_film.webp";
+import i_ate_short_film from "../assets/images/i_ate_short_film.webp";
 // Government Documentaries
 import MahaKhumb from "../assets/images/MahaKhumb.webp";
 import Baisc_shiksha_vibhaag from "../assets/images/Baisc_shiksha_vibhaag.webp";
@@ -297,12 +304,36 @@ export const portfolioData = {
   ],
   "Ad/TVC Films": [
     {
-      title: "Commercial Story Films",
-      client: "Brand Campaigns",
+      title: "Elopment TVC Film",
+      client: "Uttar Pradesh Police Agra Zone",
       description: "High-recall commercial films shaped for awareness and action",
-      image: adsTvc,
+      image: op_jagriti_TVC,
       video: "",
-      slug: "https://www.youtube.com/watch?v=zod9C1LDp-M&list=PLH3Vw0GwKudEHgw1w8POQp7e81SJO-vs4",
+      slug: "https://www.youtube.com/watch?v=zod9C1LDp-M&list=PLH3Vw0GwKudEHgw1w8POQp7e81SJO-vs4&index=1&pp=iAQB",
+    },
+      {
+      title: "Martial Discord TVC Film",
+      client: "Uttar Pradesh Police Agra Zone",
+      description: "High-recall commercial films shaped for awareness and action",
+      image: martial_discord,
+      video: "",
+      slug: "https://www.youtube.com/watch?v=PhByElgaTCQ&list=PLH3Vw0GwKudEHgw1w8POQp7e81SJO-vs4&index=2&pp=iAQB",
+    },
+    {
+      title: "Maa Vaishno Devi Law College TVC Film",
+      client: "Uttar Pradesh Police",
+      description: "High-recall commercial films shaped for awareness and action",
+      image: maa_vaishno_devi,
+      video: "",
+      slug: "https://www.youtube.com/watch?v=dXcgzi_8K64&list=PLH3Vw0GwKudEHgw1w8POQp7e81SJO-vs4&index=4&pp=iAQB",
+    },
+    {
+      title: "False FIR TVC Film",
+      client: "Uttar Pradesh Police",
+      description: "High-recall commercial films shaped for awareness and action",
+      image: false_fir,
+      video: "",
+      slug: "https://www.youtube.com/watch?v=xK_SGNSC5Ak&list=PLH3Vw0GwKudEHgw1w8POQp7e81SJO-vs4&index=3&pp=iAQB0gcJCQMLAYcqIYzv",
     },
   ],
   "Reels/Shorts": [
@@ -316,6 +347,23 @@ export const portfolioData = {
     },
   ],
   "Short Films": [
+     {
+        title: "I ate My Husband Short Film",
+        client: "TNV Films",
+        description: "Compact story films with cinematic pacing and emotional clarity",
+        image: i_ate_short_film,
+        video: "",
+        slug: "https://youtu.be/q2NVTWZZZao",
+      },
+         {
+        title: "Salman Is Innocent Short Film",
+        client: "TNV Films",
+        description: "Compact story films with cinematic pacing and emotional clarity",
+        image: salman_is_innocent,
+        video: "",
+        slug: "https://youtu.be/nbleK7On2z8",
+      },
+     
      
       {
         title: "Alfaaz Short Film",
