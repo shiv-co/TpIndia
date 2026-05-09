@@ -1,15 +1,7 @@
-import adsTvc from "../assets/images/ads_tvc.webp";
-import corporate from "../assets/images/corporate.webp";
 import creatorsContent from "../assets/images/creators_content.webp";
 import eventCoverage from "../assets/images/eventCoverage.webp";
 import fullPortfolio from "../assets/images/Full_Portfolio.webp";
-import governmentDoc from "../assets/images/Goverment_doc.webp";
-import music from "../assets/images/music.webp";
-import podcasts from "../assets/images/podcasts.webp";
 import privateDoc from "../assets/images/private_doc.webp";
-import reelsShorts from "../assets/images/reels_shorts.webp";
-import shortFilms from "../assets/images/shortFilms.webp";
-import web from "../assets/images/web.webp";
 // Podcasts & Interviews
 import dhasutalks from "../assets/images/dhasutalks_podcast_image.webp";
 import aleena_rais from "../assets/images/aleena_raies_podcast.avif";
@@ -70,13 +62,13 @@ export const categoryOrder = [
 
 export const sectionDescriptions = {
   "Government Documentaries":
-    "Public initiative stories framed with clarity, context and documentary discipline.",
+    "Cinematic public-sector films that turn policy, heritage and civic progress into stories people can understand and remember.",
   "Corporate Documentaries":
-    "Strategic films that translate operations, people and outcomes into compelling brand narratives.",
+    "Strategic films that translate institutions, teams and outcomes into credible brand narratives.",
   "Audio/Visuals":
-    "Integrated sound, camera and post-production work for stories that need polish from first frame to final mix.",
+    "Integrated sound, camera and post-production work for stories that need polish from the first frame to the final mix.",
   "Website Development":
-    "Digital homes built to turn brand credibility into a clear, useful online experience.",
+    "Digital experiences designed to turn brand credibility into clear, memorable and useful journeys.",
   "Social Media Management":
     "Platform-native campaigns, creator content and cutdowns designed for consistent audience momentum.",
   "Live Streaming & Broadcasting":
@@ -100,7 +92,7 @@ export const portfolioData = {
     {
       title: "Uttar Pradesh Basic Shiksha Documentary",
       client: "Government & Public Bodies",
-      description: "Documentary storytelling around public initiatives and progress",
+      description: "A ground-level education film capturing classroom change, public investment and the human stories behind reform.",
       image: Baisc_shiksha_vibhaag,
       video: "",
       slug: "https://www.youtube.com/watch?v=i2YcP2VgOXA&list=PLH3Vw0GwKudHa0hcIOJmgArEzygAbXcLi&index=1&pp=iAQB",
@@ -108,7 +100,7 @@ export const portfolioData = {
       {
         title: "MahaKhumb Documentary",
         client: "Uttar Pradesh Tourism",
-        description: "Documentary storytelling around public initiatives and progress",
+        description: "A sweeping cultural documentary shaped around faith, scale, movement and the visual grandeur of Mahakumbh.",
         image: MahaKhumb,
         video: "",
         slug: "https://youtu.be/ln7NlGIsrGM?list=PLH3Vw0GwKudHa0hcIOJmgArEzygAbXcLi",
@@ -116,7 +108,7 @@ export const portfolioData = {
       {
       title: "Ayodhya Documentary",
       client: "Uttar Pradesh Government",
-      description: "Documentary storytelling around public initiatives and progress",
+      description: "A heritage-led film presenting Ayodhya's transformation through architecture, devotion and civic momentum.",
       image: Ayodhya_documentary,
       video: "",
       slug: "https://www.youtube.com/watch?v=3qgtbuL0LPE&list=PLH3Vw0GwKudHa0hcIOJmgArEzygAbXcLi&index=2&pp=iAQB",
@@ -124,7 +116,7 @@ export const portfolioData = {
      {
       title: "Mission Rojgar Documentary",
       client: "Uttar Pradesh Government",
-      description: "Documentary storytelling around public initiatives and progress",
+      description: "A public-impact documentary focused on employment, opportunity and the scale of livelihood creation.",
       image: Mission_Rojgar,
       video: "",
       slug: "https://youtu.be/SIhHdIk8xKM?list=PLH3Vw0GwKudHa0hcIOJmgArEzygAbXcLi",
@@ -132,7 +124,7 @@ export const portfolioData = {
     {
       title: "Dharmik evam Sanskritik Unnayan Documentary",
       client: "Uttar Pradesh Government",
-      description: "Documentary storytelling around public initiatives and progress",
+      description: "A culture-first documentary framing spiritual heritage and public development with cinematic clarity.",
       image: Dharmik_Sanskritik,
       video: "",
       slug: "https://youtu.be/OWGzJeLOMCo?list=PLH3Vw0GwKudHa0hcIOJmgArEzygAbXcLi",
@@ -143,7 +135,7 @@ export const portfolioData = {
     {
       title: "Institutional Impact Films",
       client: "Private Sector Partners",
-      description: "Strategic films showcasing operations, people and impact",
+      description: "A refined corporate film designed to present institutional credibility, operational strength and measurable impact.",
       image: privateDoc,
       video: "",
       slug: "https://www.youtube.com/watch?v=izC13cZTXD4&list=PLH3Vw0GwKudHF1tUark0lNG0tkhjwRpMW&pp=gAQB",
@@ -153,7 +145,7 @@ export const portfolioData = {
     {
       title: "Studio-Led Audio Visual Production",
       client: "TP India Network",
-      description: "Integrated audio and visual production for brand storytelling",
+      description: "A production-led showcase uniting camera language, sound craft and post-production polish into one cinematic system.",
       image: fullPortfolio,
       video: "",
       slug: "https://www.youtube.com/watch?v=0VlR_lmn6-Q&list=PLH3Vw0GwKudHnVKY6cybeBtBBitV8apDv",
@@ -163,7 +155,7 @@ export const portfolioData = {
     {
       title: "Dhasu Talks Website",
       client: "Dhasu Talks",
-      description: "Conversion-focused websites built for credibility and scale",
+      description: "A content-first web experience built to make episodes, personalities and conversations easy to discover.",
       image: dhasutalks_website,
       video: "",
       slug: "https://dhasutalks.com",
@@ -171,7 +163,7 @@ export const portfolioData = {
     {
       title: "Tehzeeb Website",
       client: "Tehzeeb",
-      description: "Modern website design for a cultural platform",
+      description: "An elegant cultural platform shaped for editorial storytelling, visual calm and a premium brand impression.",
       image: Tehzeeb_website,
       video: "",
       slug: "https://www.tehzeebcreations.in/",
@@ -179,7 +171,7 @@ export const portfolioData = {
     {
       title: "Ummeed Website",
       client: "Ummeed Welfare",
-      description: "Responsive website for a social welfare organization",
+      description: "A trust-led nonprofit website designed to communicate purpose, credibility and pathways for action.",
       image: Ummeed_website,
       video: "",
       slug: "https://www.ummeedwelfare.org.in/",
@@ -187,7 +179,7 @@ export const portfolioData = {
     {
       title: "Aitechtactics Website",
       client: "Aitechtactics",
-      description: "Modern website design for a tech startup",
+      description: "A focused technology website crafted to explain services clearly while building confidence from the first scroll.",
       image: aitechtactics_website,
       video: "",
       slug: "https://www.aitechtactics.com/",
@@ -197,7 +189,7 @@ export const portfolioData = {
     {
       title: "Creator Campaign Cutdowns",
       client: "Creators & Businesses",
-      description: "Platform-first content systems for consistent brand visibility",
+      description: "A platform-native content engine built to turn creator moments into consistent, scroll-stopping brand visibility.",
       image: creatorsContent,
       video: "",
       slug: "https://www.youtube.com/watch?v=BDCHkk_p8Og&list=PLH3Vw0GwKudHriLoJjfaSJlmlBttFIbDd&pp=gAQB",
@@ -207,7 +199,7 @@ export const portfolioData = {
     {
       title: "Live Broadcast Production",
       client: "Corporate & Cultural Events",
-      description: "Broadcast-ready coverage for stages, conferences and launches",
+      description: "A reliable multi-camera broadcast workflow built to translate stage energy into a polished live experience.",
       image: live_img1,
       video: "",
       slug: "",
@@ -215,7 +207,7 @@ export const portfolioData = {
     {
       title: "Thalka Sanwaad Live Broadcast",
       client: "Thalka Sanwaad",
-      description: "Broadcast-ready coverage for stages, conferences and launches",
+      description: "A dialogue-led live format produced for clarity, continuity and real-time audience engagement.",
       image: live_img2,
       video: "",
       slug: "",
@@ -226,7 +218,7 @@ export const portfolioData = {
      {
       title: "Podcast Studio Conversations",
       client: "Dhasu Talks",
-      description: "Clean studio interviews designed for long-form audience trust",
+      description: "A warm studio conversation format designed to hold attention through trust, rhythm and personality.",
       image: dhasutalks,
       video: "",
       slug: "https://youtu.be/jmhHjLjISm8",
@@ -234,7 +226,7 @@ export const portfolioData = {
      {
       title: "Industry me 90% log toh fake hain..",
       client: "Aleena Rais Live",
-      description: "Clean studio interviews designed for long-form audience trust",
+      description: "A personality-driven interview cut with a direct hook, clean pacing and strong audience retention in mind.",
       image: aleena_rais,
       video: "",
       slug: "https://youtu.be/fLw4KLuFSMo",
@@ -242,7 +234,7 @@ export const portfolioData = {
     {
       title: "IIT से IAS का रोचक सफ़र",
       client: "Vijit Singh Studio",
-      description: "Clean studio interviews designed for long-form audience trust",
+      description: "A thoughtful long-form interview shaped around ambition, personal journey and credible studio storytelling.",
       image: vijit_singh,
       video: "",
       slug: "https://youtu.be/BK9-ArodiCs?list=PLH3Vw0GwKudGF-SFFezE9vcDGUTGp0GaQ",
@@ -250,7 +242,7 @@ export const portfolioData = {
     {
       title: "Arun Rajhbha Podcast with Shilpa",
       client: "Shilpa Kachwaha",
-      description: "Clean studio interviews designed for long-form audience trust",
+      description: "A character-led podcast episode balancing relaxed conversation with an intimate, polished studio presence.",
       image: shilpa_podcast,
       video: "",
       slug: "https://youtu.be/CpvgMda0s8Y?list=PLH3Vw0GwKudGF-SFFezE9vcDGUTGp0GaQ",
@@ -258,7 +250,7 @@ export const portfolioData = {
     {
       title: "Struggling with Diabetes? ",
       client: "Dr. Amit Mohan",
-      description: "Clean studio interviews designed for long-form audience trust",
+      description: "A health-focused interview crafted to make expert guidance feel clear, human and accessible.",
       image: Dr_Amit_Podcast,
       video: "",
       slug: "https://youtu.be/CpvgMda0s8Y?list=PLH3Vw0GwKudGF-SFFezE9vcDGUTGp0GaQ",
@@ -268,7 +260,7 @@ export const portfolioData = {
     {
       title: "Event Memory Films",
       client: "Weddings & Cultural Events",
-      description: "Cinematic coverage for live moments, rituals and celebrations",
+      description: "A cinematic event story preserving rituals, atmosphere and unscripted emotion with elegant visual pacing.",
       image: eventCoverage,
       video: "",
       slug: "https://www.youtube.com/watch?v=bCleSAdce-I&list=PLH3Vw0GwKudHCUMeCVL1GfX1HkQ2S2CTR",
@@ -278,7 +270,7 @@ export const portfolioData = {
    {
       title: "Aai Re Aai Holi",
       client: "Music Mohalla",
-      description: "Narrative-driven romantic music video with polished visuals",
+      description: "A festive music video built around colour, rhythm and celebratory movement with vibrant cinematic energy.",
       image: aai_re_holi,
       video: "",
       slug: "https://youtu.be/J7Kwh0PEwMQ",
@@ -286,7 +278,7 @@ export const portfolioData = {
     {
       title: "Mahakhumb Song",
       client: "Poseidon Films",
-      description: "Narrative-driven romantic music video with polished visuals",
+      description: "A devotional music film combining scale, atmosphere and spiritual imagery for a strong cultural recall.",
       image: mahakhumb,
       video: "",
       slug: "https://youtu.be/q3e1lWzK4tQ?list=PLH3Vw0GwKudGWaJzUFThLdFV5PhDDVrCE",
@@ -294,7 +286,7 @@ export const portfolioData = {
      {
       title: "Mohan Aaye Hain",
       client: "Zee Music Devotional",
-      description: "Narrative-driven romantic music video with polished visuals",
+      description: "A devotional visual treatment shaped with reverence, performance texture and polished music-video grammar.",
       image: mohan_aaye_hain,
       video: "",
       slug: "https://youtu.be/UM3ttbm1aWc?list=PLH3Vw0GwKudGWaJzUFThLdFV5PhDDVrCE",
@@ -302,7 +294,7 @@ export const portfolioData = {
     {
       title: "Mera Bhola Naache",
       client: "Salim Sulaiman Music",
-      description: "Narrative-driven romantic music video with polished visuals",
+      description: "A high-energy devotional music video driven by performance, rhythm and a bold visual presence.",
       image: mera_bhola,
       video: "",
       slug: "https://youtu.be/O0xoQrcSwwQ?list=PLH3Vw0GwKudGWaJzUFThLdFV5PhDDVrCE",
@@ -310,7 +302,7 @@ export const portfolioData = {
     {
       title: "Darji Wave Music Video",
       client: "Poseidon Films",
-      description: "Narrative-driven romantic music video with polished visuals",
+      description: "A stylized music video shaped around mood, movement and a contemporary performance-led visual language.",
       image: darji_wave_music,
       video: "",
       slug: "https://youtu.be/Frm_Zb297g0?list=PLH3Vw0GwKudGWaJzUFThLdFV5PhDDVrCE",
@@ -321,7 +313,7 @@ export const portfolioData = {
     {
       title: "Elopment TVC Film",
       client: "Uttar Pradesh Police Agra Zone",
-      description: "High-recall commercial films shaped for awareness and action",
+      description: "A public-awareness TVC designed to communicate risk, consequence and action through a clear dramatic setup.",
       image: op_jagriti_TVC,
       video: "",
       slug: "https://www.youtube.com/watch?v=zod9C1LDp-M&list=PLH3Vw0GwKudEHgw1w8POQp7e81SJO-vs4&index=1&pp=iAQB",
@@ -329,7 +321,7 @@ export const portfolioData = {
       {
       title: "Martial Discord TVC Film",
       client: "Uttar Pradesh Police Agra Zone",
-      description: "High-recall commercial films shaped for awareness and action",
+      description: "A social-message film using conflict, restraint and clarity to drive awareness for a sensitive public issue.",
       image: martial_discord,
       video: "",
       slug: "https://www.youtube.com/watch?v=PhByElgaTCQ&list=PLH3Vw0GwKudEHgw1w8POQp7e81SJO-vs4&index=2&pp=iAQB",
@@ -337,7 +329,7 @@ export const portfolioData = {
     {
       title: "Maa Vaishno Devi Law College TVC Film",
       client: "Uttar Pradesh Police",
-      description: "High-recall commercial films shaped for awareness and action",
+      description: "A campaign film crafted to deliver institutional messaging with simple staging and high recall.",
       image: maa_vaishno_devi,
       video: "",
       slug: "https://www.youtube.com/watch?v=dXcgzi_8K64&list=PLH3Vw0GwKudEHgw1w8POQp7e81SJO-vs4&index=4&pp=iAQB",
@@ -345,7 +337,7 @@ export const portfolioData = {
     {
       title: "False FIR TVC Film",
       client: "Uttar Pradesh Police",
-      description: "High-recall commercial films shaped for awareness and action",
+      description: "A concise awareness film framing legal consequence through direct storytelling and campaign-ready clarity.",
       image: false_fir,
       video: "",
       slug: "https://www.youtube.com/watch?v=xK_SGNSC5Ak&list=PLH3Vw0GwKudEHgw1w8POQp7e81SJO-vs4&index=3&pp=iAQB0gcJCQMLAYcqIYzv",
@@ -355,7 +347,7 @@ export const portfolioData = {
     {
       title: "16 ways to say sorry.",
       client: "Aleena Rais",
-      description: "Fast, vertical edits crafted for attention and retention",
+      description: "A personality-led short cut for instant relatability, crisp timing and repeatable social engagement.",
       image: reel_aleena,
       video: "",
       slug: "https://www.youtube.com/watch?v=F5ThKH5fIWA&list=PLH3Vw0GwKudFjvMHLk6aFrJr71PIRTuo7&index=1&pp=iAQB",
@@ -363,7 +355,7 @@ export const portfolioData = {
      {
       title: "Dil wali Coffee",
       client: "Vijit Singh Studio",
-      description: "Fast, vertical edits crafted for attention and retention",
+      description: "A warm vertical story edited for mood, charm and fast emotional connection on mobile screens.",
       image: vijit_reels_1,
       video: "",
       slug: "https://www.youtube.com/watch?v=8nVlSWC8l7c&list=PLH3Vw0GwKudFjvMHLk6aFrJr71PIRTuo7&index=2&pp=iAQB",
@@ -371,7 +363,7 @@ export const portfolioData = {
        {
       title: "Mohabbat ",
       client: "Vijit Singh Studio",
-      description: "Fast, vertical edits crafted for attention and retention",
+      description: "A romantic short-form moment shaped with expressive pacing, soft emotion and social-first rhythm.",
       image: vijit_reels_2,
       video: "",
       slug: "https://www.youtube.com/watch?v=c-OPmfDkRpU&list=PLH3Vw0GwKudFjvMHLk6aFrJr71PIRTuo7&index=3&pp=iAQB",
@@ -381,7 +373,7 @@ export const portfolioData = {
      {
         title: "I ate My Husband Short Film",
         client: "TNV Films",
-        description: "Compact story films with cinematic pacing and emotional clarity",
+        description: "A dark narrative short shaped around tension, performance and a striking premise built for recall.",
         image: i_ate_short_film,
         video: "",
         slug: "https://youtu.be/q2NVTWZZZao",
@@ -389,7 +381,7 @@ export const portfolioData = {
          {
         title: "Salman Is Innocent Short Film",
         client: "TNV Films",
-        description: "Compact story films with cinematic pacing and emotional clarity",
+        description: "A socially aware short film built around character, conflict and a focused emotional argument.",
         image: salman_is_innocent,
         video: "",
         slug: "https://youtu.be/nbleK7On2z8",
@@ -399,7 +391,7 @@ export const portfolioData = {
       {
         title: "Alfaaz Short Film",
         client: "Vijit Singh Studio",
-        description: "Compact story films with cinematic pacing and emotional clarity",
+        description: "A dialogue-led short film using restraint, emotion and performance to carry a compact story arc.",
         image: alfaaz_short_film,
         video: "",
         slug: "https://www.youtube.com/watch?v=iBUqcpIt9DA&pp=ygUkYWxmYWF6ICBTaG9ydCBmaWxtcyBvbiBzb2NpYWwgaXNzdWVz",
@@ -407,7 +399,7 @@ export const portfolioData = {
          {
         title: "Saajhi Short Film",
         client: "Vijit Singh Studio",
-        description: "Compact story films with cinematic pacing and emotional clarity",
+        description: "A sensitive narrative piece crafted around shared emotion, grounded staging and human detail.",
         image: saajhi_short_film,
         video: "",
         slug: "https://youtu.be/PAownZ4Qxjs?list=PLH3Vw0GwKudHCUMeCVL1GfX1HkQ2S2CTR",
@@ -415,7 +407,7 @@ export const portfolioData = {
       {
         title: "The Mercy Man",
         client: "Open Artist ",
-        description: "Compact story films with cinematic pacing and emotional clarity",
+        description: "A character-focused short film built with atmosphere, moral tension and restrained cinematic pacing.",
         image: The_mercy_man,
         video: "",
         slug: "https://www.youtube.com/watch?v=3KPyWtXtee4&pp=ygUOIFRIRSBNRVJDWSBNQU4%3D",
@@ -423,7 +415,7 @@ export const portfolioData = {
       {
         title: "Bosa Short Film",
         client: "Open Artist ",
-        description: "Compact story films with cinematic pacing and emotional clarity",
+        description: "A concise independent film shaped through visual mood, intimate conflict and memorable character beats.",
         image: bosa_short_Film,
         video: "",
         slug: "https://youtu.be/rTuNMs0YMHw?list=PLH3Vw0GwKudHCUMeCVL1GfX1HkQ2S2CTR",

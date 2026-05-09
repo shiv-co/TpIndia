@@ -60,19 +60,22 @@ export default function PortfolioGrid({
   return (
     <section
       id="portfolio-work"
-      className="scroll-mt-28 bg-white px-6 py-12 text-neutral-900 dark:bg-neutral-950 dark:text-neutral-100"
+      className="scroll-mt-28 bg-[var(--bg-color)] px-5 py-12 text-[var(--text-primary)] sm:px-6"
     >
       <div className="mx-auto max-w-7xl">
         <div className="mx-auto mb-8 max-w-3xl text-center md:mb-10">
-          <h2 className="text-4xl font-extrabold tracking-normal text-neutral-900 md:text-6xl dark:text-neutral-100">
+          <p className="text-xs font-bold uppercase tracking-[0.24em] text-[var(--accent-color)]">
+            Selected Portfolio
+          </p>
+          <h2 className="mt-3 text-4xl font-bold tracking-normal text-[var(--text-primary)] md:text-6xl">
             Our Work
           </h2>
-          <p className="mt-4 text-base leading-7 text-neutral-600 md:text-lg dark:text-neutral-400">
+          <p className="mt-4 text-base leading-7 text-[var(--text-secondary)] md:text-lg">
             Stories, campaigns, and visuals crafted to create real impact
           </p>
         </div>
 
-        <div className="sticky top-16 z-20 -mx-6 border-y border-neutral-200 bg-white/90 px-6 py-4 backdrop-blur dark:border-neutral-800 dark:bg-neutral-950/90">
+        <div className="sticky top-16 z-20 -mx-5 border-y border-[var(--border-color)] bg-[var(--bg-color)]/90 px-5 py-4 backdrop-blur-xl sm:-mx-6 sm:px-6">
           <FilterTabs
             categories={categories}
             activeCategory={activeCategory}
@@ -80,7 +83,7 @@ export default function PortfolioGrid({
           />
         </div>
 
-        <div className="divide-y divide-neutral-200 dark:divide-neutral-800">
+        <div className="divide-y divide-[var(--border-color)]">
           {categoryOrder.map((category) => {
             const projects = portfolioData[category];
 
