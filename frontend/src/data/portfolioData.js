@@ -50,7 +50,7 @@ import shooting_range from "../assets/images/shooting_range.webp";
 
 export const categoryOrder = [
   "Government Documentaries",
-  "Corporate Documentaries",
+  "Corporate Documentaries & Films",
   "Event Coverage & Photography",
   "Audio/Visuals",
   "Website Development",
@@ -66,7 +66,7 @@ export const categoryOrder = [
 export const sectionDescriptions = {
   "Government Documentaries":
     "Cinematic public-sector films that turn policy, heritage and civic progress into stories people can understand and remember.",
-  "Corporate Documentaries":
+  "Corporate Documentaries & Films":
     "Strategic films that translate institutions, teams and outcomes into credible brand narratives.",
   "Audio/Visuals":
     "Integrated sound, camera and post-production work for stories that need polish from the first frame to the final mix.",
@@ -142,7 +142,7 @@ export const portfolioData = {
     },
 
   ],
-  "Corporate Documentaries": [
+  "Corporate Documentaries & Films": [
     {
       title: "Water For All UL4BC Documentary",
       client: "Private Sector ",
