@@ -44,6 +44,7 @@ import Baisc_shiksha_vibhaag from "../assets/images/Baisc_shiksha_vibhaag.webp";
 import Ayodhya_documentary from "../assets/images/Ayodhya_doc.webp";
 import Mission_Rojgar from "../assets/images/Mission_rojgar.webp";
 import Dharmik_Sanskritik from "../assets/images/Dharmik_doc.webp";
+import Shikshak_Se_Samman from "../assets/images/shikashak_documentary.webp";
 
 export const categoryOrder = [
   "Government Documentaries",
@@ -112,6 +113,14 @@ export const portfolioData = {
       image: Ayodhya_documentary,
       video: "",
       slug: "https://www.youtube.com/watch?v=3qgtbuL0LPE&list=PLH3Vw0GwKudHa0hcIOJmgArEzygAbXcLi&index=2&pp=iAQB",
+    },
+    {
+      title: "Shikshak Se Samman Documentary",
+      client: "Uttar Pradesh Government",
+      description: "A character-driven documentary celebrating teacher impact through personal stories, public recognition and the scale of educational change. ",
+      image: Shikshak_Se_Samman,
+      video: "",
+      slug: "https://youtu.be/Xkl4hE6ydIg",
     },
      {
       title: "Mission Rojgar Documentary",
@@ -253,7 +262,7 @@ export const portfolioData = {
       description: "A health-focused interview crafted to make expert guidance feel clear, human and accessible.",
       image: Dr_Amit_Podcast,
       video: "",
-      slug: "https://youtu.be/CpvgMda0s8Y?list=PLH3Vw0GwKudGF-SFFezE9vcDGUTGp0GaQ",
+      slug: "https://www.youtube.com/watch?v=eif_qhIwdGA&list=PLH3Vw0GwKudGF-SFFezE9vcDGUTGp0GaQ&index=5&pp=iAQB",
     },
   ],
   "Event Coverage & Photography": [
