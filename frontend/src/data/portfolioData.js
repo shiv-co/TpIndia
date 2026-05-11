@@ -45,16 +45,18 @@ import Ayodhya_documentary from "../assets/images/Ayodhya_doc.webp";
 import Mission_Rojgar from "../assets/images/Mission_rojgar.webp";
 import Dharmik_Sanskritik from "../assets/images/Dharmik_doc.webp";
 import Shikshak_Se_Samman from "../assets/images/shikashak_documentary.webp";
+import water_for_all from "../assets/images/water_for_all.webp";
+import shooting_range from "../assets/images/shooting_range.webp";
 
 export const categoryOrder = [
   "Government Documentaries",
   "Corporate Documentaries",
+  "Event Coverage & Photography",
   "Audio/Visuals",
   "Website Development",
   "Social Media Management",
   "Live Streaming & Broadcasting",
   "Podcasts & Interviews",
-  "Event Coverage & Photography",
   "Music Videos",
   "Ad/TVC Films",
   "Reels/Shorts",
@@ -142,12 +144,28 @@ export const portfolioData = {
   ],
   "Corporate Documentaries": [
     {
-      title: "Institutional Impact Films",
-      client: "Private Sector Partners",
-      description: "A refined corporate film designed to present institutional credibility, operational strength and measurable impact.",
-      image: privateDoc,
+      title: "Water For All UL4BC Documentary",
+      client: "Private Sector ",
+      description: "A purpose-driven documentary showcasing water access solutions, community impact and the human stories behind change.",
+      image: water_for_all,
       video: "",
-      slug: "https://www.youtube.com/watch?v=izC13cZTXD4&list=PLH3Vw0GwKudHF1tUark0lNG0tkhjwRpMW&pp=gAQB",
+      slug: "https://youtu.be/8Wnek5p6ZPg",
+    },
+    {
+      title: "Shooting Range Documentary",
+      client: "Private Sector ",
+      description: "A purpose-driven documentary showcasing water access solutions, community impact and the human stories behind change.",
+      image: shooting_range,
+      video: "",
+      slug: "https://youtu.be/pdQ69e4d2d4",
+    },
+    {
+      title: "Shooting Range Documentary",
+      client: "Private Sector ",
+      description: "A purpose-driven documentary showcasing water access solutions, community impact and the human stories behind change.",
+      image: shooting_range,
+      video: "",
+      slug: "https://youtu.be/MsgXUUHXuYU",
     },
   ],
   "Audio/Visuals": [
