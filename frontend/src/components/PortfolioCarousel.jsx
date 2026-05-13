@@ -24,14 +24,14 @@ function PortfolioCarousel({ category, projects }) {
     <div
       className="relative"
       onMouseEnter={pause}
-      onMouseLeave={() => resume()}
+      onMouseLeave={() => resume(800)}
       onFocusCapture={pause}
       onBlurCapture={() => resume()}
     >
       <div
         className="overflow-hidden [mask-image:linear-gradient(90deg,transparent,black_3%,black_97%,transparent)] sm:[mask-image:none]"
         onTouchStart={(event) => handleTouchStart(event.touches[0].clientX)}
-        onTouchCancel={() => resume(1200)}
+        onTouchCancel={() => resume(800)}
         onTouchEnd={(event) => handleTouchEnd(event.changedTouches[0].clientX)}
       >
         <div
@@ -79,7 +79,7 @@ function PortfolioCarousel({ category, projects }) {
             onClick={() => {
               pause();
               moveBy(-1);
-              resume(1300);
+              resume(800);
             }}
             aria-label={`Previous ${category} projects`}
             className="pointer-events-auto -ml-2 flex h-10 w-10 transform-gpu items-center justify-center rounded-full border border-white/20 bg-black/45 text-white shadow-lg shadow-black/20 backdrop-blur-xl transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-x-1 hover:scale-105 hover:bg-white hover:text-neutral-950 sm:-ml-4 sm:h-12 sm:w-12 lg:-ml-5 dark:shadow-black/50"
@@ -91,7 +91,7 @@ function PortfolioCarousel({ category, projects }) {
             onClick={() => {
               pause();
               moveBy(1);
-              resume(1300);
+              resume(800);
             }}
             aria-label={`Next ${category} projects`}
             className="pointer-events-auto -mr-2 flex h-10 w-10 transform-gpu items-center justify-center rounded-full border border-white/20 bg-black/45 text-white shadow-lg shadow-black/20 backdrop-blur-xl transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:translate-x-1 hover:scale-105 hover:bg-white hover:text-neutral-950 sm:-mr-4 sm:h-12 sm:w-12 lg:-mr-5 dark:shadow-black/50"
@@ -111,7 +111,7 @@ function PortfolioCarousel({ category, projects }) {
               onClick={() => {
                 pause();
                 goTo(index);
-                resume(1300);
+                resume(800);
               }}
               className={`h-1.5 rounded-full transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
                 index === activeIndex

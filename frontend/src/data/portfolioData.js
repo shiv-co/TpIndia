@@ -45,14 +45,20 @@ import Ayodhya_documentary from "../assets/images/Ayodhya_doc.webp";
 import Mission_Rojgar from "../assets/images/Mission_rojgar.webp";
 import Dharmik_Sanskritik from "../assets/images/Dharmik_doc.webp";
 import Shikshak_Se_Samman from "../assets/images/shikashak_documentary.webp";
+// Corporate Documentaries
 import water_for_all from "../assets/images/water_for_all.webp";
 import shooting_range from "../assets/images/shooting_range.webp";
+import efl_university from "../assets/images/efl_university.webp";
+import TIME_coaching from "../assets/images/TIME_coaching.webp";
+import khawaja_university from "../assets/images/khawaja_university.webp";
+// Event Coverage & Photography
+import seher_santkada from "../assets/images/seher_santkada.webp";
+import kawali from "../assets/images/kawali.webp";
 
 export const categoryOrder = [
   "Government Documentaries",
   "Corporate Documentaries & Films",
   "Event Coverage & Photography",
-  "Audio/Visuals",
   "Website Development",
   "Social Media Management",
   "Live Streaming & Broadcasting",
@@ -68,8 +74,6 @@ export const sectionDescriptions = {
     "Cinematic public-sector films that turn policy, heritage and civic progress into stories people can understand and remember.",
   "Corporate Documentaries & Films":
     "Strategic films that translate institutions, teams and outcomes into credible brand narratives.",
-  "Audio/Visuals":
-    "Integrated sound, camera and post-production work for stories that need polish from the first frame to the final mix.",
   "Website Development":
     "Digital experiences designed to turn brand credibility into clear, memorable and useful journeys.",
   "Social Media Management":
@@ -154,29 +158,36 @@ export const portfolioData = {
     {
       title: "Shooting Range Documentary",
       client: "Private Sector ",
-      description: "A purpose-driven documentary showcasing water access solutions, community impact and the human stories behind change.",
+      description: "A character-led documentary exploring the world of competitive shooting, athlete journeys and the pursuit of excellence.",
       image: shooting_range,
       video: "",
       slug: "https://youtu.be/pdQ69e4d2d4",
     },
     {
-      title: "Shooting Range Documentary",
-      client: "Private Sector ",
-      description: "A purpose-driven documentary showcasing water access solutions, community impact and the human stories behind change.",
-      image: shooting_range,
+      title: "EFL University Documentary",
+      client: "EFL University",
+      description: "A documentary exploring the transformative journey of students and faculty at EFL University.",
+      image: efl_university,
       video: "",
       slug: "https://youtu.be/MsgXUUHXuYU",
     },
-  ],
-  "Audio/Visuals": [
     {
-      title: "Studio-Led Audio Visual Production",
-      client: "TP India Network",
-      description: "A production-led showcase uniting camera language, sound craft and post-production polish into one cinematic system.",
-      image: fullPortfolio,
+      title: "T.I.M.E. Coaching Institute Documentary",
+      client: "TIME Coaching Institute", 
+      description: "A purpose-driven documentary showcasing the impact of coaching on student success, featuring personal stories and institutional insights.",
+      image: TIME_coaching,
       video: "",
-      slug: "https://www.youtube.com/watch?v=0VlR_lmn6-Q&list=PLH3Vw0GwKudHnVKY6cybeBtBBitV8apDv",
+      slug: "https://youtu.be/GAL1TrqqWIA",
     },
+    {
+      title: "Khawaja Moinuddin Chishti University Documentary",
+      client: "TIME Coaching Institute", 
+      description: "A character-driven documentary exploring the legacy and impact of Khawaja Moinuddin Chishti University, highlighting student experiences and academic excellence.",
+      image: khawaja_university,
+      video: "",
+      slug: "https://youtu.be/PxBTo51A8I4",
+    },
+   
   ],
   "Website Development": [
     {
@@ -291,6 +302,22 @@ export const portfolioData = {
       image: eventCoverage,
       video: "",
       slug: "https://www.youtube.com/watch?v=bCleSAdce-I&list=PLH3Vw0GwKudHCUMeCVL1GfX1HkQ2S2CTR",
+    },
+      {
+      title: "Seher - Concert at Dawn MSLF",
+      client: "Mahindra Sanatkada Lucknow Festival",
+      description: "A cinematic portrayal of the vibrant Seher concert at dawn during the Mahindra Sanatkada Lucknow Festival.",
+      image: seher_santkada,
+      video: "",
+      slug: "https://youtu.be/hLkl-RzwQgo",
+    },
+    {
+      title: "Sufi Qawwali - Shahid Sami Niyazi Brothers",
+      client: "Mahindra Sanatkada Lucknow Festival",
+      description: "A cinematic portrayal of the vibrant Sufi Qawwali performance during the Mahindra Sanatkada Lucknow Festival.",
+      image: kawali,
+      video: "",
+      slug: "https://youtu.be/3AbEFLxEgFE",
     },
   ],
   "Music Videos": [
