@@ -38,6 +38,8 @@ import vijit_reels_1 from "../assets/images/vijit_reels.webp";
 // live streaming and broadcasting
 import live_img1 from "../assets/images/live_img1.webp";
 import live_img2 from "../assets/images/live_img2.webp";
+import cheque_vitran from "../assets/images/check_vitran.webp";
+import defining_live from "../assets/images/defining_live.webp";
 // Government Documentaries
 import MahaKhumb from "../assets/images/MahaKhumb.webp";
 import Baisc_shiksha_vibhaag from "../assets/images/Baisc_shiksha_vibhaag.webp";
@@ -234,6 +236,22 @@ export const portfolioData = {
     },
   ],
   "Live Streaming & Broadcasting": [
+    {
+      title: "Cheque Distribution Program organized in Lucknow",
+      client: "Shri Yogi Adityanath",
+      description: "A large-scale live broadcast capturing the energy, significance and human stories of a high-profile cheque distribution event.",
+      image: cheque_vitran,
+      video: "",
+      slug: "https://youtu.be/CS0dCThcerE",
+    },
+    {
+      title: "Defining 9 Years of Transformation: From Progress to Prosperity-Uttar Pradesh Leads Ahead conclave",
+      client: "Shri Yogi Adityanath",
+      description: "A dynamic live production covering a major conclave, designed to highlight key moments, speeches and the overall narrative of progress in Uttar Pradesh.",
+      image: defining_live,
+      video: "",
+      slug: "https://youtu.be/QkFcXSvp5mE",
+    },
     {
       title: "Live Broadcast Production",
       client: "Corporate & Cultural Events",
