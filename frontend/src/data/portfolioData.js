@@ -1,8 +1,8 @@
 import creatorsContent from "../assets/images/creators_content.webp";
 import eventCoverage from "../assets/images/eventCoverage.webp";
-import fullPortfolio from "../assets/images/Full_Portfolio.webp";
-import privateDoc from "../assets/images/private_doc.webp";
+
 // Podcasts & Interviews
+import akhilesh_yadav_podcast_shoot from "../assets/images/akhilesh_yadav_podcast_shoot.webp";
 import dhasutalks from "../assets/images/dhasutalks_podcast_image.webp";
 import aleena_rais from "../assets/images/aleena_raies_podcast.avif";
 import vijit_singh from "../assets/images/vijit_singh_podcast.webp";
@@ -35,6 +35,11 @@ import i_ate_short_film from "../assets/images/i_ate_short_film.webp";
 import reel_aleena from "../assets/images/reel_aleena.webp";
 import vijit_reels_2 from "../assets/images/vijit_reels_2.webp";
 import vijit_reels_1 from "../assets/images/vijit_reels.webp";
+import Kuku_reels_3 from "../assets/images/kuku_reels_3.webp";
+import Kuku_tv_reels1 from "../assets/images/kuku_tv_reels1.webp";
+import kuku_dhurandhar_nishane from "../assets/images/kuku_dhurandhar_nishane.webp";
+import kuku_tv_long_ep from "../assets/images/kuku_tv_long_ep.webp";
+
 // live streaming and broadcasting
 import live_img1 from "../assets/images/live_img1.webp";
 import live_img2 from "../assets/images/live_img2.webp";
@@ -60,11 +65,11 @@ import kawali from "../assets/images/kawali.webp";
 export const categoryOrder = [
   "Government Documentaries",
   "Corporate Documentaries & Films",
+  "Podcasts & Interviews",
   "Event Coverage & Photography",
   "Website Development",
   "Social Media Management",
   "Live Streaming & Broadcasting",
-  "Podcasts & Interviews",
   "Music Videos",
   "Ad/TVC Films",
   "Reels/Shorts",
@@ -271,7 +276,15 @@ export const portfolioData = {
   ],
   "Podcasts & Interviews": [
    
-     {
+    {
+      title: "Podcast Shoot of Mr. Akhilesh Yadav",
+      client: "FrontLine Magazine",
+      description: "Will BJP lose Uttar Pradesh? Akhilesh Yadav on INDIA alliance, Modi's foreign policy, and SIR's future. A candid conversation with the former Chief Minister of Uttar Pradesh, delving into the political landscape and the challenges faced by the opposition.",
+      image: akhilesh_yadav_podcast_shoot,
+      video: "",
+      slug: "https://youtu.be/jbP5rOvvUZg",
+    }, 
+    {
       title: "Podcast Studio Conversations",
       client: "Dhasu Talks",
       description: "A warm studio conversation format designed to hold attention through trust, rhythm and personality.",
@@ -439,6 +452,46 @@ export const portfolioData = {
       image: vijit_reels_2,
       video: "",
       slug: "https://www.youtube.com/watch?v=c-OPmfDkRpU&list=PLH3Vw0GwKudFjvMHLk6aFrJr71PIRTuo7&index=3&pp=iAQB",
+    },
+      {
+      title: "Dhurandhar Nishanebaaz Full Episode",
+      client: "Kuku TV",
+      description: "A romantic short-form moment shaped with expressive pacing, soft emotion and social-first rhythm.",
+      image: kuku_tv_long_ep,
+      video: "",
+      slug: "https://youtu.be/LYQYCFpsH2Q",
+    },
+    {
+      title: "Dhurandhar Nishanebaaz Reel 1",
+      client: "Kuku TV",
+      description: "A romantic short-form moment shaped with expressive pacing, soft emotion and social-first rhythm.",
+      image: Kuku_tv_reels1,
+      video: "",
+      slug: "https://youtube.com/shorts/244EnBIAmbg?feature=share",
+    },
+    {
+      title: "Dhurandhar Nishanebaaz Reel 2",
+      client: "Kuku TV",
+      description: "A romantic short-form moment shaped with expressive pacing, soft emotion and social-first rhythm.",
+      image: Kuku_reels_3,
+      video: "",
+      slug: "https://www.youtube.com/shorts/2o6Vheqs8H4",
+    },
+     {
+      title: "Sharp Shooter Reel ",
+      client: "Kuku TV",
+      description: "A romantic short-form moment shaped with expressive pacing, soft emotion and social-first rhythm.",
+      image: kuku_dhurandhar_nishane,
+      video: "",
+      slug: "https://www.youtube.com/shorts/Bm74saJR1XU",
+    },
+    {
+      title: "olympic Shooter Reel",
+      client: "Kuku TV",
+      description: "A romantic short-form moment shaped with expressive pacing, soft emotion and social-first rhythm.",
+      image: Kuku_tv_reels1,
+      video: "",
+      slug: "https://www.youtube.com/shorts/dMg0VhhcJJI",
     },
   ],
   "Short Films": [

@@ -17,23 +17,6 @@ import { useMeta } from "../hooks/useMeta";
 import man_avatar from "../assets/man.png";
 import woman_avatar from "../assets/woman.png";
 
-// import logo1 from "../assets/images/logo1.webp";
-// import logo2 from "../assets/images/logo2.webp";
-// import logo3 from "../assets/images/logo3.webp";
-// import logo4 from "../assets/images/logo4.webp";
-// import logo5 from "../assets/images/logo5.webp";
-// import logo6 from "../assets/images/logo6.webp";
-// import logo7 from "../assets/images/logo7.webp";
-// import logo8 from "../assets/images/logo8.webp";
-// import logo9 from "../assets/images/logo9.webp";
-// import logo10 from "../assets/images/logo10.webp";
-// import logo11 from "../assets/images/logo11.webp";
-// import logo12 from "../assets/images/logo12.webp";
-// import logo13 from "../assets/images/logo13.webp";
-// import logo14 from "../assets/images/logo14.webp";
-// import logo15 from "../assets/images/logo15.webp";
-// import logo16 from "../assets/images/logo16.webp";
-
 import logo1 from "../assets/logos/logo_1.webp";
 import logo2 from "../assets/logos/logo_2.webp";
 import logo3 from "../assets/logos/logo_3.webp";
@@ -73,6 +56,12 @@ import logo36 from "../assets/logos/logo_36.webp";
 import logo37 from "../assets/logos/logo_37.webp";
 import logo38 from "../assets/logos/logo_38.webp";
 import logo39 from "../assets/logos/logo_39.webp";
+import advik_energy_logo from "../assets/logos/Advik_Logo.webp";
+import GPL_LOGO from "../assets/logos/GPL_LOGO.webp";
+import The_Hindu_Logo from "../assets/logos/The_Hindu_Logo.webp";
+import Frontline_Magazine from "../assets/logos/Frontline_Magazine.webp";
+import kuku_tv_logo from "../assets/logos/kuku-tv-logo.webp";
+
 // import logo40 from "../assets/logos/logo_40.webp";
 
 function PlayIcon({ className = "w-10 h-10" }) {
@@ -728,6 +717,26 @@ function Logo() {
     {
       logo: logo39,
       title: "T.S Mishra College",
+    },
+    {
+      logo: advik_energy_logo,
+      title: "Advik Energy",
+    },
+    {
+      logo: GPL_LOGO,
+      title: "GPL",
+    },
+    {
+      logo: The_Hindu_Logo,
+      title: "The Hindu",
+    },
+    {
+      logo: Frontline_Magazine,
+      title: "Frontline Magazine",
+    },
+    {
+      logo: kuku_tv_logo,
+      title: "Kuku TV",
     },
     // logo40,
   ];

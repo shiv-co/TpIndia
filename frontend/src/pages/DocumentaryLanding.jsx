@@ -16,14 +16,7 @@ import clientB from "../assets/images/gallery2.webp";
 import clientC from "../assets/images/gallery2.webp";
 import directorPhoto from "../assets/crew_img/kudrat.webp";
 
-// import docuHero from "../assets/documentary-hero.webp";
-// import docSample1 from "../assets/doc-sample-1.webp";
-// import docSample2 from "../assets/doc-sample-2.webp";
-// import docSample3 from "../assets/doc-sample-3.webp";
-// import clientA from "../assets/client-a.webp";
-// import clientB from "../assets/client-b.webp";
-// import clientC from "../assets/client-c.webp";
-// import directorPhoto from "../assets/director.webp";
+
 export default function DocumentaryLanding() {
   useMeta({
     title: "Documentary Filmmaking TP India Network | Cinematic Non-Fiction",
