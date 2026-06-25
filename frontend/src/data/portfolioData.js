@@ -35,7 +35,7 @@ import i_ate_short_film from "../assets/images/i_ate_short_film.webp";
 import reel_aleena from "../assets/images/reel_aleena.webp";
 import vijit_reels_2 from "../assets/images/vijit_reels_2.webp";
 import vijit_reels_1 from "../assets/images/vijit_reels.webp";
-import Kuku_reels_3 from "../assets/images/kuku_reels_3.webp";
+import Kuku_reels_3 from "../assets/images/Kuku_reels_3.webp";
 import Kuku_tv_reels1 from "../assets/images/Kuku_tv_reels1.webp";
 import kuku_dhurandhar_nishane from "../assets/images/kuku_dhurandhar_nishane.webp";
 import kuku_tv_long_ep from "../assets/images/kuku_tv_long_ep.webp";
