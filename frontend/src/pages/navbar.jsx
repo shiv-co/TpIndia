@@ -281,6 +281,14 @@ export default function Navbar() {
             </li>
             <li>
               <Link
+                to="/gallery"
+                className="hover:text-[var(--accent-color)] transition-colors"
+              >
+                Gallery
+              </Link>
+            </li>
+            <li>
+              <Link
                 to="/rentals"
                 className="hover:text-[var(--accent-color)] transition-colors"
               >
@@ -443,7 +451,7 @@ export default function Navbar() {
                   About Us
                 </Link>
               </li>
-              <li>
+                   <li>
                 <Link
                   to="/rentals"
                   onClick={() => {
@@ -453,6 +461,18 @@ export default function Navbar() {
                   className="hover:text-[var(--accent-color)]"
                 >
                   Rentals
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/gallery"
+                  onClick={() => {
+                    setIsOpen(false);
+                    setIsMobilePricingOpen(false);
+                  }}
+                  className="hover:text-[var(--accent-color)]"
+                >
+                  Gallery
                 </Link>
               </li>
               <li>

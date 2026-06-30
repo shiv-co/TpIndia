@@ -18,6 +18,7 @@ import WebsiteDevLanding from "../pages/WebsiteDevLanding.jsx";
 import DocumentaryLanding from "../pages/DocumentaryLanding.jsx";
 import RateCard from "../pages/webdevRateCard.jsx";
 import Pricing2 from "../pages/pricing2/Pricing2.jsx";
+import GalleryPage from "../pages/gallery.jsx";
 
 const AppRouter = () => {
   return (
@@ -41,6 +42,7 @@ const AppRouter = () => {
           <Route path="/pricing" element={<RateCard />} />
           <Route path="/website/pricing" element={<RateCard />} />
           <Route path="/pricing-makeup" element={<Pricing2 />} />
+          <Route path="/gallery" element={<GalleryPage />} />
         </Routes>
 
         <Footer />
