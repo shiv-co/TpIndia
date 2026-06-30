@@ -2,7 +2,7 @@
 // Gallery Images
 // ===============================
 
-import img1 from "../assets/gallery/gallery1.JPG";
+import img1 from "../assets/gallery/gallery1.jpg";
 import img2 from "../assets/gallery/gallery2.webp";
 import img3 from "../assets/gallery/gallery3.webp";
 import img4 from "../assets/gallery/gallery4.webp";
